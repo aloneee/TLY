@@ -21,6 +21,10 @@
     //设置状态栏的样式
     application.statusBarStyle = UIStatusBarStyleLightContent;
     
+    
+    NSLog(@"llll");
+    
+    
     return YES;
 }
 
