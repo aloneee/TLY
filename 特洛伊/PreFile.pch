@@ -1,0 +1,15 @@
+//
+//  PreFile.pch
+//  特洛伊
+//
+//  Created by liurihua on 15/8/24.
+//  Copyright (c) 2015年 刘日华. All rights reserved.
+//
+
+#ifndef ____PreFile_pch
+#define ____PreFile_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
