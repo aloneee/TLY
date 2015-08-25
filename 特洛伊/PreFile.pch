@@ -6,10 +6,52 @@
 //  Copyright (c) 2015年 刘日华. All rights reserved.
 //
 
-#ifndef ____PreFile_pch
-#define ____PreFile_pch
+//#ifndef ____PreFile_pch
+//#define ____PreFile_pch
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+
+#ifdef __OBJC__
+//系统类
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+//自己类
+//#import "UIImage+Help.h"
+#import "NSString+Help.h"
+#import "UIView+Help.h"
+#import "UIImage+Help.h"
+#import "MBProgressHUD+MJ.h"
+#endif
+
+//提高效率
+#define iPhone ([[UIDevice currentDevice].model rangeOfString:@"iPhone"].length > 0)
+#define iPod  ([[UIDevice currentDevice].model rangeOfString:@"iPod"].length > 0)
+#define ios8 ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0)
+#define ios7 ([[UIDevice currentDevice].systemVersion floatValue] < 8.0)
+#define kColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0  blue:(b)/255.0  alpha:1]
+
+
+//随机色
+#define kRandomColor [UIColor colorWithRed:(arc4random()%255 /255.0)green:(arc4random()%255 /255.0) blue:(arc4random()%255 /255.0) alpha:1]
+#define kScreenBounds [UIScreen mainScreen].bounds
+#define kScreenWidth  kScreenBounds.size.width
+#define kScreenHeight  kScreenBounds.size.height
+
+
+#define kUser [NSUserDefaults standardUserDefaults]
+
+
+
+#ifdef DEBUG
+//Debug Model
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s [%d lines] %s\n",__PRETTY_FUNCTION__, __LINE__,[[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+//Release Model
+#define NSLog(FORMAT, ...) nil  //Disable NSLog
+
 
 #endif

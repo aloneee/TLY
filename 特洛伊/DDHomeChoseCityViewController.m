@@ -7,21 +7,43 @@
 //
 
 #import "DDHomeChoseCityViewController.h"
+#import "DDHomeCityCell.h"
 
 @interface DDHomeChoseCityViewController ()
+
+@property (nonatomic, strong) NSMutableArray        *citys;
 
 @end
 
 @implementation DDHomeChoseCityViewController
 
+
+-(NSMutableArray *)citys{
+    if (!_citys) {
+        _citys = [NSMutableArray arrayWithObjects:@"北京市",@"长春市",@"上海市",@"天津市",@"重庆市",@"石家庄市", nil];
+    }
+    return _citys;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.title = @"选择城市";
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIButton *left=[UIButton buttonWithType:UIButtonTypeCustom];
+    left.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
+    [left setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    left.frame = CGRectMake(0, 0, 80, 30);
+    [left setTitle:@"返回" forState:UIControlStateNormal];
+    [left addTarget:self action:@selector(popBack) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:left];
+    
+}
+
+- (void) popBack{
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,69 +54,48 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+//#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+//#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    if (0 == section) {
+        return 1;
+    }
+    return self.citys.count;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+
+- (DDHomeCityCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    DDHomeCityCell *cell = [DDHomeCityCell cellForTabelView:tableView];
     
-    // Configure the cell...
+    if (0 == indexPath.section) {
+        cell.city = @"北京市";
+        
+        
+    }
+    else{
+        cell.city = self.citys[indexPath.row];
+    }
+    
+    cell.returnCityBlock = ^(DDHomeCityCell *homeCityCell){
+        [self.userLocationBtn setTitle:homeCityCell.city forState:UIControlStateNormal];
+        [self.navigationController popViewControllerAnimated:YES];
+    };
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    if (0 == section) {
+        return @"当前位置";
+    }else{
+        return @"已开通城市";
+    }
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

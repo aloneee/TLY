@@ -10,4 +10,6 @@
 
 @interface DDHomeChoseCityViewController : UITableViewController
 
+@property (nonatomic, strong) UIButton *userLocationBtn;
+
 @end

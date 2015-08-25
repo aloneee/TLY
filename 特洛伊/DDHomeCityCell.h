@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class DDHomeCityCell;
+
+typedef void (^HomeCityCellReturnCityBlock)(DDHomeCityCell *);
+
+
 @interface DDHomeCityCell : UITableViewCell
+
+@property (nonatomic, copy) NSString                    *city;
+
+@property (nonatomic, copy) HomeCityCellReturnCityBlock returnCityBlock;
+
++(DDHomeCityCell *)cellForTabelView:(UITableView *)tableView;
 
 @end

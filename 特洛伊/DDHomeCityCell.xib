@@ -1,18 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="DDHomeCityCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityCell" id="KGk-i7-Jjw" customClass="DDHomeCityCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Par-kh-tNY">
+                        <rect key="frame" x="0.0" y="42" width="320" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZW-0V-0Ms">
+                        <rect key="frame" x="250" y="0.0" width="50" height="42"/>
+                        <state key="normal" title="确定">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="returnCity:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="a8M-oD-FAf"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pU-RZ-ac0">
+                        <rect key="frame" x="20" y="0.0" width="230" height="42.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="TZW-0V-0Ms" secondAttribute="trailing" constant="20" id="B2g-gt-VUZ"/>
+                    <constraint firstAttribute="bottom" secondItem="1pU-RZ-ac0" secondAttribute="bottom" constant="1" id="EqP-XA-gkF"/>
+                    <constraint firstAttribute="trailing" secondItem="1pU-RZ-ac0" secondAttribute="trailing" constant="70" id="GH8-WU-bBB"/>
+                    <constraint firstItem="1pU-RZ-ac0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="LMU-ba-XMe"/>
+                    <constraint firstAttribute="bottom" secondItem="Par-kh-tNY" secondAttribute="bottom" id="MBw-ze-hOn"/>
+                    <constraint firstItem="1pU-RZ-ac0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="OXc-Yk-cim"/>
+                    <constraint firstAttribute="trailing" secondItem="Par-kh-tNY" secondAttribute="trailing" id="QYy-vh-6bY"/>
+                    <constraint firstItem="TZW-0V-0Ms" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="SWG-ZQ-FVH"/>
+                    <constraint firstItem="TZW-0V-0Ms" firstAttribute="leading" secondItem="1pU-RZ-ac0" secondAttribute="trailing" id="Snr-n8-V4Z"/>
+                    <constraint firstItem="Par-kh-tNY" firstAttribute="top" secondItem="1pU-RZ-ac0" secondAttribute="bottom" id="T90-sV-8Rl"/>
+                    <constraint firstItem="Par-kh-tNY" firstAttribute="top" secondItem="TZW-0V-0Ms" secondAttribute="bottom" id="VmY-mE-4Pc"/>
+                    <constraint firstItem="Par-kh-tNY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="akT-bR-Zrs"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="cityNameView" destination="1pU-RZ-ac0" id="3wy-cp-S3j"/>
+                <outlet property="donebtn" destination="TZW-0V-0Ms" id="1vE-89-JZq"/>
+            </connections>
+            <point key="canvasLocation" x="371" y="238"/>
         </tableViewCell>
     </objects>
 </document>
