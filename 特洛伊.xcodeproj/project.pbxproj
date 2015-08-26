@@ -468,6 +468,7 @@
 				TargetAttributes = {
 					59F0DB281B8564BB0092B104 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = M2AC6R6S33;
 					};
 					59F0DB411B8564BB0092B104 = {
 						CreatedOnToolsVersion = 6.4;
@@ -669,9 +670,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "特洛伊/PreFile.pch";
 				INFOPLIST_FILE = "特洛伊/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -681,9 +684,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "特洛伊/PreFile.pch";
 				INFOPLIST_FILE = "特洛伊/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
