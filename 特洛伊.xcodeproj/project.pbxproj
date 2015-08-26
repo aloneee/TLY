@@ -29,9 +29,9 @@
 		599A55161B8D53E7007D71C8 /* DDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599A54F01B8D53E7007D71C8 /* DDLoginViewController.m */; };
 		599A55171B8D53E7007D71C8 /* DDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599A54F21B8D53E7007D71C8 /* DDNavigationController.m */; };
 		599A55181B8D53E7007D71C8 /* DDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599A54F41B8D53E7007D71C8 /* DDTabBarController.m */; };
-		599A55191B8D53E7007D71C8 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 599A54F81B8D53E7007D71C8 /* MBProgressHUD+MJ.m */; };
-		599A551A1B8D53E7007D71C8 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 599A54F91B8D53E7007D71C8 /* MBProgressHUD.bundle */; };
-		599A551B1B8D53E7007D71C8 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 599A54FB1B8D53E7007D71C8 /* MBProgressHUD.m */; };
+		599A55221B8D6055007D71C8 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 599A551E1B8D6055007D71C8 /* MBProgressHUD+MJ.m */; };
+		599A55231B8D6055007D71C8 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 599A551F1B8D6055007D71C8 /* MBProgressHUD.bundle */; };
+		599A55241B8D6055007D71C8 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 599A55211B8D6055007D71C8 /* MBProgressHUD.m */; };
 		59F0DB2F1B8564BB0092B104 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F0DB2E1B8564BB0092B104 /* main.m */; };
 		59F0DB491B8564BB0092B104 /* ___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F0DB481B8564BB0092B104 /* ___Tests.m */; };
 /* End PBXBuildFile section */
@@ -89,11 +89,11 @@
 		599A54F21B8D53E7007D71C8 /* DDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNavigationController.m; sourceTree = "<group>"; };
 		599A54F31B8D53E7007D71C8 /* DDTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTabBarController.h; sourceTree = "<group>"; };
 		599A54F41B8D53E7007D71C8 /* DDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTabBarController.m; sourceTree = "<group>"; };
-		599A54F71B8D53E7007D71C8 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
-		599A54F81B8D53E7007D71C8 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
-		599A54F91B8D53E7007D71C8 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
-		599A54FA1B8D53E7007D71C8 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		599A54FB1B8D53E7007D71C8 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		599A551D1B8D6055007D71C8 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
+		599A551E1B8D6055007D71C8 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
+		599A551F1B8D6055007D71C8 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		599A55201B8D6055007D71C8 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		599A55211B8D6055007D71C8 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		59F0DB291B8564BB0092B104 /* 特洛伊.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "特洛伊.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F0DB2D1B8564BB0092B104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59F0DB2E1B8564BB0092B104 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -303,21 +303,9 @@
 		599A54F51B8D53E7007D71C8 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				599A54F61B8D53E7007D71C8 /* MBProgressHUD */,
+				599A551C1B8D6055007D71C8 /* MBProgressHUD */,
 			);
 			path = Lib;
-			sourceTree = "<group>";
-		};
-		599A54F61B8D53E7007D71C8 /* MBProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				599A54F71B8D53E7007D71C8 /* MBProgressHUD+MJ.h */,
-				599A54F81B8D53E7007D71C8 /* MBProgressHUD+MJ.m */,
-				599A54F91B8D53E7007D71C8 /* MBProgressHUD.bundle */,
-				599A54FA1B8D53E7007D71C8 /* MBProgressHUD.h */,
-				599A54FB1B8D53E7007D71C8 /* MBProgressHUD.m */,
-			);
-			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		599A54FC1B8D53E7007D71C8 /* Models */ = {
@@ -363,6 +351,18 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		599A551C1B8D6055007D71C8 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				599A551D1B8D6055007D71C8 /* MBProgressHUD+MJ.h */,
+				599A551E1B8D6055007D71C8 /* MBProgressHUD+MJ.m */,
+				599A551F1B8D6055007D71C8 /* MBProgressHUD.bundle */,
+				599A55201B8D6055007D71C8 /* MBProgressHUD.h */,
+				599A55211B8D6055007D71C8 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		59F0DB201B8564BB0092B104 = {
@@ -501,7 +501,7 @@
 			files = (
 				599A55051B8D53E7007D71C8 /* Images.xcassets in Resources */,
 				599A55091B8D53E7007D71C8 /* DDHomeCityCell.xib in Resources */,
-				599A551A1B8D53E7007D71C8 /* MBProgressHUD.bundle in Resources */,
+				599A55231B8D6055007D71C8 /* MBProgressHUD.bundle in Resources */,
 				599A55031B8D53E7007D71C8 /* LaunchScreen.xib in Resources */,
 				599A55041B8D53E7007D71C8 /* Main.storyboard in Resources */,
 			);
@@ -534,12 +534,12 @@
 				599A550F1B8D53E7007D71C8 /* UIImage+ImageEffects.m in Sources */,
 				599A550C1B8D53E7007D71C8 /* UIBarButtonItem+Help.m in Sources */,
 				599A55131B8D53E7007D71C8 /* XXBDeviceHelp.m in Sources */,
+				599A55241B8D6055007D71C8 /* MBProgressHUD.m in Sources */,
 				599A550D1B8D53E7007D71C8 /* UIColor+Help.m in Sources */,
-				599A551B1B8D53E7007D71C8 /* MBProgressHUD.m in Sources */,
 				599A55081B8D53E7007D71C8 /* DDHomeCityCell.m in Sources */,
 				599A55161B8D53E7007D71C8 /* DDLoginViewController.m in Sources */,
+				599A55221B8D6055007D71C8 /* MBProgressHUD+MJ.m in Sources */,
 				599A55121B8D53E7007D71C8 /* UIView+MotionEffect.m in Sources */,
-				599A55191B8D53E7007D71C8 /* MBProgressHUD+MJ.m in Sources */,
 				599A55071B8D53E7007D71C8 /* HomeRootViewController.m in Sources */,
 				599A550A1B8D53E7007D71C8 /* NSDate+XXB.m in Sources */,
 			);
