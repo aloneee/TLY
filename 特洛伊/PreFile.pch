@@ -21,10 +21,11 @@
 
 //自己类
 //#import "UIImage+Help.h"
-#import "NSString+Help.h"
+//#import "NSString+Help.h"
 #import "UIView+Help.h"
 #import "UIImage+Help.h"
 #import "MBProgressHUD+MJ.h"
+#import "XXBSingleton.h"
 #endif
 
 //提高效率
@@ -42,9 +43,10 @@
 #define kScreenHeight  kScreenBounds.size.height
 
 
-#define kUser [NSUserDefaults standardUserDefaults]
+#define kUserDefaults [NSUserDefaults standardUserDefaults]
 
-
+// 生成一个字符串
+#define NSString(...) [NSString stringWithFormat:__VA_ARGS__]
 
 #ifdef DEBUG
 //Debug Model
