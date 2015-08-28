@@ -35,8 +35,8 @@ static NSTimeInterval kDownCount;
     self.phoneNumberView.leftViewMode = UITextFieldViewModeAlways;
     [self.phoneNumberView addTarget:self action:@selector(phoneNumberViewChangeValue:) forControlEvents:UIControlEventAllEditingEvents];
     
-    self.getVerificationCodeBtn.layer.borderWidth = 1;
-    self.getVerificationCodeBtn.layer.borderColor = [UIColor blackColor].CGColor;
+//    self.getVerificationCodeBtn.layer.borderWidth = 1;
+//    self.getVerificationCodeBtn.layer.borderColor = [UIColor blackColor].CGColor;
     [self.getVerificationCodeBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     self.getVerificationCodeBtn.enabled = NO;
     self.getVerificationCodeBtn.titleLabel.textAlignment = NSTextAlignmentCenter;

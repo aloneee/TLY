@@ -53,6 +53,7 @@
         NSLog(@"是iOS8");
         // 主动要求用户对我们的程序授权, 授权状态改变就会通知代理
         [self.locationManager requestAlwaysAuthorization]; // 请求前台和后台定位权限
+        [self.locationManager startUpdatingLocation];
 
     }else
     {
@@ -91,12 +92,14 @@
     [self.geocoder reverseGeocodeLocation:userLocation completionHandler:^(NSArray *placemarks, NSError *error) {
         CLPlacemark *placemark = [placemarks lastObject];
         
-        NSLog(@"%@",placemark.locality);
+        NSLog(@"%@",placemark.administrativeArea);
+        [self.leftNavItem setTitle:placemark.administrativeArea forState:UIControlStateNormal];
+        [self.locationManager stopUpdatingLocation];
     }];
 }
 
-
 -(void)choseCity{
+    
     NSLog(@"choseCity");
     
     DDHomeChoseCityViewController *choseCity = [[DDHomeChoseCityViewController alloc] init];
@@ -107,9 +110,6 @@
 
 -(void)addCarInfo{
     NSLog(@"addCarInfo");
-    
-    
 }
-
 
 @end

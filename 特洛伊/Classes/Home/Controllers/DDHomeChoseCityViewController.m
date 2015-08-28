@@ -74,8 +74,6 @@
     
     if (0 == indexPath.section) {
         cell.city = @"北京市";
-        
-        
     }
     else{
         cell.city = self.citys[indexPath.row];

@@ -125,8 +125,6 @@
 			children = (
 				599A54BC1B8D53E7007D71C8 /* Common */,
 				599A54C81B8D53E7007D71C8 /* Home */,
-				599A54B81B8D53E7007D71C8 /* 4SStore */,
-				599A54C41B8D53E7007D71C8 /* GeneralStore */,
 				599A54FE1B8D53E7007D71C8 /* Mine */,
 				599A54D31B8D53E7007D71C8 /* Main */,
 			);
@@ -140,7 +138,8 @@
 				599A54BA1B8D53E7007D71C8 /* Models */,
 				599A54BB1B8D53E7007D71C8 /* Views */,
 			);
-			path = 4SStore;
+			name = 4SStore;
+			path = ../../4SStore;
 			sourceTree = "<group>";
 		};
 		599A54B91B8D53E7007D71C8 /* Controllers */ = {
@@ -183,7 +182,8 @@
 				599A54C61B8D53E7007D71C8 /* Models */,
 				599A54C71B8D53E7007D71C8 /* Views */,
 			);
-			path = GeneralStore;
+			name = GeneralStore;
+			path = ../../GeneralStore;
 			sourceTree = "<group>";
 		};
 		599A54C51B8D53E7007D71C8 /* Controllers */ = {
@@ -238,9 +238,11 @@
 		599A54CF1B8D53E7007D71C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				599A54C41B8D53E7007D71C8 /* GeneralStore */,
 				599A54D01B8D53E7007D71C8 /* DDHomeCityCell.h */,
 				599A54D11B8D53E7007D71C8 /* DDHomeCityCell.m */,
 				599A54D21B8D53E7007D71C8 /* DDHomeCityCell.xib */,
+				599A54B81B8D53E7007D71C8 /* 4SStore */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -463,12 +465,12 @@
 		59F0DB211B8564BB0092B104 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "刘日华";
 				TargetAttributes = {
 					59F0DB281B8564BB0092B104 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = M2AC6R6S33;
+						DevelopmentTeam = HCTZ8VKJ47;
 					};
 					59F0DB411B8564BB0092B104 = {
 						CreatedOnToolsVersion = 6.4;
@@ -605,6 +607,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -620,7 +623,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -658,7 +661,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -671,12 +674,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "特洛伊/PreFile.pch";
 				INFOPLIST_FILE = "特洛伊/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.TLY.lrh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -685,12 +692,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "特洛伊/PreFile.pch";
 				INFOPLIST_FILE = "特洛伊/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.TLY.lrh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -708,6 +719,7 @@
 				);
 				INFOPLIST_FILE = "特洛伊Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Didichuxing.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/特洛伊.app/特洛伊";
 			};
@@ -723,6 +735,7 @@
 				);
 				INFOPLIST_FILE = "特洛伊Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Didichuxing.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/特洛伊.app/特洛伊";
 			};

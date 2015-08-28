@@ -32,7 +32,7 @@
 +(DDHomeCityCell *)cellForTabelView:(UITableView *)tableView{
     
     static NSString *identifier  = @"cityCell";
-    DDHomeCityCell *cell = [tableView dequeueReusableHeaderFooterViewWithIdentifier:identifier];
+    DDHomeCityCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"DDHomeCityCell" owner:self options:nil] lastObject];
     }

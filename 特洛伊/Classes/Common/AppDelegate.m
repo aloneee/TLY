@@ -21,7 +21,30 @@
     //设置状态栏的样式
     application.statusBarStyle = UIStatusBarStyleLightContent;
     
+    if (ios7) {
+        UIRemoteNotificationType type = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound;
+        
+        [application registerForRemoteNotificationTypes:type];
+    }else {
+        
+        UIUserNotificationType type = UIUserNotificationTypeAlert | UIUserNotificationTypeAlert | UIUserNotificationTypeSound;
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:type categories:nil];
+        [application registerUserNotificationSettings:settings];
+        
+        [application registerForRemoteNotifications];
+    }
+    
+    
+    
     return YES;
+}
+
+/**
+ *  获取当前用户的deviceToken
+ */
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    
+    NSLog(@"%@",deviceToken);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
