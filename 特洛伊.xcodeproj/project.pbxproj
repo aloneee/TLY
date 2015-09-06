@@ -470,7 +470,7 @@
 				TargetAttributes = {
 					59F0DB281B8564BB0092B104 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = HCTZ8VKJ47;
+						DevelopmentTeam = M2AC6R6S33;
 					};
 					59F0DB411B8564BB0092B104 = {
 						CreatedOnToolsVersion = 6.4;
@@ -680,7 +680,7 @@
 				INFOPLIST_FILE = "特洛伊/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.TLY.lrh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.TLY.lrh.didi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -698,7 +698,7 @@
 				INFOPLIST_FILE = "特洛伊/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.TLY.lrh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.TLY.lrh.didi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
