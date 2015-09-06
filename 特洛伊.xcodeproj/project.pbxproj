@@ -48,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		593310A61B8AB9BE008CE1E2 /* PreFile.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreFile.pch; sourceTree = "<group>"; };
+		5958A1E61B9BEBD500B66F32 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		599A54BD1B8D53E7007D71C8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		599A54BE1B8D53E7007D71C8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		599A54C01B8D53E7007D71C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -82,7 +83,6 @@
 		599A54EA1B8D53E7007D71C8 /* XXBHelpTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBHelpTools.m; sourceTree = "<group>"; };
 		599A54EB1B8D53E7007D71C8 /* XXBNetWorkExtion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBNetWorkExtion.h; sourceTree = "<group>"; };
 		599A54EC1B8D53E7007D71C8 /* XXBNetWorkExtion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBNetWorkExtion.m; sourceTree = "<group>"; };
-		599A54ED1B8D53E7007D71C8 /* XXBSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBSingleton.h; sourceTree = "<group>"; };
 		599A54EF1B8D53E7007D71C8 /* DDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLoginViewController.h; sourceTree = "<group>"; };
 		599A54F01B8D53E7007D71C8 /* DDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLoginViewController.m; sourceTree = "<group>"; };
 		599A54F11B8D53E7007D71C8 /* DDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNavigationController.h; sourceTree = "<group>"; };
@@ -284,7 +284,7 @@
 				599A54EA1B8D53E7007D71C8 /* XXBHelpTools.m */,
 				599A54EB1B8D53E7007D71C8 /* XXBNetWorkExtion.h */,
 				599A54EC1B8D53E7007D71C8 /* XXBNetWorkExtion.m */,
-				599A54ED1B8D53E7007D71C8 /* XXBSingleton.h */,
+				5958A1E61B9BEBD500B66F32 /* Singleton.h */,
 			);
 			path = Category;
 			sourceTree = "<group>";

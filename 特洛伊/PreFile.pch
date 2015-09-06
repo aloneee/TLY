@@ -25,7 +25,7 @@
 #import "UIView+Help.h"
 #import "UIImage+Help.h"
 #import "MBProgressHUD+MJ.h"
-#import "XXBSingleton.h"
+#import "Singleton.h"
 #endif
 
 //提高效率
