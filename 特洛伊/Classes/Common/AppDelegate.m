@@ -34,7 +34,7 @@
         [application registerForRemoteNotifications];
     }
     
-    
+    NSLog(@"");
     
     return YES;
 }
