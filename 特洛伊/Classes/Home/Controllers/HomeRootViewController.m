@@ -93,9 +93,12 @@
         CLPlacemark *placemark = [placemarks lastObject];
         
         NSLog(@"%@",placemark.administrativeArea);
-        [self.leftNavItem setTitle:placemark.administrativeArea forState:UIControlStateNormal];
-        [self.locationManager stopUpdatingLocation];
+        if (placemark.administrativeArea) {
+            [self.leftNavItem setTitle:placemark.administrativeArea forState:UIControlStateNormal];
+            [self.locationManager stopUpdatingLocation];
+        }
     }];
+
 }
 
 -(void)choseCity{
