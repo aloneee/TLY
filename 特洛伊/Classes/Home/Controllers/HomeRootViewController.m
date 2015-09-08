@@ -9,6 +9,7 @@
 #import "HomeRootViewController.h"
 #import "DDHomeChoseCityViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import <AFNetworking.h>
 
 @interface HomeRootViewController () <UIScrollViewDelegate, CLLocationManagerDelegate>
 
