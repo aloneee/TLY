@@ -284,7 +284,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="smr-jh-dIT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="50" y="145"/>
+            <point key="canvasLocation" x="-101" y="-45"/>
         </scene>
         <!--首页-->
         <scene sceneID="FUF-yr-9WS">
@@ -313,12 +313,41 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="XAl-Fo-uGt" kind="relationship" relationship="rootViewController" id="5HG-yh-xO8"/>
+                        <segue destination="Ccf-u1-6fw" kind="relationship" relationship="rootViewController" id="l0f-uB-gjQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0N-b3-cXt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="787" y="387"/>
+        </scene>
+        <!--4S店-->
+        <scene sceneID="lhc-eA-sXd">
+            <objects>
+                <tableViewController id="Ccf-u1-6fw" customClass="DD4SRootViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="56c-lJ-uDu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="iUI-eA-fS0">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iUI-eA-fS0" id="eNU-ug-NlJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ccf-u1-6fw" id="8Te-eE-dOk"/>
+                            <outlet property="delegate" destination="Ccf-u1-6fw" id="F9h-IY-MHi"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="4S店" id="8F6-cf-tG0"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iFk-If-8ap" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1510" y="387"/>
         </scene>
         <!--滴滴养车-->
         <scene sceneID="1pn-9u-9HK">
@@ -337,26 +366,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ll-HN-I5B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1404" y="-272"/>
-        </scene>
-        <!--4S店-->
-        <scene sceneID="gbG-nd-m94">
-            <objects>
-                <viewController id="XAl-Fo-uGt" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="met-HV-Yi4"/>
-                        <viewControllerLayoutGuide type="bottom" id="Jh0-KG-hv1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1Ge-19-iBa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="4S店" id="KSH-rr-8ka"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3na-3M-ahH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1546" y="492"/>
+            <point key="canvasLocation" x="1596" y="-256"/>
         </scene>
         <!--我的-->
         <scene sceneID="LE0-vl-fJz">
