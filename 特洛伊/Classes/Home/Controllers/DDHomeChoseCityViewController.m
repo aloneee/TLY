@@ -36,7 +36,11 @@
     [left setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     left.frame = CGRectMake(0, 0, 80, 30);
     [left setTitle:@"返回" forState:UIControlStateNormal];
-    [left addTarget:self action:@selector(popBack) forControlEvents:UIControlEventTouchUpInside];
+    
+    [left addTarget:self
+             action:@selector(popBack)
+   forControlEvents:UIControlEventTouchUpInside];
+    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:left];
     
 }
@@ -59,7 +63,9 @@
     return 2;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
+    
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
     if (0 == section) {
@@ -69,7 +75,9 @@
 }
 
 
-- (DDHomeCityCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (DDHomeCityCell *)tableView:(UITableView *)tableView
+        cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     DDHomeCityCell *cell = [DDHomeCityCell cellForTabelView:tableView];
     
     if (0 == indexPath.section) {
@@ -80,14 +88,17 @@
     }
     
     cell.returnCityBlock = ^(DDHomeCityCell *homeCityCell){
-        [self.userLocationBtn setTitle:homeCityCell.city forState:UIControlStateNormal];
+        [self.userLocationBtn setTitle:homeCityCell.city
+                              forState:UIControlStateNormal];
         [self.navigationController popViewControllerAnimated:YES];
     };
     
     return cell;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+- (NSString *)tableView:(UITableView *)tableView
+titleForHeaderInSection:(NSInteger)section{
+    
     
     if (0 == section) {
         return @"当前位置";

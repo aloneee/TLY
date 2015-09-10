@@ -26,6 +26,7 @@
 #import "UIImage+Help.h"
 #import "MBProgressHUD+MJ.h"
 #import "Singleton.h"
+#import "RHCoding.h"
 #endif
 
 //提高效率
@@ -54,6 +55,15 @@
 #else
 //Release Model
 #define NSLog(FORMAT, ...) nil  //Disable NSLog
+
+#define kApp ((AppDelegate *)[UIApplication sharedApplication].delegate)
+#define kScreen_Height ([UIScreen mainScreen].bounds.size.height)
+#define kScreen_Width ([UIScreen mainScreen].bounds.size.width)
+#define kScreen_Frame (CGRectMake(0, 0 ,kScreen_Width,kScreen_Height))
+#define kUser [NSUserDefaults standardUserDefaults]
+
+#define ColorWithHex(rgbValue) ([UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0])
+#define ColorWithHexAlpha(rgbValue,a) ([UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:(a)])
 
 
 #endif

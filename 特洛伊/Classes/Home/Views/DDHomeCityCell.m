@@ -34,17 +34,24 @@
     static NSString *identifier  = @"cityCell";
     DDHomeCityCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"DDHomeCityCell" owner:self options:nil] lastObject];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"DDHomeCityCell"
+                                              owner:self
+                                            options:nil]
+                lastObject];
     }
     
     return cell;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+- (void)setSelected:(BOOL)selected
+           animated:(BOOL)animated {
+    
+    [super setSelected:selected
+              animated:animated];
 
     if (selected == YES) {
-        [UIView animateWithDuration:0.25f animations:^{
+        [UIView animateWithDuration:0.25f
+                         animations:^{
             self.donebtn.alpha = 0.9f;
         }];
     }else{
