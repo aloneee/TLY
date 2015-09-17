@@ -17,7 +17,7 @@
 
 +(void)initialize{
     
-    [[UINavigationBar appearance] setBackgroundColor:[UIColor blueColor]];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"topbarbg_ios7"] forBarMetrics:UIBarMetricsDefault];
     
     // 设置标题文字颜色
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
@@ -31,6 +31,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIViewController *rootVC = self.viewControllers[0];
+    rootVC.view.backgroundColor = ColorWithHexAlpha(0x000000, 1);
+    
+    
     id target = self.interactivePopGestureRecognizer.delegate;
     // 创建全屏滑动手势，调用系统自带滑动手势的target的action方法
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target
@@ -44,6 +48,10 @@
     
 }
 
+- (void)pop{
+    
+    [self popViewControllerAnimated:YES];
+}
 
 -(BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
     
@@ -62,6 +70,19 @@
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     
     viewController.hidesBottomBarWhenPushed = YES;
+    viewController.view.backgroundColor = ColorWithHexAlpha(0x000000, 1);
+    
+    UIButton *left=[UIButton buttonWithType:UIButtonTypeCustom];
+    left.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
+    [left setTitleColor:[UIColor whiteColor]
+               forState:UIControlStateNormal];
+    left.frame = CGRectMake(0, 0, 40, 40);
+    [left setImage:[UIImage imageNamed:@"back_btn"] forState:UIControlStateNormal];
+    
+    [left addTarget:self
+             action:@selector(pop)
+   forControlEvents:UIControlEventTouchUpInside];
+    viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:left];
     
     [super pushViewController:viewController animated:animated];
     

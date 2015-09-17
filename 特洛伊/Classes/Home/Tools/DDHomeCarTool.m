@@ -45,7 +45,14 @@ SingletonM(DDHomeCarTool)
     if ([[NSFileManager defaultManager] fileExistsAtPath:DDHomeCarFile])
     {
 
-        [[self getCars] enumerateObjectsUsingBlock:^(DDHomeCar* c, NSUInteger idx, BOOL * _Nonnull stop) {
+//        [[self getCars] enumerateObjectsUsingBlock:^(DDHomeCar* c, NSUInteger idx, BOOL * _Nonnull stop) {
+//            if ([car isEqual:c]) {
+//                [[self getCars] removeObject:c];
+//                *stop = YES;
+//            }
+//        }];
+        
+        [[self getCars] enumerateObjectsUsingBlock:^(DDHomeCar *c, NSUInteger idx, BOOL *stop) {
             if ([car isEqual:c]) {
                 [[self getCars] removeObject:c];
                 *stop = YES;

@@ -33,9 +33,14 @@
     
     UIButton *left=[UIButton buttonWithType:UIButtonTypeCustom];
     left.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
-    [left setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    [left setTitleColor:[UIColor whiteColor]
+               forState:UIControlStateNormal];
+    
     left.frame = CGRectMake(0, 0, 80, 30);
-    [left setTitle:@"返回" forState:UIControlStateNormal];
+    
+    [left setTitle:@"返回"
+          forState:UIControlStateNormal];
     
     [left addTarget:self
              action:@selector(popBack)
@@ -98,7 +103,6 @@
 
 - (NSString *)tableView:(UITableView *)tableView
 titleForHeaderInSection:(NSInteger)section{
-    
     
     if (0 == section) {
         return @"当前位置";

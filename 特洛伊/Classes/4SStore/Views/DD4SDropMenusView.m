@@ -8,7 +8,9 @@
 
 #import "DD4SDropMenusView.h"
 
+
 @interface DD4SDropMenusView ()<UITableViewDataSource,UITableViewDelegate>
+
 
 @property (nonatomic, strong) NSMutableArray      *serviceTypes;
 @property (nonatomic, strong) NSMutableArray      *carTypes;
@@ -17,6 +19,7 @@
 @property (nonatomic, strong) UIView              *showDropMenu;
 
 @end
+
 
 @implementation DD4SDropMenusView
 
@@ -28,12 +31,14 @@
     }
     return _serviceTypes;
 }
+
 -(NSMutableArray *)carTypes{
     if (!_carTypes) {
         _carTypes = [NSMutableArray arrayWithArray:@[@"汽车保养",@"汽车美容",@"汽车维修"]];
     }
     return _carTypes;
 }
+
 -(NSMutableArray *)sortTypes{
     if (!_sortTypes) {
         _sortTypes = [NSMutableArray arrayWithArray:@[@"not so fast ",@"附近有限",@"评分最高",@"价格最高",@"价格最低"]];
@@ -69,7 +74,6 @@
     return self;
 }
 
-
 - (void)btnClick:(UIButton *)sender{
     
     
@@ -102,10 +106,12 @@
     CGFloat btnW = kScreenWidth * 0.25;
     
     for (int i = 0; i< self.subviews.count;i++) {
-        self.subviews[i].height = self.height;
-        self.subviews[i].x = btnW * i;
-        self.subviews[i].y = 0;
-        self.subviews[i].width = btnW;
+        
+        UIView *subView = self.subviews[i];
+        subView.height = self.height;
+        subView.x = btnW * i;
+        subView.y = 0;
+        subView.width = btnW;
     }
 }
 
@@ -141,13 +147,13 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"DROPMENUBTNCLICk"
+    [[NSNotificationCenter defaultCenter] postNotificationName:kDropMenuTableCellClickNotification
                                                         object:nil
                                                       userInfo:@{@"table":tableView,@"TAG":@(tableView.tag),@"STR":(tableView.tag == 0 ? self.serviceTypes[indexPath.row] : tableView.tag == 2 ? self.carTypes[indexPath.row] : self.sortTypes[indexPath.row])}];
     [tableView removeFromSuperview];
 }
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     NSLog(@"lalal");
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "DDHomeAddCarInfoViewController.h"
+#import "DDHomeChoseCarViewController.h"
 #import "DDHomeCar.h"
 #import "DDHomeCarTool.h"
 #import "DDDatePicker.h"
@@ -112,6 +113,10 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
 
 - (IBAction)choseCarBtnClick:(id)sender {
     NSLog(@"gotoChoseCar");
+    
+    DDHomeChoseCarViewController *choseCar = [[DDHomeChoseCarViewController alloc] init];
+    
+    [self.navigationController pushViewController:choseCar animated:YES];
 }
 
 - (IBAction)choseCurrentNumOfYeayBtnClick:(id)sender {
@@ -174,6 +179,7 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
         }
         
         if (!isAddKM) {
+            
             NSMutableAttributedString *attrPlaceholder = [[NSMutableAttributedString alloc] initWithString:@"当前公里数(KM)"];
             
             [attrPlaceholder setAttributes:@{NSForegroundColorAttributeName:[UIColor redColor]}
@@ -184,10 +190,10 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
     }
 }
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.currentKMField resignFirstResponder];
     
     [self.licensePlateNumberField resignFirstResponder];
 }
+
 @end

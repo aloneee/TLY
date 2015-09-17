@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define kDropMenuTableCellClickNotification  @"DROPMENUBTNCLICk"
+
 @interface DD4SDropMenusView : UIView
 
 @end
