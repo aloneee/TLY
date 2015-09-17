@@ -11,8 +11,9 @@
 
 @interface DDHomeTestReportViewController ()
 
-@property (weak, nonatomic) IBOutlet UITableView *table;
-@property (weak, nonatomic) IBOutlet UILabel *carHealthHintView;
+@property (weak, nonatomic) IBOutlet UITableView     *table;
+@property (weak, nonatomic) IBOutlet UILabel         *carHealthHintView;
+@property (weak, nonatomic) IBOutlet UIImageView     *headImageView;
 
 @end
 
@@ -22,7 +23,7 @@
     [super viewDidLoad];
     
     self.title = @"检测报告";
-    
+    self.headImageView.image = [UIImage captureCircleImageWithImage:[UIImage imageNamed:@"img_03"] andBorderWith:2.0f andBorderColor:[UIColor blackColor]];
     
 }
 

@@ -532,6 +532,7 @@
                     <navigationItem key="navigationItem" id="bZa-VL-PMU"/>
                     <connections>
                         <outlet property="carHealthHintView" destination="8Q0-MO-Aki" id="lAZ-d3-UIK"/>
+                        <outlet property="headImageView" destination="7K3-59-pYb" id="ZCe-yv-6qz"/>
                         <outlet property="table" destination="XQI-ly-zgj" id="40U-e4-1zy"/>
                     </connections>
                 </viewController>

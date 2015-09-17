@@ -20,7 +20,7 @@
 #import <Foundation/Foundation.h>
 
 //自己类
-//#import "UIImage+Help.h"
+#import "UIImage+Help.h"
 //#import "NSString+Help.h"
 #import "UIView+Help.h"
 #import "UIImage+Help.h"

@@ -65,6 +65,8 @@
 		59FC70FA1BAAAEF000CA9948 /* DDHomeOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FC70F91BAAAEEF00CA9948 /* DDHomeOrderViewController.m */; };
 		59FC71001BAAB2CB00CA9948 /* DDHomeMaintenanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FC70FF1BAAB2CB00CA9948 /* DDHomeMaintenanceViewController.m */; };
 		59FC71031BAABD1600CA9948 /* DDHomeMaintenanceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FC71021BAABD1600CA9948 /* DDHomeMaintenanceDetailViewController.m */; };
+		59FC71071BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FC71051BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.m */; };
+		59FC71081BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59FC71061BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.xib */; };
 		59FCE92F1BA833AB006303EF /* HMNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59FCE92E1BA833AB006303EF /* HMNewsCell.xib */; };
 /* End PBXBuildFile section */
 
@@ -190,6 +192,9 @@
 		59FC70FF1BAAB2CB00CA9948 /* DDHomeMaintenanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeMaintenanceViewController.m; sourceTree = "<group>"; };
 		59FC71011BAABD1600CA9948 /* DDHomeMaintenanceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeMaintenanceDetailViewController.h; sourceTree = "<group>"; };
 		59FC71021BAABD1600CA9948 /* DDHomeMaintenanceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeMaintenanceDetailViewController.m; sourceTree = "<group>"; };
+		59FC71041BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeMaintenanceDetialCell.h; sourceTree = "<group>"; };
+		59FC71051BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeMaintenanceDetialCell.m; sourceTree = "<group>"; };
+		59FC71061BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDHomeMaintenanceDetialCell.xib; sourceTree = "<group>"; };
 		59FCE92E1BA833AB006303EF /* HMNewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMNewsCell.xib; sourceTree = "<group>"; };
 		CA5C67C8191E1FA58E22E75F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -369,6 +374,9 @@
 				5985B9301BA0091700139593 /* DDHomeCar.m */,
 				59E34B2B1BA809AE0006B226 /* DDHomeMyCar.h */,
 				59E34B2C1BA809AE0006B226 /* DDHomeMyCar.m */,
+				59FC71041BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.h */,
+				59FC71051BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.m */,
+				59FC71061BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.xib */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -695,6 +703,7 @@
 				59F3B3131BA7B420006026C5 /* icon_chose_bottom@2x.png in Resources */,
 				599A55031B8D53E7007D71C8 /* LaunchScreen.xib in Resources */,
 				59F3B3111BA7B420006026C5 /* icon_chose_arrow_nor@2x.png in Resources */,
+				59FC71081BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.xib in Resources */,
 				599A55041B8D53E7007D71C8 /* Main.storyboard in Resources */,
 				59FCE92F1BA833AB006303EF /* HMNewsCell.xib in Resources */,
 				59F3B3121BA7B420006026C5 /* icon_chose_arrow_sel@2x.png in Resources */,
@@ -752,6 +761,7 @@
 				599A55171B8D53E7007D71C8 /* DDNavigationController.m in Sources */,
 				59FC70FA1BAAAEF000CA9948 /* DDHomeOrderViewController.m in Sources */,
 				599A55021B8D53E7007D71C8 /* AppDelegate.m in Sources */,
+				59FC71071BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.m in Sources */,
 				59E34B2D1BA809AE0006B226 /* DDHomeMyCar.m in Sources */,
 				5985B9311BA0091700139593 /* DDHomeCar.m in Sources */,
 				599A55101B8D53E7007D71C8 /* UIView+AutoLayout.m in Sources */,
