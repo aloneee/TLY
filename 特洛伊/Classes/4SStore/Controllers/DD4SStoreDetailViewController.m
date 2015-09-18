@@ -43,10 +43,11 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    self.title = @"详情";
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, kNavgationBarHeight, kScreenWidth, kScreenHeight * 0.25) collectionViewLayout:[[DDFlowLayout alloc] init]];
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, kNavgationBarHeight, kScreenWidth, kScreenHeight * 0.25)
+                                                          collectionViewLayout:[[DDFlowLayout alloc] init]];
     collectionView.backgroundColor = [UIColor redColor];
     collectionView.delegate = self;
     collectionView.dataSource = self;
@@ -54,9 +55,14 @@
     [self.view addSubview:collectionView];
     self.collectionView = collectionView;
     // 注册cell
-    [self.collectionView registerNib:[UINib nibWithNibName:@"HMNewsCell" bundle:nil] forCellWithReuseIdentifier:HMCellIdentifier];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"HMNewsCell"
+                                                    bundle:nil]
+          forCellWithReuseIdentifier:HMCellIdentifier];
     // 默认显示最中间的那组
-    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:HMMaxSections/2] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0
+                                                                     inSection:HMMaxSections/2]
+                                atScrollPosition:UICollectionViewScrollPositionLeft
+                                        animated:NO];
     
     
     // 添加定时器
@@ -72,6 +78,10 @@
     self.pageControl = pageControl;
     [self.view bringSubviewToFront:self.pageControl];
     
+    
+    
+    
+    
 }
 
 
@@ -80,8 +90,14 @@
  */
 - (void)addTimer
 {
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0
+                                                      target:self
+                                                    selector:@selector(nextPage)
+                                                    userInfo:nil
+                                                     repeats:YES];
+    
+    [[NSRunLoop mainRunLoop] addTimer:timer
+                              forMode:NSRunLoopCommonModes];
     self.timer = timer;
 }
 
@@ -100,8 +116,12 @@
     // 当前正在展示的位置
     NSIndexPath *currentIndexPath = [[self.collectionView indexPathsForVisibleItems] lastObject];
     // 马上显示回最中间那组的数据
-    NSIndexPath *currentIndexPathReset = [NSIndexPath indexPathForItem:currentIndexPath.item inSection:HMMaxSections/2];
-    [self.collectionView scrollToItemAtIndexPath:currentIndexPathReset atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    NSIndexPath *currentIndexPathReset = [NSIndexPath indexPathForItem:currentIndexPath.item
+                                                             inSection:HMMaxSections/2];
+    
+    [self.collectionView scrollToItemAtIndexPath:currentIndexPathReset
+                                atScrollPosition:UICollectionViewScrollPositionLeft
+                                        animated:NO];
     return currentIndexPathReset;
 }
 /**
@@ -122,7 +142,9 @@
     NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:nextItem inSection:nextSection];
     
     // 3.通过动画滚动到下一个位置
-    [self.collectionView scrollToItemAtIndexPath:nextIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+    [self.collectionView scrollToItemAtIndexPath:nextIndexPath
+                                atScrollPosition:UICollectionViewScrollPositionLeft
+                                        animated:YES];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -138,7 +160,8 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    HMNewsCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:HMCellIdentifier forIndexPath:indexPath];
+    HMNewsCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:HMCellIdentifier
+                                                                 forIndexPath:indexPath];
     
     cell.news = self.newses[indexPath.item];
     

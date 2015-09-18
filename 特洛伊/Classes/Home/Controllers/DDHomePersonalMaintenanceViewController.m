@@ -41,6 +41,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     DDHomeIndividualMaintenanceViewCell *cell = [DDHomeIndividualMaintenanceViewCell cellForTabelView:tableView];
     
     cell.textLabel.text = @"测试酱油～～～";
@@ -49,10 +50,12 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     self.hintView.text = [NSString stringWithFormat:@"共%ld项",[[self.table indexPathsForSelectedRows] count]];
 }
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     self.hintView.text = [NSString stringWithFormat:@"共%ld项",[[self.table indexPathsForSelectedRows] count]];
 }
 

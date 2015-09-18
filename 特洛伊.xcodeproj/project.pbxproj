@@ -52,7 +52,7 @@
 		59AE15E21BA9479900DBACD0 /* DDHomeFreshManViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AE15E11BA9479900DBACD0 /* DDHomeFreshManViewController.m */; };
 		59B6DE9C1BA9591B0046F1DB /* DDHomeSpecificPreferentialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B6DE9B1BA9591B0046F1DB /* DDHomeSpecificPreferentialViewController.m */; };
 		59B6DE9F1BA963960046F1DB /* DDHomeTableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B6DE9E1BA963960046F1DB /* DDHomeTableHeadView.m */; };
-		59C6F1061BAC0E3B00DB2DFA /* DDFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C6F1051BAC0E3B00DB2DFA /* DDFlowLayout.m */; settings = {ASSET_TAGS = (); }; };
+		59C6F1061BAC0E3B00DB2DFA /* DDFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C6F1051BAC0E3B00DB2DFA /* DDFlowLayout.m */; };
 		59CD2ADD1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CD2ADC1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.m */; };
 		59E34B2A1BA8033B0006B226 /* DDHomeMyCarsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E34B291BA8033B0006B226 /* DDHomeMyCarsViewController.m */; };
 		59E34B2D1BA809AE0006B226 /* DDHomeMyCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E34B2C1BA809AE0006B226 /* DDHomeMyCar.m */; };
@@ -980,7 +980,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "特洛伊/PreFile.pch";
 				INFOPLIST_FILE = "特洛伊/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.TLY.lrh.didi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -999,7 +999,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "特洛伊/PreFile.pch";
 				INFOPLIST_FILE = "特洛伊/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.TLY.lrh.didi;
 				PRODUCT_NAME = "$(TARGET_NAME)";

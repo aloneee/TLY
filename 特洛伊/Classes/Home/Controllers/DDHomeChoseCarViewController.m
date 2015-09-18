@@ -26,7 +26,10 @@
     
     [choseCarMenu showAsDrawDownView:view];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(haveChosedCar) name:@"CHOSECARFINISHED" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(haveChosedCar)
+                                                 name:@"CHOSECARFINISHED"
+                                               object:nil];
     
 }
 

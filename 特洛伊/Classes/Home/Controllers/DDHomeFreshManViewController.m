@@ -24,6 +24,7 @@
     
     UIButton *right=[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 30)];
     right.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -50);
+    
     [right setTitleColor:[UIColor whiteColor]
                 forState:UIControlStateNormal];
     [right setTitle:@"分享" forState:UIControlStateNormal];
@@ -31,6 +32,7 @@
     [right addTarget:self
               action:@selector(rightNavItemClick)
     forControlEvents:UIControlEventTouchUpInside];
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:right];
     
     self.tableView.contentInset  = UIEdgeInsetsMake(headImageHeight, 0, 0, 0);
@@ -58,7 +60,8 @@
     static NSString *identifier  = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:identifier];
     }
     
     cell.textLabel.text = @"测试小酱油呀～～～～";

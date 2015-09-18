@@ -44,7 +44,9 @@
     }
     
     [@[self.carNameContainerView,self.driveDistanceContainerView,self.driveYearContainerView] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGes)];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                              action:@selector(tapGes)];
         [view addGestureRecognizer:tap];
     }];
     
@@ -52,12 +54,18 @@
     NSArray *colors = @[[UIColor redColor],[UIColor blueColor],[UIColor orangeColor]];
     
     [@[self.testReportBtn,self.IntelligentMaintenanceBtn,self.personalMaintenanceBtn] enumerateObjectsUsingBlock:^(UIButton *btn, NSUInteger idx, BOOL *stop) {
-        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+        [btn setTitleColor:[UIColor whiteColor]
+                  forState:UIControlStateNormal];
+        
         btn.layer.cornerRadius = 5;
         if (showNoAnyCarHintView) {
+            
             btn.backgroundColor = [UIColor grayColor];
             btn.enabled = NO;
+            
         }else{
+            
             btn.backgroundColor = colors[idx];
         }
     }];

@@ -25,6 +25,7 @@
     
     UIButton *right=[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     right.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -20);
+    
     [right setTitleColor:[UIColor whiteColor]
                 forState:UIControlStateNormal];
     [right setTitle:@"分享" forState:UIControlStateNormal];
@@ -32,6 +33,7 @@
     [right addTarget:self
               action:@selector(rightNavItemClick)
     forControlEvents:UIControlEventTouchUpInside];
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:right];
     
     
@@ -46,9 +48,17 @@
     UIButton *bottomBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     bottomBtn.frame = CGRectMake(0, kScreen_Height - kBottomBtnHeight, kScreen_Width, kBottomBtnHeight);
     bottomBtn.backgroundColor = [UIColor orangeColor];
-    [bottomBtn setTitle:@"立即分享给好友" forState:UIControlStateNormal];
-    [bottomBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [bottomBtn addTarget:self action:@selector(rightNavItemClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    [bottomBtn setTitle:@"立即分享给好友"
+               forState:UIControlStateNormal];
+    
+    [bottomBtn setTitleColor:[UIColor whiteColor]
+                    forState:UIControlStateNormal];
+    
+    [bottomBtn addTarget:self
+                  action:@selector(rightNavItemClick)
+        forControlEvents:UIControlEventTouchUpInside];
+    
     [self.view addSubview:bottomBtn];
     
     
@@ -73,7 +83,8 @@
     static NSString *identifier  = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:identifier];
     }
     
     cell.textLabel.text = @"测试小酱油呀～～～～";

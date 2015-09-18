@@ -23,7 +23,9 @@
     [super viewDidLoad];
     
     self.title = @"检测报告";
-    self.headImageView.image = [UIImage captureCircleImageWithImage:[UIImage imageNamed:@"img_03"] andBorderWith:2.0f andBorderColor:[UIColor blackColor]];
+    self.headImageView.image = [UIImage captureCircleImageWithImage:[UIImage imageNamed:@"img_03"]
+                                                      andBorderWith:2.0f
+                                                     andBorderColor:[UIColor blackColor]];
     
 }
 
@@ -37,7 +39,9 @@
 - (IBAction)goToMaintenance:(id)sender {
     
     DDHomeMaintenanceDetailViewController *md = [[DDHomeMaintenanceDetailViewController alloc] init];
-    [self.navigationController pushViewController:md animated:YES];
+    
+    [self.navigationController pushViewController:md
+                                         animated:YES];
 }
 
 

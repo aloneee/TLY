@@ -59,15 +59,22 @@
     addCarBtn.frame = CGRectMake(20, kScreenHeight - 50, kScreenWidth - 40, 30);
     addCarBtn.layer.cornerRadius = 5;
     addCarBtn.backgroundColor = [UIColor orangeColor];
-    [addCarBtn setTitle:@"添加爱车" forState:UIControlStateNormal];
-    [addCarBtn addTarget:self action:@selector(addCar:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [addCarBtn setTitle:@"添加爱车"
+               forState:UIControlStateNormal];
+    
+    [addCarBtn addTarget:self
+                  action:@selector(addCar:)
+        forControlEvents:UIControlEventTouchUpInside];
+    
     [self.view addSubview:addCarBtn];
 }
 
 -(void)addCar:(UIButton *)sender{
     
     DDHomeAddCarInfoViewController *addCarInfo = [[UIStoryboard storyboardWithName:@"Main"
-                                                                            bundle:nil] instantiateViewControllerWithIdentifier:@"addCarInfo"];
+                                                                            bundle:nil]
+                                                  instantiateViewControllerWithIdentifier:@"addCarInfo"];
     NSLog(@"%@",addCarInfo);
     
     [self.navigationController pushViewController:addCarInfo animated:YES];

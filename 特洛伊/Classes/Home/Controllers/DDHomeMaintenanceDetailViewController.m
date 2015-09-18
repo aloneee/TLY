@@ -33,13 +33,16 @@ static const CGFloat kTopBtnHeight = 44;
     
     self.title = @"保养";
     
-    self.menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 64) andHeight:kTopBtnHeight];
+    self.menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 64)
+                                              andHeight:kTopBtnHeight];
+    
     self.menu.initialTitles = @[@"店铺类型",@"区域",@"智能排序"];
     self.menu.delegate = self;
     self.menu.dataSource = self;
     [self.view addSubview:self.menu];
     
-    self.table = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavgationBarHeight + kTopBtnHeight, kScreenWidth, kScreenHeight - kNavgationBarHeight - kTopBtnHeight) style:UITableViewStylePlain];
+    self.table = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavgationBarHeight + kTopBtnHeight, kScreenWidth, kScreenHeight - kNavgationBarHeight - kTopBtnHeight)
+                                              style:UITableViewStylePlain];
     self.table.delegate = self;
     self.table.dataSource = self;
     [self.view addSubview:self.table];
@@ -139,7 +142,8 @@ static const CGFloat kTopBtnHeight = 44;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
   
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:identifier];
     }
     
     
