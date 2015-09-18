@@ -15,6 +15,10 @@
 		5981C4471BABBCB900788E6A /* icon_chose_arrow_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5981C4431BABBCB900788E6A /* icon_chose_arrow_sel@2x.png */; };
 		5981C4481BABBCB900788E6A /* icon_chose_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5981C4441BABBCB900788E6A /* icon_chose_bottom@2x.png */; };
 		5981C44B1BABBCEB00788E6A /* DDBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5981C44A1BABBCEB00788E6A /* DDBackView.m */; };
+		5981C44E1BABCA8300788E6A /* DDHomePersonalMaintenanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5981C44D1BABCA8300788E6A /* DDHomePersonalMaintenanceViewController.m */; };
+		5981C4551BABD85500788E6A /* DDHomeIndividualMaintenanceViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5981C4531BABD85500788E6A /* DDHomeIndividualMaintenanceViewCell.m */; };
+		5981C4561BABD85500788E6A /* DDHomeIndividualMaintenanceViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5981C4541BABD85500788E6A /* DDHomeIndividualMaintenanceViewCell.xib */; };
+		5981C4591BABEFD200788E6A /* DD4SStoreDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5981C4581BABEFD200788E6A /* DD4SStoreDetailViewController.m */; };
 		5985B9311BA0091700139593 /* DDHomeCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5985B9301BA0091700139593 /* DDHomeCar.m */; };
 		5985B9371BA0122200139593 /* DDHomeCarTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5985B9361BA0122200139593 /* DDHomeCarTool.m */; };
 		5985B93D1BA03C6F00139593 /* DDDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5985B93C1BA03C6F00139593 /* DDDatePicker.m */; };
@@ -48,6 +52,7 @@
 		59AE15E21BA9479900DBACD0 /* DDHomeFreshManViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AE15E11BA9479900DBACD0 /* DDHomeFreshManViewController.m */; };
 		59B6DE9C1BA9591B0046F1DB /* DDHomeSpecificPreferentialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B6DE9B1BA9591B0046F1DB /* DDHomeSpecificPreferentialViewController.m */; };
 		59B6DE9F1BA963960046F1DB /* DDHomeTableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B6DE9E1BA963960046F1DB /* DDHomeTableHeadView.m */; };
+		59C6F1061BAC0E3B00DB2DFA /* DDFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C6F1051BAC0E3B00DB2DFA /* DDFlowLayout.m */; settings = {ASSET_TAGS = (); }; };
 		59CD2ADD1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CD2ADC1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.m */; };
 		59E34B2A1BA8033B0006B226 /* DDHomeMyCarsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E34B291BA8033B0006B226 /* DDHomeMyCarsViewController.m */; };
 		59E34B2D1BA809AE0006B226 /* DDHomeMyCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E34B2C1BA809AE0006B226 /* DDHomeMyCar.m */; };
@@ -95,6 +100,13 @@
 		5981C4441BABBCB900788E6A /* icon_chose_bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_bottom@2x.png"; sourceTree = "<group>"; };
 		5981C4491BABBCEB00788E6A /* DDBackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDBackView.h; sourceTree = "<group>"; };
 		5981C44A1BABBCEB00788E6A /* DDBackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDBackView.m; sourceTree = "<group>"; };
+		5981C44C1BABCA8300788E6A /* DDHomePersonalMaintenanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomePersonalMaintenanceViewController.h; sourceTree = "<group>"; };
+		5981C44D1BABCA8300788E6A /* DDHomePersonalMaintenanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomePersonalMaintenanceViewController.m; sourceTree = "<group>"; };
+		5981C4521BABD85500788E6A /* DDHomeIndividualMaintenanceViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeIndividualMaintenanceViewCell.h; sourceTree = "<group>"; };
+		5981C4531BABD85500788E6A /* DDHomeIndividualMaintenanceViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeIndividualMaintenanceViewCell.m; sourceTree = "<group>"; };
+		5981C4541BABD85500788E6A /* DDHomeIndividualMaintenanceViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDHomeIndividualMaintenanceViewCell.xib; sourceTree = "<group>"; };
+		5981C4571BABEFD200788E6A /* DD4SStoreDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DD4SStoreDetailViewController.h; sourceTree = "<group>"; };
+		5981C4581BABEFD200788E6A /* DD4SStoreDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DD4SStoreDetailViewController.m; sourceTree = "<group>"; };
 		5985B92F1BA0091700139593 /* DDHomeCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeCar.h; sourceTree = "<group>"; };
 		5985B9301BA0091700139593 /* DDHomeCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeCar.m; sourceTree = "<group>"; };
 		5985B9331BA00E6D00139593 /* RHCoding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RHCoding.h; sourceTree = "<group>"; };
@@ -159,6 +171,8 @@
 		59B6DE9B1BA9591B0046F1DB /* DDHomeSpecificPreferentialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeSpecificPreferentialViewController.m; sourceTree = "<group>"; };
 		59B6DE9D1BA963960046F1DB /* DDHomeTableHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeTableHeadView.h; sourceTree = "<group>"; };
 		59B6DE9E1BA963960046F1DB /* DDHomeTableHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeTableHeadView.m; sourceTree = "<group>"; };
+		59C6F1041BAC0E3B00DB2DFA /* DDFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFlowLayout.h; sourceTree = "<group>"; };
+		59C6F1051BAC0E3B00DB2DFA /* DDFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFlowLayout.m; sourceTree = "<group>"; };
 		59CD2ADB1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeAddCarInfoViewController.h; sourceTree = "<group>"; };
 		59CD2ADC1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeAddCarInfoViewController.m; sourceTree = "<group>"; };
 		59E34B281BA8033B0006B226 /* DDHomeMyCarsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeMyCarsViewController.h; sourceTree = "<group>"; };
@@ -195,9 +209,9 @@
 		59FC70FF1BAAB2CB00CA9948 /* DDHomeMaintenanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeMaintenanceViewController.m; sourceTree = "<group>"; };
 		59FC71011BAABD1600CA9948 /* DDHomeMaintenanceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeMaintenanceDetailViewController.h; sourceTree = "<group>"; };
 		59FC71021BAABD1600CA9948 /* DDHomeMaintenanceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeMaintenanceDetailViewController.m; sourceTree = "<group>"; };
-		59FC71041BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeMaintenanceDetialCell.h; sourceTree = "<group>"; };
-		59FC71051BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeMaintenanceDetialCell.m; sourceTree = "<group>"; };
-		59FC71061BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDHomeMaintenanceDetialCell.xib; sourceTree = "<group>"; };
+		59FC71041BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDHomeMaintenanceDetialCell.h; path = ../Models/DDHomeMaintenanceDetialCell.h; sourceTree = "<group>"; };
+		59FC71051BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDHomeMaintenanceDetialCell.m; path = ../Models/DDHomeMaintenanceDetialCell.m; sourceTree = "<group>"; };
+		59FC71061BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DDHomeMaintenanceDetialCell.xib; path = ../Models/DDHomeMaintenanceDetialCell.xib; sourceTree = "<group>"; };
 		59FCE92E1BA833AB006303EF /* HMNewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMNewsCell.xib; sourceTree = "<group>"; };
 		CA5C67C8191E1FA58E22E75F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -233,6 +247,15 @@
 				5981C4441BABBCB900788E6A /* icon_chose_bottom@2x.png */,
 			);
 			path = DOPDropMenu;
+			sourceTree = "<group>";
+		};
+		5981C45A1BABF81100788E6A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				59C6F1041BAC0E3B00DB2DFA /* DDFlowLayout.h */,
+				59C6F1051BAC0E3B00DB2DFA /* DDFlowLayout.m */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		5985B9341BA0120600139593 /* Tools */ = {
@@ -272,6 +295,8 @@
 			children = (
 				5985B9471BA1210600139593 /* DD4SRootViewController.h */,
 				5985B9481BA1210600139593 /* DD4SRootViewController.m */,
+				5981C4571BABEFD200788E6A /* DD4SStoreDetailViewController.h */,
+				5981C4581BABEFD200788E6A /* DD4SStoreDetailViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -378,6 +403,8 @@
 				59FC71021BAABD1600CA9948 /* DDHomeMaintenanceDetailViewController.m */,
 				59FC70F81BAAAEEF00CA9948 /* DDHomeOrderViewController.h */,
 				59FC70F91BAAAEEF00CA9948 /* DDHomeOrderViewController.m */,
+				5981C44C1BABCA8300788E6A /* DDHomePersonalMaintenanceViewController.h */,
+				5981C44D1BABCA8300788E6A /* DDHomePersonalMaintenanceViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -391,9 +418,6 @@
 				5985B9301BA0091700139593 /* DDHomeCar.m */,
 				59E34B2B1BA809AE0006B226 /* DDHomeMyCar.h */,
 				59E34B2C1BA809AE0006B226 /* DDHomeMyCar.m */,
-				59FC71041BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.h */,
-				59FC71051BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.m */,
-				59FC71061BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.xib */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -418,6 +442,12 @@
 				59E34B431BA824980006B226 /* DDActivityCell.m */,
 				59B6DE9D1BA963960046F1DB /* DDHomeTableHeadView.h */,
 				59B6DE9E1BA963960046F1DB /* DDHomeTableHeadView.m */,
+				59FC71041BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.h */,
+				59FC71051BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.m */,
+				59FC71061BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.xib */,
+				5981C4521BABD85500788E6A /* DDHomeIndividualMaintenanceViewCell.h */,
+				5981C4531BABD85500788E6A /* DDHomeIndividualMaintenanceViewCell.m */,
+				5981C4541BABD85500788E6A /* DDHomeIndividualMaintenanceViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -425,6 +455,7 @@
 		599A54D31B8D53E7007D71C8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				5981C45A1BABF81100788E6A /* Other */,
 				599A54D41B8D53E7007D71C8 /* Category */,
 				599A54EE1B8D53E7007D71C8 /* Controllers */,
 				599A54F51B8D53E7007D71C8 /* Lib */,
@@ -700,6 +731,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5981C4561BABD85500788E6A /* DDHomeIndividualMaintenanceViewCell.xib in Resources */,
 				599A55051B8D53E7007D71C8 /* Images.xcassets in Resources */,
 				59E34B391BA8199A0006B226 /* newses.plist in Resources */,
 				5981C4461BABBCB900788E6A /* icon_chose_arrow_nor@2x.png in Resources */,
@@ -765,11 +797,13 @@
 				599A55171B8D53E7007D71C8 /* DDNavigationController.m in Sources */,
 				59FC70FA1BAAAEF000CA9948 /* DDHomeOrderViewController.m in Sources */,
 				599A55021B8D53E7007D71C8 /* AppDelegate.m in Sources */,
+				59C6F1061BAC0E3B00DB2DFA /* DDFlowLayout.m in Sources */,
 				59FC71071BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.m in Sources */,
 				59E34B2D1BA809AE0006B226 /* DDHomeMyCar.m in Sources */,
 				5981C4451BABBCB900788E6A /* DOPDropDownMenu.m in Sources */,
 				5985B9311BA0091700139593 /* DDHomeCar.m in Sources */,
 				599A55101B8D53E7007D71C8 /* UIView+AutoLayout.m in Sources */,
+				5981C44E1BABCA8300788E6A /* DDHomePersonalMaintenanceViewController.m in Sources */,
 				5958A2291B9D400400B66F32 /* HomeRootViewController.m in Sources */,
 				59F0DB2F1B8564BB0092B104 /* main.m in Sources */,
 				599A550E1B8D53E7007D71C8 /* UIImage+Help.m in Sources */,
@@ -788,11 +822,13 @@
 				599A55151B8D53E7007D71C8 /* XXBNetWorkExtion.m in Sources */,
 				599A55061B8D53E7007D71C8 /* DDHomeChoseCityViewController.m in Sources */,
 				59FC70EE1BAA53AA00CA9948 /* DDHomeIcePriceViewController.m in Sources */,
+				5981C4591BABEFD200788E6A /* DD4SStoreDetailViewController.m in Sources */,
 				599A550F1B8D53E7007D71C8 /* UIImage+ImageEffects.m in Sources */,
 				5981C44B1BABBCEB00788E6A /* DDBackView.m in Sources */,
 				599A550C1B8D53E7007D71C8 /* UIBarButtonItem+Help.m in Sources */,
 				59AE15E21BA9479900DBACD0 /* DDHomeFreshManViewController.m in Sources */,
 				59F3B31F1BA7EBEB006026C5 /* DDHomeChoseCarViewController.m in Sources */,
+				5981C4551BABD85500788E6A /* DDHomeIndividualMaintenanceViewCell.m in Sources */,
 				599A55131B8D53E7007D71C8 /* XXBDeviceHelp.m in Sources */,
 				59E34B2A1BA8033B0006B226 /* DDHomeMyCarsViewController.m in Sources */,
 				599A55241B8D6055007D71C8 /* MBProgressHUD.m in Sources */,

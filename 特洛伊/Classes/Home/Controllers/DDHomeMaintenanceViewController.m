@@ -75,7 +75,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSLog(@"%@",segue.identifier);
-    UIViewController *vc = segue.destinationViewController;
+//    UIViewController *vc = segue.destinationViewController;
     
 }
 

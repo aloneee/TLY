@@ -33,6 +33,7 @@
     // Do any additional setup after loading the view.
     UIViewController *rootVC = self.viewControllers[0];
     rootVC.view.backgroundColor = ColorWithHexAlpha(0x000000, 1);
+//    rootVC.automaticallyAdjustsScrollViewInsets = NO;
     
     
     id target = self.interactivePopGestureRecognizer.delegate;
@@ -70,7 +71,8 @@
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     
     viewController.hidesBottomBarWhenPushed = YES;
-//    viewController.view.backgroundColor = ColorWithHexAlpha(0x000000, 1);
+    viewController.view.backgroundColor = ColorWithHexAlpha(0x000000, 1);
+//    viewController.automaticallyAdjustsScrollViewInsets = NO;
     
     UIButton *left=[UIButton buttonWithType:UIButtonTypeCustom];
     left.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);

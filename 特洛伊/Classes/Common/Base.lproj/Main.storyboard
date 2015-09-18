@@ -401,15 +401,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95s-rh-ghP">
-                                <rect key="frame" x="26" y="550" width="548" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Kwj-Ol-R8t"/>
-                                </constraints>
-                                <state key="normal" title="定制个人保养方案">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2N-N6-pvR">
                                 <rect key="frame" x="26" y="450" width="548" height="30"/>
                                 <constraints>
@@ -420,6 +411,18 @@
                                 </state>
                                 <connections>
                                     <segue destination="bOH-f4-6j8" kind="show" identifier="testReportSegue" id="9zq-aK-Nk3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95s-rh-ghP">
+                                <rect key="frame" x="26" y="550" width="548" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Kwj-Ol-R8t"/>
+                                </constraints>
+                                <state key="normal" title="定制个人保养方案">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0xK-bP-Q9p" kind="show" id="BP1-W2-Bw2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -538,7 +541,93 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v5W-sG-kqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="334" y="1811"/>
+            <point key="canvasLocation" x="324" y="1724"/>
+        </scene>
+        <!--Home Personal Maintenance View Controller-->
+        <scene sceneID="mjd-OX-S8L">
+            <objects>
+                <viewController id="0xK-bP-Q9p" customClass="DDHomePersonalMaintenanceViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wKd-Rs-J7P"/>
+                        <viewControllerLayoutGuide type="bottom" id="3f5-e9-nf0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R0m-jU-KS7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择您爱车需要保养的项目:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eb5-TJ-Y7u">
+                                <rect key="frame" x="10" y="20" width="580" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="wjo-j3-VPC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbX-kq-qJd">
+                                <rect key="frame" x="40" y="550" width="520" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="WhH-ty-jzm"/>
+                                </constraints>
+                                <state key="normal" title="去保养">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="gotoMaintenanceBtnClick:" destination="0xK-bP-Q9p" eventType="touchUpInside" id="aYe-y6-wm3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="共0项" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1P-bD-fJm">
+                                <rect key="frame" x="538" y="524" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="YZW-9h-fEt"/>
+                                    <constraint firstAttribute="width" constant="42" id="iAV-ki-rYp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVt-UO-kMH">
+                                <rect key="frame" x="0.0" y="518" width="600" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="pJR-z3-SUU"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ddn-sK-HOO">
+                                <rect key="frame" x="0.0" y="50" width="600" height="468"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TbX-kq-qJd" firstAttribute="leading" secondItem="R0m-jU-KS7" secondAttribute="leading" constant="40" id="1Os-bX-n7s"/>
+                            <constraint firstItem="V1P-bD-fJm" firstAttribute="top" secondItem="bVt-UO-kMH" secondAttribute="bottom" constant="5" id="36U-6F-kwO"/>
+                            <constraint firstAttribute="trailing" secondItem="V1P-bD-fJm" secondAttribute="trailing" constant="20" id="8oz-Vg-CB6"/>
+                            <constraint firstAttribute="trailing" secondItem="Eb5-TJ-Y7u" secondAttribute="trailing" constant="10" id="A9E-Os-cze"/>
+                            <constraint firstItem="TbX-kq-qJd" firstAttribute="top" secondItem="V1P-bD-fJm" secondAttribute="bottom" constant="5" id="Ayp-yG-FzS"/>
+                            <constraint firstItem="Eb5-TJ-Y7u" firstAttribute="leading" secondItem="R0m-jU-KS7" secondAttribute="leading" constant="10" id="OCw-n9-exD"/>
+                            <constraint firstAttribute="trailing" secondItem="Ddn-sK-HOO" secondAttribute="trailing" id="QnR-Zx-2f1"/>
+                            <constraint firstItem="bVt-UO-kMH" firstAttribute="leading" secondItem="R0m-jU-KS7" secondAttribute="leading" id="Tau-q6-wju"/>
+                            <constraint firstItem="bVt-UO-kMH" firstAttribute="top" secondItem="Ddn-sK-HOO" secondAttribute="bottom" id="bU3-u9-3zh"/>
+                            <constraint firstItem="Ddn-sK-HOO" firstAttribute="leading" secondItem="R0m-jU-KS7" secondAttribute="leading" id="dIy-aG-XR9"/>
+                            <constraint firstItem="Ddn-sK-HOO" firstAttribute="top" secondItem="Eb5-TJ-Y7u" secondAttribute="bottom" id="dxm-2o-21J"/>
+                            <constraint firstItem="Eb5-TJ-Y7u" firstAttribute="top" secondItem="wKd-Rs-J7P" secondAttribute="bottom" id="eh8-29-Dwl"/>
+                            <constraint firstAttribute="trailing" secondItem="bVt-UO-kMH" secondAttribute="trailing" id="jSB-NB-L2F"/>
+                            <constraint firstItem="3f5-e9-nf0" firstAttribute="top" secondItem="TbX-kq-qJd" secondAttribute="bottom" constant="20" id="krd-mk-ROp"/>
+                            <constraint firstAttribute="trailing" secondItem="TbX-kq-qJd" secondAttribute="trailing" constant="40" id="ni4-uJ-NjD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="goToMaintenanceBtn" destination="TbX-kq-qJd" id="wFd-aN-gBo"/>
+                        <outlet property="hintView" destination="V1P-bD-fJm" id="ixI-K0-qLT"/>
+                        <outlet property="table" destination="Ddn-sK-HOO" id="45C-Tz-Ap4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vDR-bR-LjP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="285" y="2343"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2ao-gV-ZMA">

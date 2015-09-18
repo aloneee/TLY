@@ -45,7 +45,7 @@
                 <outlet property="iconView" destination="Fsw-3F-5GI" id="VAk-T5-0yx"/>
                 <outlet property="titleLabel" destination="3C3-jM-fOD" id="LZQ-qQ-DZY"/>
             </connections>
-            <point key="canvasLocation" x="-176" y="219"/>
+            <point key="canvasLocation" x="-24" y="245"/>
         </collectionViewCell>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

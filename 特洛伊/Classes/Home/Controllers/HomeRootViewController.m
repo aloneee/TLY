@@ -15,6 +15,7 @@
 #import "HMNewsCell.h"
 #import "HMNews.h"
 #import <MJExtension.h>
+#import "DDFlowLayout.h"
 
 //按钮点击
 #import "DDHomeFreshManViewController.h"
@@ -75,8 +76,7 @@
     
     [super viewDidLoad];
     
-    
-   
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.locationManager.delegate = self;
     // 判断是否是iOS8
@@ -93,8 +93,6 @@
         // 3.开始监听(开始获取位置)
         [self.locationManager startUpdatingLocation];
     }
-    
-    
     
     UIButton *left=[UIButton buttonWithType:UIButtonTypeCustom];
     left.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
@@ -124,11 +122,13 @@
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    layout.minimumInteritemSpacing = 0;
     layout.minimumLineSpacing = 0;
-    layout.itemSize = CGSizeMake(kScreenWidth, kScreenHeight * 0.25 + 15);
+    layout.itemSize = CGSizeMake(kScreenWidth, kScreenHeight * 0.25);
     
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, kNavgationBarHeight, kScreenWidth, kScreenHeight * 0.25) collectionViewLayout:layout];
+//    DDFlowLayout *layout = ;
+    
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, kNavgationBarHeight, kScreenWidth, kScreenHeight * 0.25) collectionViewLayout:[[DDFlowLayout alloc] init]];
+//    collectionView.
     collectionView.backgroundColor = [UIColor redColor];
     collectionView.delegate = self;
     collectionView.dataSource = self;
@@ -143,8 +143,6 @@
     
     // 添加定时器
     [self addTimer];
-    
-    
     
     //pageControl
     UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(kScreenWidth - 120, kScreenHeight * 0.25 - 30 + kNavgationBarHeight, 100, 30)];
@@ -332,7 +330,6 @@
     int page = (int)(scrollView.contentOffset.x / scrollView.bounds.size.width + 0.5) % self.newses.count;
     self.pageControl.currentPage = page;
 }
-
 
 
 #pragma mark ---- 定位相关

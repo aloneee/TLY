@@ -10,6 +10,7 @@
 #import "DD4SRootViewController.h"
 //#import "DD4SDropMenusView.h"
 #import "DOPDropDownMenu.h"
+#import "DD4SStoreDetailViewController.h"
 
 @interface DD4SRootViewController ()<DOPDropDownMenuDataSource,DOPDropDownMenuDelegate>
 
@@ -173,6 +174,13 @@ static const CGFloat kTopBtnHeight = 44;
     
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    DD4SStoreDetailViewController *storeDetail = [[DD4SStoreDetailViewController alloc] init];
+    [self.navigationController pushViewController:storeDetail animated:YES];
+    
 }
 
 
