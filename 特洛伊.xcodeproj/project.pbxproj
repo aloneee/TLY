@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1CF6DFFB7A64B2AB51ED38A4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC4A6CA57B70429881DEC4B /* libPods.a */; };
 		5904DF921BA98C4A00556AE6 /* DDHomeRecommendRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5904DF911BA98C4A00556AE6 /* DDHomeRecommendRewardViewController.m */; };
+		591299321BAC2C2B00ADACDC /* DD4SStoreCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591299311BAC2C2B00ADACDC /* DD4SStoreCommentViewController.m */; settings = {ASSET_TAGS = (); }; };
+		591299351BAC316600ADACDC /* DDStoreScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 591299341BAC316600ADACDC /* DDStoreScoreView.m */; settings = {ASSET_TAGS = (); }; };
+		591299381BAC31C000ADACDC /* DDStoreScoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 591299371BAC31C000ADACDC /* DDStoreScoreModel.m */; settings = {ASSET_TAGS = (); }; };
 		5958A2291B9D400400B66F32 /* HomeRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599A54CD1B8D53E7007D71C8 /* HomeRootViewController.m */; };
 		5981C4451BABBCB900788E6A /* DOPDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5981C4411BABBCB900788E6A /* DOPDropDownMenu.m */; };
 		5981C4461BABBCB900788E6A /* icon_chose_arrow_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5981C4421BABBCB900788E6A /* icon_chose_arrow_nor@2x.png */; };
@@ -91,6 +94,12 @@
 		4AC4A6CA57B70429881DEC4B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5904DF901BA98C4A00556AE6 /* DDHomeRecommendRewardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeRecommendRewardViewController.h; sourceTree = "<group>"; };
 		5904DF911BA98C4A00556AE6 /* DDHomeRecommendRewardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeRecommendRewardViewController.m; sourceTree = "<group>"; };
+		591299301BAC2C2B00ADACDC /* DD4SStoreCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DD4SStoreCommentViewController.h; path = ../Views/DD4SStoreCommentViewController.h; sourceTree = "<group>"; };
+		591299311BAC2C2B00ADACDC /* DD4SStoreCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DD4SStoreCommentViewController.m; path = ../Views/DD4SStoreCommentViewController.m; sourceTree = "<group>"; };
+		591299331BAC316600ADACDC /* DDStoreScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDStoreScoreView.h; sourceTree = "<group>"; };
+		591299341BAC316600ADACDC /* DDStoreScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDStoreScoreView.m; sourceTree = "<group>"; };
+		591299361BAC31C000ADACDC /* DDStoreScoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDStoreScoreModel.h; path = "特洛伊/Classes/4SStore/Views/DDStoreScoreModel.h"; sourceTree = SOURCE_ROOT; };
+		591299371BAC31C000ADACDC /* DDStoreScoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDStoreScoreModel.m; path = "特洛伊/Classes/4SStore/Views/DDStoreScoreModel.m"; sourceTree = SOURCE_ROOT; };
 		593310A61B8AB9BE008CE1E2 /* PreFile.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreFile.pch; sourceTree = "<group>"; };
 		5958A1E61B9BEBD500B66F32 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		5981C4401BABBCB900788E6A /* DOPDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOPDropDownMenu.h; sourceTree = "<group>"; };
@@ -297,6 +306,8 @@
 				5985B9481BA1210600139593 /* DD4SRootViewController.m */,
 				5981C4571BABEFD200788E6A /* DD4SStoreDetailViewController.h */,
 				5981C4581BABEFD200788E6A /* DD4SStoreDetailViewController.m */,
+				591299301BAC2C2B00ADACDC /* DD4SStoreCommentViewController.h */,
+				591299311BAC2C2B00ADACDC /* DD4SStoreCommentViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -304,6 +315,8 @@
 		599A54BA1B8D53E7007D71C8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				591299361BAC31C000ADACDC /* DDStoreScoreModel.h */,
+				591299371BAC31C000ADACDC /* DDStoreScoreModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -314,6 +327,8 @@
 				5981C43F1BABBCB900788E6A /* DOPDropMenu */,
 				5985B94A1BA1273200139593 /* DD4SDropMenusView.h */,
 				5985B94B1BA1273200139593 /* DD4SDropMenusView.m */,
+				591299331BAC316600ADACDC /* DDStoreScoreView.h */,
+				591299341BAC316600ADACDC /* DDStoreScoreView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -819,12 +834,14 @@
 				59E34B311BA80A4B0006B226 /* DDHomeMyCarCell.m in Sources */,
 				5985B93D1BA03C6F00139593 /* DDDatePicker.m in Sources */,
 				599A55181B8D53E7007D71C8 /* DDTabBarController.m in Sources */,
+				591299321BAC2C2B00ADACDC /* DD4SStoreCommentViewController.m in Sources */,
 				599A55151B8D53E7007D71C8 /* XXBNetWorkExtion.m in Sources */,
 				599A55061B8D53E7007D71C8 /* DDHomeChoseCityViewController.m in Sources */,
 				59FC70EE1BAA53AA00CA9948 /* DDHomeIcePriceViewController.m in Sources */,
 				5981C4591BABEFD200788E6A /* DD4SStoreDetailViewController.m in Sources */,
 				599A550F1B8D53E7007D71C8 /* UIImage+ImageEffects.m in Sources */,
 				5981C44B1BABBCEB00788E6A /* DDBackView.m in Sources */,
+				591299381BAC31C000ADACDC /* DDStoreScoreModel.m in Sources */,
 				599A550C1B8D53E7007D71C8 /* UIBarButtonItem+Help.m in Sources */,
 				59AE15E21BA9479900DBACD0 /* DDHomeFreshManViewController.m in Sources */,
 				59F3B31F1BA7EBEB006026C5 /* DDHomeChoseCarViewController.m in Sources */,
@@ -846,6 +863,7 @@
 				599A55121B8D53E7007D71C8 /* UIView+MotionEffect.m in Sources */,
 				59B6DE9F1BA963960046F1DB /* DDHomeTableHeadView.m in Sources */,
 				599A550A1B8D53E7007D71C8 /* NSDate+XXB.m in Sources */,
+				591299351BAC316600ADACDC /* DDStoreScoreView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -980,7 +998,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "特洛伊/PreFile.pch";
 				INFOPLIST_FILE = "特洛伊/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.TLY.lrh.didi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -999,7 +1017,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "特洛伊/PreFile.pch";
 				INFOPLIST_FILE = "特洛伊/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.TLY.lrh.didi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
