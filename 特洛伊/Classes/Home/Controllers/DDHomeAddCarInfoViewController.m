@@ -90,7 +90,6 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShow) name:UIKeyboardWillShowNotification object:nil];
     
 }
-
 //- (void)currentKMChange:(UITextField*)sender{
 //    
 //}
@@ -162,7 +161,7 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
         car.licensePlateNumber = self.licensePlateNumberField.text;
         
         
-        NSLog(@"%@",car);
+        NSLog(@"%@ll",car);
         
         [DDHomeCarTool saveCar:car];
         
