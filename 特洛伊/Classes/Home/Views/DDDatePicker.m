@@ -22,19 +22,15 @@ static const CGFloat kBtnW = 50.0f;
 
 @implementation DDDatePicker
 
-
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        
+-(instancetype)initWithFrame:(CGRect)frame datePickerMode:(UIDatePickerMode)datePickerMode minimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate{
+    if (self = [super initWithFrame:frame]) {
         UIButton *cancleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         
         [cancleBtn setTitle:@"取消"
                    forState:UIControlStateNormal];
         
-//        [cancleBtn setTitleColor:[UIColor blueColor]
-//                        forState:UIControlStateNormal];
+        //        [cancleBtn setTitleColor:[UIColor blueColor]
+        //                        forState:UIControlStateNormal];
         
         cancleBtn.backgroundColor = [UIColor blueColor];
         cancleBtn.layer.cornerRadius = 5;
@@ -51,10 +47,10 @@ static const CGFloat kBtnW = 50.0f;
         [doneBtn setTitle:@"确定"
                  forState:UIControlStateNormal];
         
-//        [doneBtn setTitleColor:[UIColor blueColor]
-//                        forState:UIControlStateNormal];
+        //        [doneBtn setTitleColor:[UIColor blueColor]
+        //                        forState:UIControlStateNormal];
         doneBtn.backgroundColor = [UIColor blueColor];
-
+        
         
         doneBtn.layer.cornerRadius = 5;
         
@@ -67,15 +63,29 @@ static const CGFloat kBtnW = 50.0f;
         self.doneBtn = doneBtn;
         
         UIDatePicker *datePicker = [[UIDatePicker alloc] init];
-        datePicker.datePickerMode = UIDatePickerModeDate;
+        
+        datePicker.datePickerMode = datePickerMode;
+        datePicker.minimumDate = minimumDate;
+        datePicker.maximumDate = maximumDate;
+        
         [self addSubview:datePicker];
         self.datePicker = datePicker;
-        
-//        self.backgroundColor = [UIColor redColor];
     }
+    
+    
     return self;
 }
 
+-(NSDate *)date{
+    
+    return self.datePicker.date;
+}
+
+
+- (void)setDate:(NSDate *)date animated:(BOOL)animated{
+    
+    return [self.datePicker setDate:date animated:animated];
+}
 
 -(void)layoutSubviews{
     [super layoutSubviews];

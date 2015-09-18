@@ -10,6 +10,7 @@
 		1CF6DFFB7A64B2AB51ED38A4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC4A6CA57B70429881DEC4B /* libPods.a */; };
 		5904DF921BA98C4A00556AE6 /* DDHomeRecommendRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5904DF911BA98C4A00556AE6 /* DDHomeRecommendRewardViewController.m */; };
 		5958A2291B9D400400B66F32 /* HomeRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599A54CD1B8D53E7007D71C8 /* HomeRootViewController.m */; };
+		5981C43E1BABA41900788E6A /* DDBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5981C43D1BABA41900788E6A /* DDBackView.m */; };
 		5985B9311BA0091700139593 /* DDHomeCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5985B9301BA0091700139593 /* DDHomeCar.m */; };
 		5985B9371BA0122200139593 /* DDHomeCarTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5985B9361BA0122200139593 /* DDHomeCarTool.m */; };
 		5985B93D1BA03C6F00139593 /* DDDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5985B93C1BA03C6F00139593 /* DDDatePicker.m */; };
@@ -87,6 +88,8 @@
 		5904DF911BA98C4A00556AE6 /* DDHomeRecommendRewardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeRecommendRewardViewController.m; sourceTree = "<group>"; };
 		593310A61B8AB9BE008CE1E2 /* PreFile.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreFile.pch; sourceTree = "<group>"; };
 		5958A1E61B9BEBD500B66F32 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		5981C43C1BABA41900788E6A /* DDBackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDBackView.h; path = ../../Home/Controllers/DDBackView.h; sourceTree = "<group>"; };
+		5981C43D1BABA41900788E6A /* DDBackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDBackView.m; path = ../../Home/Controllers/DDBackView.m; sourceTree = "<group>"; };
 		5985B92F1BA0091700139593 /* DDHomeCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeCar.h; sourceTree = "<group>"; };
 		5985B9301BA0091700139593 /* DDHomeCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeCar.m; sourceTree = "<group>"; };
 		5985B9331BA00E6D00139593 /* RHCoding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RHCoding.h; sourceTree = "<group>"; };
@@ -588,6 +591,8 @@
 			children = (
 				59F3B30B1BA7B420006026C5 /* DOPDropDownMenu.h */,
 				59F3B30C1BA7B420006026C5 /* DOPDropDownMenu.m */,
+				5981C43C1BABA41900788E6A /* DDBackView.h */,
+				5981C43D1BABA41900788E6A /* DDBackView.m */,
 				59F3B30D1BA7B420006026C5 /* icon_chose_arrow_nor@2x.png */,
 				59F3B30E1BA7B420006026C5 /* icon_chose_arrow_sel@2x.png */,
 				59F3B30F1BA7B420006026C5 /* icon_chose_bottom@2x.png */,
@@ -785,6 +790,7 @@
 				59FC70EE1BAA53AA00CA9948 /* DDHomeIcePriceViewController.m in Sources */,
 				599A550F1B8D53E7007D71C8 /* UIImage+ImageEffects.m in Sources */,
 				599A550C1B8D53E7007D71C8 /* UIBarButtonItem+Help.m in Sources */,
+				5981C43E1BABA41900788E6A /* DDBackView.m in Sources */,
 				59AE15E21BA9479900DBACD0 /* DDHomeFreshManViewController.m in Sources */,
 				59F3B31F1BA7EBEB006026C5 /* DDHomeChoseCarViewController.m in Sources */,
 				599A55131B8D53E7007D71C8 /* XXBDeviceHelp.m in Sources */,

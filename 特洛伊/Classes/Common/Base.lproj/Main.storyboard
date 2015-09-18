@@ -182,7 +182,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ja2-TP-ixd">
-                                <rect key="frame" x="36" y="520" width="528" height="30"/>
+                                <rect key="frame" x="36" y="550" width="528" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="64K-tf-10P"/>
                                 </constraints>
@@ -199,7 +199,7 @@
                             <constraint firstItem="jWJ-6d-WDb" firstAttribute="width" secondItem="jza-LG-664" secondAttribute="width" id="30k-vy-duj"/>
                             <constraint firstItem="4cH-GY-qTD" firstAttribute="leading" secondItem="hdS-57-0Oc" secondAttribute="trailing" id="4Cm-JD-mcl"/>
                             <constraint firstItem="PPT-yD-i64" firstAttribute="top" secondItem="4cH-GY-qTD" secondAttribute="bottom" constant="20" id="4NF-1b-TsD"/>
-                            <constraint firstAttribute="bottom" secondItem="ja2-TP-ixd" secondAttribute="bottom" constant="50" id="65k-qi-92B"/>
+                            <constraint firstAttribute="bottom" secondItem="ja2-TP-ixd" secondAttribute="bottom" constant="20" id="65k-qi-92B"/>
                             <constraint firstItem="hdS-57-0Oc" firstAttribute="top" secondItem="jWJ-6d-WDb" secondAttribute="bottom" constant="20" id="6f0-US-r0r"/>
                             <constraint firstItem="5IY-tr-nop" firstAttribute="height" secondItem="dYe-vF-CYA" secondAttribute="height" id="9S1-ai-UL1"/>
                             <constraint firstItem="PPT-yD-i64" firstAttribute="leading" secondItem="b6m-4E-XLG" secondAttribute="trailing" id="BUC-QP-sMg"/>
@@ -267,7 +267,6 @@
         <!--Home Maintenance View Controller-->
         <scene sceneID="aI0-JI-Dw9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="olS-um-mrI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="maintenanceRoot" id="eKo-ia-Wdw" customClass="DDHomeMaintenanceViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TrY-DK-CDc"/>
@@ -465,6 +464,7 @@
                         <outlet property="testReportBtn" destination="z2N-N6-pvR" id="GVD-HH-zEV"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="olS-um-mrI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-392" y="2017"/>
         </scene>

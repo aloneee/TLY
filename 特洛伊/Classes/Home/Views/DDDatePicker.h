@@ -18,6 +18,10 @@ typedef  void(^DDDatePickerDoneBlock) (DDDatePicker *);
 @property(nonatomic, copy) DDDatePickerCancleBlock cancleBlock;
 @property(nonatomic, copy) DDDatePickerDoneBlock doneBlock;
 
+@property (nonatomic, retain) NSDate *date;
+
+- (instancetype)initWithFrame:(CGRect)frame datePickerMode:(UIDatePickerMode)datePickerMode minimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate;
+
 @property(nonatomic, assign) BOOL isShow;
 
 @end

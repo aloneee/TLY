@@ -34,7 +34,9 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
 -(DDDatePicker *)datePicker{
     
     if (!_datePicker) {
-        DDDatePicker *datePicker = [[DDDatePicker alloc] initWithFrame:CGRectMake(0, kScreenHeight, kScreenWidth, kScreenHeight * 0.25)];
+        DDDatePicker *datePicker = [[DDDatePicker alloc] initWithFrame:CGRectMake(0, kScreenHeight, kScreenWidth, kScreenHeight * 0.25)
+                                                        datePickerMode:UIDatePickerModeDate
+                                                           minimumDate:nil maximumDate:[NSDate date]];
 
         datePicker.cancleBlock = ^(DDDatePicker *dp){
             
@@ -51,7 +53,7 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
                 dp.isShow = NO;
             } completion:^(BOOL finished) {
                 
-                NSDate *date = [self.datePicker valueForKeyPath:@"datePicker.date"];
+                NSDate *date = self.datePicker.date;
                 NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
                 [dateFormat setDateFormat:@"yyyy-MM-dd"];
                 [self.choseBuyDateBtn setTitle:[dateFormat stringFromDate:date] forState:UIControlStateNormal];
