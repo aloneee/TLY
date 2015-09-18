@@ -10,7 +10,11 @@
 		1CF6DFFB7A64B2AB51ED38A4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC4A6CA57B70429881DEC4B /* libPods.a */; };
 		5904DF921BA98C4A00556AE6 /* DDHomeRecommendRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5904DF911BA98C4A00556AE6 /* DDHomeRecommendRewardViewController.m */; };
 		5958A2291B9D400400B66F32 /* HomeRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599A54CD1B8D53E7007D71C8 /* HomeRootViewController.m */; };
-		5981C43E1BABA41900788E6A /* DDBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5981C43D1BABA41900788E6A /* DDBackView.m */; };
+		5981C4451BABBCB900788E6A /* DOPDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5981C4411BABBCB900788E6A /* DOPDropDownMenu.m */; };
+		5981C4461BABBCB900788E6A /* icon_chose_arrow_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5981C4421BABBCB900788E6A /* icon_chose_arrow_nor@2x.png */; };
+		5981C4471BABBCB900788E6A /* icon_chose_arrow_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5981C4431BABBCB900788E6A /* icon_chose_arrow_sel@2x.png */; };
+		5981C4481BABBCB900788E6A /* icon_chose_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5981C4441BABBCB900788E6A /* icon_chose_bottom@2x.png */; };
+		5981C44B1BABBCEB00788E6A /* DDBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5981C44A1BABBCEB00788E6A /* DDBackView.m */; };
 		5985B9311BA0091700139593 /* DDHomeCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5985B9301BA0091700139593 /* DDHomeCar.m */; };
 		5985B9371BA0122200139593 /* DDHomeCarTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5985B9361BA0122200139593 /* DDHomeCarTool.m */; };
 		5985B93D1BA03C6F00139593 /* DDDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5985B93C1BA03C6F00139593 /* DDDatePicker.m */; };
@@ -55,10 +59,6 @@
 		59E34B441BA824980006B226 /* DDActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E34B431BA824980006B226 /* DDActivityCell.m */; };
 		59F0DB2F1B8564BB0092B104 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F0DB2E1B8564BB0092B104 /* main.m */; };
 		59F0DB491B8564BB0092B104 /* ___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F0DB481B8564BB0092B104 /* ___Tests.m */; };
-		59F3B3101BA7B420006026C5 /* DOPDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F3B30C1BA7B420006026C5 /* DOPDropDownMenu.m */; };
-		59F3B3111BA7B420006026C5 /* icon_chose_arrow_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59F3B30D1BA7B420006026C5 /* icon_chose_arrow_nor@2x.png */; };
-		59F3B3121BA7B420006026C5 /* icon_chose_arrow_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59F3B30E1BA7B420006026C5 /* icon_chose_arrow_sel@2x.png */; };
-		59F3B3131BA7B420006026C5 /* icon_chose_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59F3B30F1BA7B420006026C5 /* icon_chose_bottom@2x.png */; };
 		59F3B3191BA7EB14006026C5 /* SkyAssociationMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F3B3171BA7EB14006026C5 /* SkyAssociationMenuView.m */; };
 		59F3B31F1BA7EBEB006026C5 /* DDHomeChoseCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F3B31E1BA7EBEB006026C5 /* DDHomeChoseCarViewController.m */; };
 		59FC70EE1BAA53AA00CA9948 /* DDHomeIcePriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FC70ED1BAA53AA00CA9948 /* DDHomeIcePriceViewController.m */; };
@@ -88,8 +88,13 @@
 		5904DF911BA98C4A00556AE6 /* DDHomeRecommendRewardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeRecommendRewardViewController.m; sourceTree = "<group>"; };
 		593310A61B8AB9BE008CE1E2 /* PreFile.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreFile.pch; sourceTree = "<group>"; };
 		5958A1E61B9BEBD500B66F32 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
-		5981C43C1BABA41900788E6A /* DDBackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDBackView.h; path = ../../Home/Controllers/DDBackView.h; sourceTree = "<group>"; };
-		5981C43D1BABA41900788E6A /* DDBackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDBackView.m; path = ../../Home/Controllers/DDBackView.m; sourceTree = "<group>"; };
+		5981C4401BABBCB900788E6A /* DOPDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOPDropDownMenu.h; sourceTree = "<group>"; };
+		5981C4411BABBCB900788E6A /* DOPDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOPDropDownMenu.m; sourceTree = "<group>"; };
+		5981C4421BABBCB900788E6A /* icon_chose_arrow_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_nor@2x.png"; sourceTree = "<group>"; };
+		5981C4431BABBCB900788E6A /* icon_chose_arrow_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_sel@2x.png"; sourceTree = "<group>"; };
+		5981C4441BABBCB900788E6A /* icon_chose_bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_bottom@2x.png"; sourceTree = "<group>"; };
+		5981C4491BABBCEB00788E6A /* DDBackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDBackView.h; sourceTree = "<group>"; };
+		5981C44A1BABBCEB00788E6A /* DDBackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDBackView.m; sourceTree = "<group>"; };
 		5985B92F1BA0091700139593 /* DDHomeCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeCar.h; sourceTree = "<group>"; };
 		5985B9301BA0091700139593 /* DDHomeCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeCar.m; sourceTree = "<group>"; };
 		5985B9331BA00E6D00139593 /* RHCoding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RHCoding.h; sourceTree = "<group>"; };
@@ -176,11 +181,6 @@
 		59F0DB421B8564BB0092B104 /* 特洛伊Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "特洛伊Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F0DB471B8564BB0092B104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59F0DB481B8564BB0092B104 /* ___Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___Tests.m"; sourceTree = "<group>"; };
-		59F3B30B1BA7B420006026C5 /* DOPDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOPDropDownMenu.h; sourceTree = "<group>"; };
-		59F3B30C1BA7B420006026C5 /* DOPDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOPDropDownMenu.m; sourceTree = "<group>"; };
-		59F3B30D1BA7B420006026C5 /* icon_chose_arrow_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_nor@2x.png"; sourceTree = "<group>"; };
-		59F3B30E1BA7B420006026C5 /* icon_chose_arrow_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_sel@2x.png"; sourceTree = "<group>"; };
-		59F3B30F1BA7B420006026C5 /* icon_chose_bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_bottom@2x.png"; sourceTree = "<group>"; };
 		59F3B3171BA7EB14006026C5 /* SkyAssociationMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyAssociationMenuView.m; sourceTree = "<group>"; };
 		59F3B3181BA7EB14006026C5 /* SkyAssociationMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyAssociationMenuView.h; sourceTree = "<group>"; };
 		59F3B31D1BA7EBEB006026C5 /* DDHomeChoseCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeChoseCarViewController.h; sourceTree = "<group>"; };
@@ -221,6 +221,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5981C43F1BABBCB900788E6A /* DOPDropMenu */ = {
+			isa = PBXGroup;
+			children = (
+				5981C4401BABBCB900788E6A /* DOPDropDownMenu.h */,
+				5981C4411BABBCB900788E6A /* DOPDropDownMenu.m */,
+				5981C4491BABBCEB00788E6A /* DDBackView.h */,
+				5981C44A1BABBCEB00788E6A /* DDBackView.m */,
+				5981C4421BABBCB900788E6A /* icon_chose_arrow_nor@2x.png */,
+				5981C4431BABBCB900788E6A /* icon_chose_arrow_sel@2x.png */,
+				5981C4441BABBCB900788E6A /* icon_chose_bottom@2x.png */,
+			);
+			path = DOPDropMenu;
+			sourceTree = "<group>";
+		};
 		5985B9341BA0120600139593 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,7 +286,7 @@
 		599A54BB1B8D53E7007D71C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				59F3B30A1BA7B420006026C5 /* DOPDropMenu */,
+				5981C43F1BABBCB900788E6A /* DOPDropMenu */,
 				5985B94A1BA1273200139593 /* DD4SDropMenusView.h */,
 				5985B94B1BA1273200139593 /* DD4SDropMenusView.m */,
 			);
@@ -586,21 +600,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		59F3B30A1BA7B420006026C5 /* DOPDropMenu */ = {
-			isa = PBXGroup;
-			children = (
-				59F3B30B1BA7B420006026C5 /* DOPDropDownMenu.h */,
-				59F3B30C1BA7B420006026C5 /* DOPDropDownMenu.m */,
-				5981C43C1BABA41900788E6A /* DDBackView.h */,
-				5981C43D1BABA41900788E6A /* DDBackView.m */,
-				59F3B30D1BA7B420006026C5 /* icon_chose_arrow_nor@2x.png */,
-				59F3B30E1BA7B420006026C5 /* icon_chose_arrow_sel@2x.png */,
-				59F3B30F1BA7B420006026C5 /* icon_chose_bottom@2x.png */,
-			);
-			name = DOPDropMenu;
-			path = ../DOPDropMenu;
-			sourceTree = "<group>";
-		};
 		9170DBD34A5F6C8EE9FCF78A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -703,15 +702,15 @@
 			files = (
 				599A55051B8D53E7007D71C8 /* Images.xcassets in Resources */,
 				59E34B391BA8199A0006B226 /* newses.plist in Resources */,
+				5981C4461BABBCB900788E6A /* icon_chose_arrow_nor@2x.png in Resources */,
+				5981C4481BABBCB900788E6A /* icon_chose_bottom@2x.png in Resources */,
 				599A55091B8D53E7007D71C8 /* DDHomeCityCell.xib in Resources */,
 				599A55231B8D6055007D71C8 /* MBProgressHUD.bundle in Resources */,
-				59F3B3131BA7B420006026C5 /* icon_chose_bottom@2x.png in Resources */,
 				599A55031B8D53E7007D71C8 /* LaunchScreen.xib in Resources */,
-				59F3B3111BA7B420006026C5 /* icon_chose_arrow_nor@2x.png in Resources */,
 				59FC71081BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.xib in Resources */,
 				599A55041B8D53E7007D71C8 /* Main.storyboard in Resources */,
+				5981C4471BABBCB900788E6A /* icon_chose_arrow_sel@2x.png in Resources */,
 				59FCE92F1BA833AB006303EF /* HMNewsCell.xib in Resources */,
-				59F3B3121BA7B420006026C5 /* icon_chose_arrow_sel@2x.png in Resources */,
 				59E34B321BA80A4B0006B226 /* DDHomeMyCarCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -768,6 +767,7 @@
 				599A55021B8D53E7007D71C8 /* AppDelegate.m in Sources */,
 				59FC71071BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.m in Sources */,
 				59E34B2D1BA809AE0006B226 /* DDHomeMyCar.m in Sources */,
+				5981C4451BABBCB900788E6A /* DOPDropDownMenu.m in Sources */,
 				5985B9311BA0091700139593 /* DDHomeCar.m in Sources */,
 				599A55101B8D53E7007D71C8 /* UIView+AutoLayout.m in Sources */,
 				5958A2291B9D400400B66F32 /* HomeRootViewController.m in Sources */,
@@ -789,8 +789,8 @@
 				599A55061B8D53E7007D71C8 /* DDHomeChoseCityViewController.m in Sources */,
 				59FC70EE1BAA53AA00CA9948 /* DDHomeIcePriceViewController.m in Sources */,
 				599A550F1B8D53E7007D71C8 /* UIImage+ImageEffects.m in Sources */,
+				5981C44B1BABBCEB00788E6A /* DDBackView.m in Sources */,
 				599A550C1B8D53E7007D71C8 /* UIBarButtonItem+Help.m in Sources */,
-				5981C43E1BABA41900788E6A /* DDBackView.m in Sources */,
 				59AE15E21BA9479900DBACD0 /* DDHomeFreshManViewController.m in Sources */,
 				59F3B31F1BA7EBEB006026C5 /* DDHomeChoseCarViewController.m in Sources */,
 				599A55131B8D53E7007D71C8 /* XXBDeviceHelp.m in Sources */,
@@ -800,7 +800,6 @@
 				599A55081B8D53E7007D71C8 /* DDHomeCityCell.m in Sources */,
 				599A55161B8D53E7007D71C8 /* DDLoginViewController.m in Sources */,
 				59FC71031BAABD1600CA9948 /* DDHomeMaintenanceDetailViewController.m in Sources */,
-				59F3B3101BA7B420006026C5 /* DOPDropDownMenu.m in Sources */,
 				599A55221B8D6055007D71C8 /* MBProgressHUD+MJ.m in Sources */,
 				59FC71001BAAB2CB00CA9948 /* DDHomeMaintenanceViewController.m in Sources */,
 				5985C0631BA190DA00139593 /* Const.m in Sources */,
