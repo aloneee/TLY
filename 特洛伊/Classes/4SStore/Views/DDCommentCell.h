@@ -1,0 +1,19 @@
+//
+//  DDCommentCell.h
+//  特洛伊
+//
+//  Created by liurihua on 15/9/21.
+//  Copyright (c) 2015年 刘日华. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@class DDCommentFrameModle;
+
+@interface DDCommentCell : UITableViewCell
+
+@property (nonatomic, strong) DDCommentFrameModle *commentFrameModel;
+
++(DDCommentCell *)cellWithTableView:(UITableView *)tableView;
+
+@end

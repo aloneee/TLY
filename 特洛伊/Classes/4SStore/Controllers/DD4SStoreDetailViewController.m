@@ -7,6 +7,7 @@
 //
 
 #import "DD4SStoreDetailViewController.h"
+#import "DD4SStoreCommentViewController.h"
 
 
 //轮播图
@@ -45,6 +46,7 @@
     [super viewDidLoad];
     self.title = @"详情";
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.view.backgroundColor = [UIColor whiteColor];
     
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, kNavgationBarHeight, kScreenWidth, kScreenHeight * 0.25)
                                                           collectionViewLayout:[[DDFlowLayout alloc] init]];
@@ -78,10 +80,20 @@
     self.pageControl = pageControl;
     [self.view bringSubviewToFront:self.pageControl];
     
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(100, 250, 100, 100);
+    btn.layer.cornerRadius = 5;
+    btn.backgroundColor = [UIColor redColor];
+    [btn setTitle:@"not so fast " forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
     
-    
-    
-    
+}
+
+- (void)btnClick:(UIButton *)sender{
+    DD4SStoreCommentViewController *comment = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"commentVC"];
+    [self.navigationController pushViewController:comment animated:YES];
 }
 
 
@@ -192,6 +204,7 @@
     int page = (int)(scrollView.contentOffset.x / scrollView.bounds.size.width + 0.5) % self.newses.count;
     self.pageControl.currentPage = page;
 }
+
 
 
 /*

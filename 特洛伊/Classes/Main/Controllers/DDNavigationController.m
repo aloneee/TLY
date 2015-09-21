@@ -71,7 +71,7 @@
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     
     viewController.hidesBottomBarWhenPushed = YES;
-    viewController.view.backgroundColor = ColorWithHexAlpha(0x000000, 1);
+//    viewController.view.backgroundColor = ColorWithHexAlpha(0x000000, 1);
 //    viewController.automaticallyAdjustsScrollViewInsets = NO;
     
     UIButton *left=[UIButton buttonWithType:UIButtonTypeCustom];

@@ -8,24 +8,96 @@
 //
 
 #import "DD4SStoreCommentViewController.h"
+#import "DDStoreScoreModel.h"
+#import "DDStoreScoreView.h"
+#import "DDCommentCell.h"
+#import "DDCommentFrameModle.h"
+#import "DDCommenModel.h"
 
 @interface DD4SStoreCommentViewController ()<UITableViewDataSource,UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UIView *topView;
+
+@property (weak, nonatomic) IBOutlet DDStoreScoreView *topView;
+
 @property (weak, nonatomic) IBOutlet UITableView *table;
+
+@property (nonatomic, strong) NSMutableArray *comments;
+
 
 @end
 
 @implementation DD4SStoreCommentViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+-(NSArray *)comments{
+    if (!_comments) {
+        _comments = [NSMutableArray array];
+        
+        for (int i = 0; i < 5; i++) {
+            DDCommentFrameModle *frameModel = [[DDCommentFrameModle alloc] init];
+            DDCommenModel *commentModle = [[DDCommenModel alloc] init];
+            commentModle.postTime = @"jdkjfdsjkfsdajf";
+            commentModle.comment = @"dkhfuaehfiuhdioufgheiowfuheiuhfiueldhsfnoudshfoudhgsksdjdiouehrfwiukdhadauhafiuhewqiohiouh";
+            frameModel.commentModel = commentModle;
+            
+            [_comments addObject:frameModel];
+        }
+        
+        
+        for (int i = 0; i < 5; i++) {
+            DDCommentFrameModle *frameModel = [[DDCommentFrameModle alloc] init];
+            DDCommenModel *commentModle = [[DDCommenModel alloc] init];
+            commentModle.postTime = @"jdkjfdsjkfsdajfdilfjgdoifgjldsijfldsjfljsflkjdsklfjdslafjdsakjfhakjds";
+            commentModle.comment = @"dkhfuaehfiuhdioufgheiowfuheiuhfiueldhsfnoudshfoudhgsksdjdiouehrfwiukdhadauhafiuhewqiohiouhdlskjflsdkjfsdlkjfkdshfjioerhreowiljfkhdfjsl;kdsjfkjpewooiheokoihjdsoijfsj";
+            frameModel.commentModel = commentModle;
+            
+            [_comments addObject:frameModel];
+        }
+    }
+    
+    NSLog(@"%@",_comments);
+    
+    return _comments;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    DDStoreScoreModel *scoreModel = [[DDStoreScoreModel alloc] init];
+    scoreModel.serviceScore = @"服务5.0";
+    scoreModel.technologyScore = @"技术5.0";
+    scoreModel.environmentScore = @"环境5.0";
+    
+    self.topView.scoreModel = scoreModel;
 }
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return self.comments.count;
+    
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    DDCommentCell *cell = [DDCommentCell cellWithTableView:tableView];
+    
+    cell.commentFrameModel = self.comments[indexPath.row];
+    
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    DDCommentFrameModle *frameModel = (DDCommentFrameModle *)self.comments[indexPath.row];
+    
+    return frameModel.cellHeight;
+}
+
+
 
 
 
