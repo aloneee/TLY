@@ -42,11 +42,18 @@
 #define kTabBarHeight 49
 
 
+
+
 //随机色
 #define kRandomColor [UIColor colorWithRed:(arc4random()%255 /255.0)green:(arc4random()%255 /255.0) blue:(arc4random()%255 /255.0) alpha:1]
 #define kScreenBounds [UIScreen mainScreen].bounds
 #define kScreenWidth  kScreenBounds.size.width
 #define kScreenHeight  kScreenBounds.size.height
+#define CLEARCOLOR [UIColor clearColor]
+
+//G－C－D
+#define BACK(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
+#define MAIN(block) dispatch_async(dispatch_get_main_queue(),block)
 
 
 #define kApp ((AppDelegate *)[UIApplication sharedApplication].delegate)

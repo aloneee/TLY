@@ -15,6 +15,9 @@
 		591299351BAC316600ADACDC /* DDStoreScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 591299341BAC316600ADACDC /* DDStoreScoreView.m */; };
 		591299381BAC31C000ADACDC /* DDStoreScoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 591299371BAC31C000ADACDC /* DDStoreScoreModel.m */; };
 		5958A2291B9D400400B66F32 /* HomeRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599A54CD1B8D53E7007D71C8 /* HomeRootViewController.m */; };
+		59699C1B1BB0FA8C00D486DC /* DDMineRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59699C1A1BB0FA8C00D486DC /* DDMineRootViewController.m */; };
+		59699C1E1BB0FEEB00D486DC /* DDUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 59699C1D1BB0FEEB00D486DC /* DDUser.m */; };
+		59699C221BB104BF00D486DC /* DDUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 59699C211BB104BF00D486DC /* DDUserTool.m */; };
 		5981C4451BABBCB900788E6A /* DOPDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5981C4411BABBCB900788E6A /* DOPDropDownMenu.m */; };
 		5981C4461BABBCB900788E6A /* icon_chose_arrow_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5981C4421BABBCB900788E6A /* icon_chose_arrow_nor@2x.png */; };
 		5981C4471BABBCB900788E6A /* icon_chose_arrow_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5981C4431BABBCB900788E6A /* icon_chose_arrow_sel@2x.png */; };
@@ -111,6 +114,12 @@
 		591299371BAC31C000ADACDC /* DDStoreScoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDStoreScoreModel.m; path = "特洛伊/Classes/4SStore/Views/DDStoreScoreModel.m"; sourceTree = SOURCE_ROOT; };
 		593310A61B8AB9BE008CE1E2 /* PreFile.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreFile.pch; sourceTree = "<group>"; };
 		5958A1E61B9BEBD500B66F32 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		59699C191BB0FA8C00D486DC /* DDMineRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMineRootViewController.h; sourceTree = "<group>"; };
+		59699C1A1BB0FA8C00D486DC /* DDMineRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMineRootViewController.m; sourceTree = "<group>"; };
+		59699C1C1BB0FEEB00D486DC /* DDUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDUser.h; sourceTree = "<group>"; };
+		59699C1D1BB0FEEB00D486DC /* DDUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDUser.m; sourceTree = "<group>"; };
+		59699C201BB104BF00D486DC /* DDUserTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDUserTool.h; sourceTree = "<group>"; };
+		59699C211BB104BF00D486DC /* DDUserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDUserTool.m; sourceTree = "<group>"; };
 		5981C4401BABBCB900788E6A /* DOPDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOPDropDownMenu.h; sourceTree = "<group>"; };
 		5981C4411BABBCB900788E6A /* DOPDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOPDropDownMenu.m; sourceTree = "<group>"; };
 		5981C4421BABBCB900788E6A /* icon_chose_arrow_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_nor@2x.png"; sourceTree = "<group>"; };
@@ -259,6 +268,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59699C1F1BB104AD00D486DC /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				59699C201BB104BF00D486DC /* DDUserTool.h */,
+				59699C211BB104BF00D486DC /* DDUserTool.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		5981C43F1BABBCB900788E6A /* DOPDropMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,6 +511,7 @@
 		599A54D31B8D53E7007D71C8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				59699C1F1BB104AD00D486DC /* Tools */,
 				5981C45A1BABF81100788E6A /* Other */,
 				599A54D41B8D53E7007D71C8 /* Category */,
 				599A54EE1B8D53E7007D71C8 /* Controllers */,
@@ -558,6 +577,8 @@
 		599A54FC1B8D53E7007D71C8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				59699C1C1BB0FEEB00D486DC /* DDUser.h */,
+				59699C1D1BB0FEEB00D486DC /* DDUser.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -584,6 +605,8 @@
 		599A54FF1B8D53E7007D71C8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				59699C191BB0FA8C00D486DC /* DDMineRootViewController.h */,
+				59699C1A1BB0FA8C00D486DC /* DDMineRootViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -838,6 +861,7 @@
 				59FC70FA1BAAAEF000CA9948 /* DDHomeOrderViewController.m in Sources */,
 				599A55021B8D53E7007D71C8 /* AppDelegate.m in Sources */,
 				59C6F1061BAC0E3B00DB2DFA /* DDFlowLayout.m in Sources */,
+				59699C1E1BB0FEEB00D486DC /* DDUser.m in Sources */,
 				59FC71071BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.m in Sources */,
 				59E34B2D1BA809AE0006B226 /* DDHomeMyCar.m in Sources */,
 				5981C4451BABBCB900788E6A /* DOPDropDownMenu.m in Sources */,
@@ -873,10 +897,12 @@
 				599A550C1B8D53E7007D71C8 /* UIBarButtonItem+Help.m in Sources */,
 				59AE15E21BA9479900DBACD0 /* DDHomeFreshManViewController.m in Sources */,
 				59F3B31F1BA7EBEB006026C5 /* DDHomeChoseCarViewController.m in Sources */,
+				59699C221BB104BF00D486DC /* DDUserTool.m in Sources */,
 				5981C4551BABD85500788E6A /* DDHomeIndividualMaintenanceViewCell.m in Sources */,
 				599A55131B8D53E7007D71C8 /* XXBDeviceHelp.m in Sources */,
 				59E34B2A1BA8033B0006B226 /* DDHomeMyCarsViewController.m in Sources */,
 				599A55241B8D6055007D71C8 /* MBProgressHUD.m in Sources */,
+				59699C1B1BB0FA8C00D486DC /* DDMineRootViewController.m in Sources */,
 				599A550D1B8D53E7007D71C8 /* UIColor+Help.m in Sources */,
 				599A55081B8D53E7007D71C8 /* DDHomeCityCell.m in Sources */,
 				599A55161B8D53E7007D71C8 /* DDLoginViewController.m in Sources */,

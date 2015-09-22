@@ -32,7 +32,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //    UIViewController *rootVC = self.viewControllers[0];
-//    rootVC.view.backgroundColor = ColorWithHexAlpha(0x000000, 1);
+//    rootVC.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"login_sky_f"]];
 //    rootVC.automaticallyAdjustsScrollViewInsets = NO;
     
     
@@ -46,6 +46,8 @@
     [self.view addGestureRecognizer:pan];
     // 禁止使用系统自带的滑动手势
     self.interactivePopGestureRecognizer.enabled = NO;
+    
+    
     
 }
 
@@ -71,7 +73,7 @@
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     
     viewController.hidesBottomBarWhenPushed = YES;
-//    viewController.view.backgroundColor = ColorWithHexAlpha(0x000000, 1);
+//    viewController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"login_sky_f"]];
 //    viewController.automaticallyAdjustsScrollViewInsets = NO;
     
     UIButton *left=[UIButton buttonWithType:UIButtonTypeCustom];
