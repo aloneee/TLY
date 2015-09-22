@@ -57,6 +57,8 @@
 		59AE15E21BA9479900DBACD0 /* DDHomeFreshManViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AE15E11BA9479900DBACD0 /* DDHomeFreshManViewController.m */; };
 		59B6DE9C1BA9591B0046F1DB /* DDHomeSpecificPreferentialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B6DE9B1BA9591B0046F1DB /* DDHomeSpecificPreferentialViewController.m */; };
 		59B6DE9F1BA963960046F1DB /* DDHomeTableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B6DE9E1BA963960046F1DB /* DDHomeTableHeadView.m */; };
+		59C549961BAFB77800BA093A /* DDCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C549951BAFB77800BA093A /* DDCountView.m */; };
+		59C549991BAFE6D300BA093A /* DDGeneralStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C549981BAFE6D300BA093A /* DDGeneralStoreViewController.m */; };
 		59C6F1061BAC0E3B00DB2DFA /* DDFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C6F1051BAC0E3B00DB2DFA /* DDFlowLayout.m */; };
 		59CD2ADD1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CD2ADC1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.m */; };
 		59E34B2A1BA8033B0006B226 /* DDHomeMyCarsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E34B291BA8033B0006B226 /* DDHomeMyCarsViewController.m */; };
@@ -187,6 +189,10 @@
 		59B6DE9B1BA9591B0046F1DB /* DDHomeSpecificPreferentialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeSpecificPreferentialViewController.m; sourceTree = "<group>"; };
 		59B6DE9D1BA963960046F1DB /* DDHomeTableHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeTableHeadView.h; sourceTree = "<group>"; };
 		59B6DE9E1BA963960046F1DB /* DDHomeTableHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeTableHeadView.m; sourceTree = "<group>"; };
+		59C549941BAFB77800BA093A /* DDCountView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCountView.h; sourceTree = "<group>"; };
+		59C549951BAFB77800BA093A /* DDCountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCountView.m; sourceTree = "<group>"; };
+		59C549971BAFE6D300BA093A /* DDGeneralStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDGeneralStoreViewController.h; sourceTree = "<group>"; };
+		59C549981BAFE6D300BA093A /* DDGeneralStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDGeneralStoreViewController.m; sourceTree = "<group>"; };
 		59C6F1041BAC0E3B00DB2DFA /* DDFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFlowLayout.h; sourceTree = "<group>"; };
 		59C6F1051BAC0E3B00DB2DFA /* DDFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFlowLayout.m; sourceTree = "<group>"; };
 		59CD2ADB1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeAddCarInfoViewController.h; sourceTree = "<group>"; };
@@ -375,6 +381,8 @@
 		599A54C51B8D53E7007D71C8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				59C549971BAFE6D300BA093A /* DDGeneralStoreViewController.h */,
+				59C549981BAFE6D300BA093A /* DDGeneralStoreViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -557,6 +565,8 @@
 		599A54FD1B8D53E7007D71C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				59C549941BAFB77800BA093A /* DDCountView.h */,
+				59C549951BAFB77800BA093A /* DDCountView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -843,6 +853,7 @@
 				59CD2ADD1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.m in Sources */,
 				599A55111B8D53E7007D71C8 /* UIView+Help.m in Sources */,
 				599A55141B8D53E7007D71C8 /* XXBHelpTools.m in Sources */,
+				59C549991BAFE6D300BA093A /* DDGeneralStoreViewController.m in Sources */,
 				5985B94C1BA1273200139593 /* DD4SDropMenusView.m in Sources */,
 				59FC70F41BAA8F2F00CA9948 /* DDHomeTestReportViewController.m in Sources */,
 				5985B9491BA1210600139593 /* DD4SRootViewController.m in Sources */,
@@ -879,6 +890,7 @@
 				5904DF921BA98C4A00556AE6 /* DDHomeRecommendRewardViewController.m in Sources */,
 				59E34B3C1BA819BE0006B226 /* HMNews.m in Sources */,
 				599A55121B8D53E7007D71C8 /* UIView+MotionEffect.m in Sources */,
+				59C549961BAFB77800BA093A /* DDCountView.m in Sources */,
 				59B6DE9F1BA963960046F1DB /* DDHomeTableHeadView.m in Sources */,
 				599A550A1B8D53E7007D71C8 /* NSDate+XXB.m in Sources */,
 				591299351BAC316600ADACDC /* DDStoreScoreView.m in Sources */,

@@ -18,24 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="请输入手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="98V-e4-Ra4">
-                                <rect key="frame" x="50" y="120" width="500" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="请输入手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="98V-e4-Ra4">
+                                <rect key="frame" x="46" y="120" width="508" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="NRw-i7-dXg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="请输入验证码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CJc-oq-h5A">
-                                <rect key="frame" x="50" y="180" width="421" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="请输入验证码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CJc-oq-h5A">
+                                <rect key="frame" x="46" y="180" width="429" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="860-DH-nWh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5D-0H-tos">
-                                <rect key="frame" x="50" y="240" width="500" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5D-0H-tos">
+                                <rect key="frame" x="46" y="240" width="508" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="vV2-xl-79G"/>
                                 </constraints>
@@ -47,8 +47,8 @@
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2a7-YC-7ya"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0k9-X2-tWd">
-                                <rect key="frame" x="470" y="180" width="80" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0k9-X2-tWd">
+                                <rect key="frame" x="474" y="180" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Sbc-vV-zvC"/>
                                 </constraints>
@@ -182,8 +182,8 @@
                                     <action selector="buyDateBtnClick:" destination="4ID-KJ-jQs" eventType="touchUpInside" id="ZOw-k2-VEo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ja2-TP-ixd">
-                                <rect key="frame" x="40" y="550" width="520" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ja2-TP-ixd">
+                                <rect key="frame" x="36" y="550" width="528" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="64K-tf-10P"/>
                                 </constraints>
@@ -393,8 +393,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ete-gq-8mE">
-                                <rect key="frame" x="30" y="500" width="540" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ete-gq-8mE">
+                                <rect key="frame" x="26" y="500" width="548" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="cR5-BG-rzp"/>
                                 </constraints>
@@ -402,8 +402,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2N-N6-pvR">
-                                <rect key="frame" x="30" y="450" width="540" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2N-N6-pvR">
+                                <rect key="frame" x="26" y="450" width="548" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="kEh-zH-0Dy"/>
                                 </constraints>
@@ -414,8 +414,8 @@
                                     <segue destination="bOH-f4-6j8" kind="show" identifier="testReportSegue" id="9zq-aK-Nk3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95s-rh-ghP">
-                                <rect key="frame" x="30" y="550" width="540" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95s-rh-ghP">
+                                <rect key="frame" x="26" y="550" width="548" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Kwj-Ol-R8t"/>
                                 </constraints>
@@ -827,7 +827,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="uay-QZ-dNt" kind="relationship" relationship="rootViewController" id="9qO-4Q-uTD"/>
+                        <segue destination="rSv-yk-UiG" kind="relationship" relationship="rootViewController" id="ZXc-wM-NUO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zkK-q9-Yx3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -835,23 +835,23 @@
             <point key="canvasLocation" x="-1040" y="132"/>
         </scene>
         <!--门店-->
-        <scene sceneID="Kqs-YC-aL9">
+        <scene sceneID="Syl-ux-vXU">
             <objects>
-                <viewController id="uay-QZ-dNt" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="URp-EH-ElK"/>
-                        <viewControllerLayoutGuide type="bottom" id="enO-Xw-aP5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="T0S-YI-cpx">
+                <tableViewController id="rSv-yk-UiG" customClass="DDGeneralStoreViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vTo-sj-UTj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.39668051500000001" blue="0.50566197319999995" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="门店" id="aMF-fj-Lg3"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KN1-eO-Hr0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <connections>
+                            <outlet property="dataSource" destination="rSv-yk-UiG" id="rdh-BW-aMa"/>
+                            <outlet property="delegate" destination="rSv-yk-UiG" id="p4E-fB-x3N"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="门店" id="m0p-G6-0Aj"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kYu-WU-E6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="244"/>
+            <point key="canvasLocation" x="324" y="205"/>
         </scene>
     </scenes>
     <resources>

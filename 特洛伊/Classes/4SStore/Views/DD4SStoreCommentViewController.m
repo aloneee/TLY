@@ -62,6 +62,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"评论";
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     DDStoreScoreModel *scoreModel = [[DDStoreScoreModel alloc] init];

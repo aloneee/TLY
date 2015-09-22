@@ -31,8 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UIViewController *rootVC = self.viewControllers[0];
-    rootVC.view.backgroundColor = ColorWithHexAlpha(0x000000, 1);
+//    UIViewController *rootVC = self.viewControllers[0];
+//    rootVC.view.backgroundColor = ColorWithHexAlpha(0x000000, 1);
 //    rootVC.automaticallyAdjustsScrollViewInsets = NO;
     
     
