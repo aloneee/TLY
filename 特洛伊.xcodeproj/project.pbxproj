@@ -57,6 +57,8 @@
 		599A55221B8D6055007D71C8 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 599A551E1B8D6055007D71C8 /* MBProgressHUD+MJ.m */; };
 		599A55231B8D6055007D71C8 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 599A551F1B8D6055007D71C8 /* MBProgressHUD.bundle */; };
 		599A55241B8D6055007D71C8 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 599A55211B8D6055007D71C8 /* MBProgressHUD.m */; };
+		59ADFE371BB27D2400EE5EEB /* DDHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ADFE361BB27D2400EE5EEB /* DDHttpTool.m */; };
+		59ADFE3A1BB29D6300EE5EEB /* DDParentCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ADFE391BB29D6300EE5EEB /* DDParentCar.m */; };
 		59AE15E21BA9479900DBACD0 /* DDHomeFreshManViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AE15E11BA9479900DBACD0 /* DDHomeFreshManViewController.m */; };
 		59B6DE9C1BA9591B0046F1DB /* DDHomeSpecificPreferentialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B6DE9B1BA9591B0046F1DB /* DDHomeSpecificPreferentialViewController.m */; };
 		59B6DE9F1BA963960046F1DB /* DDHomeTableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B6DE9E1BA963960046F1DB /* DDHomeTableHeadView.m */; };
@@ -192,6 +194,10 @@
 		599A551F1B8D6055007D71C8 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		599A55201B8D6055007D71C8 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		599A55211B8D6055007D71C8 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		59ADFE351BB27D2400EE5EEB /* DDHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHttpTool.h; sourceTree = "<group>"; };
+		59ADFE361BB27D2400EE5EEB /* DDHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHttpTool.m; sourceTree = "<group>"; };
+		59ADFE381BB29D6300EE5EEB /* DDParentCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDParentCar.h; sourceTree = "<group>"; };
+		59ADFE391BB29D6300EE5EEB /* DDParentCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDParentCar.m; sourceTree = "<group>"; };
 		59AE15E01BA9479900DBACD0 /* DDHomeFreshManViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeFreshManViewController.h; sourceTree = "<group>"; };
 		59AE15E11BA9479900DBACD0 /* DDHomeFreshManViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeFreshManViewController.m; sourceTree = "<group>"; };
 		59B6DE9A1BA9591B0046F1DB /* DDHomeSpecificPreferentialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeSpecificPreferentialViewController.h; sourceTree = "<group>"; };
@@ -273,6 +279,8 @@
 			children = (
 				59699C201BB104BF00D486DC /* DDUserTool.h */,
 				59699C211BB104BF00D486DC /* DDUserTool.m */,
+				59ADFE351BB27D2400EE5EEB /* DDHttpTool.h */,
+				59ADFE361BB27D2400EE5EEB /* DDHttpTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -474,6 +482,8 @@
 				5985B9301BA0091700139593 /* DDHomeCar.m */,
 				59E34B2B1BA809AE0006B226 /* DDHomeMyCar.h */,
 				59E34B2C1BA809AE0006B226 /* DDHomeMyCar.m */,
+				59ADFE381BB29D6300EE5EEB /* DDParentCar.h */,
+				59ADFE391BB29D6300EE5EEB /* DDParentCar.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -902,6 +912,7 @@
 				599A55131B8D53E7007D71C8 /* XXBDeviceHelp.m in Sources */,
 				59E34B2A1BA8033B0006B226 /* DDHomeMyCarsViewController.m in Sources */,
 				599A55241B8D6055007D71C8 /* MBProgressHUD.m in Sources */,
+				59ADFE371BB27D2400EE5EEB /* DDHttpTool.m in Sources */,
 				59699C1B1BB0FA8C00D486DC /* DDMineRootViewController.m in Sources */,
 				599A550D1B8D53E7007D71C8 /* UIColor+Help.m in Sources */,
 				599A55081B8D53E7007D71C8 /* DDHomeCityCell.m in Sources */,
@@ -913,6 +924,7 @@
 				59B6DE9C1BA9591B0046F1DB /* DDHomeSpecificPreferentialViewController.m in Sources */,
 				59E34B441BA824980006B226 /* DDActivityCell.m in Sources */,
 				590723A21BAF9D0600B23D9C /* DDCommentCell.m in Sources */,
+				59ADFE3A1BB29D6300EE5EEB /* DDParentCar.m in Sources */,
 				5904DF921BA98C4A00556AE6 /* DDHomeRecommendRewardViewController.m in Sources */,
 				59E34B3C1BA819BE0006B226 /* HMNews.m in Sources */,
 				599A55121B8D53E7007D71C8 /* UIView+MotionEffect.m in Sources */,

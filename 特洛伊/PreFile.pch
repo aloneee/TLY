@@ -28,6 +28,9 @@
 #import "Singleton.h"
 #import "RHCoding.h"
 #import "Const.h"
+#import <NZAlertView.h>
+#import "DDHttpTool.h"
+#import <MJExtension.h>
 #endif
 
 //提高效率

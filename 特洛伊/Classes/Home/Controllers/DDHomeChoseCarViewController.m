@@ -7,61 +7,178 @@
 //
 
 #import "DDHomeChoseCarViewController.h"
-#import "SkyAssociationMenuView.h"
-@interface DDHomeChoseCarViewController ()<SkyAssociationMenuViewDelegate>
+#import "DDParentCar.h"
+
+
+
+//#import "SkyAssociationMenuView.h"
+@interface DDHomeChoseCarViewController ()<UITableViewDataSource,UITableViewDelegate>//<SkyAssociationMenuViewDelegate>
+
+@property(nonatomic, strong)  UITableView           *leftTable;
+@property(nonatomic, strong)  UITableView           *rightTable;
+
+//@property (nonatomic, strong) NSMutableArray        *s;
+@property (nonatomic, strong) NSMutableDictionary   *brandDict;
+@property (nonatomic, strong) NSMutableArray        *brandArray;
 
 @end
 
 @implementation DDHomeChoseCarViewController
 
+
+#pragma marhk ---- lazy load
+
+-(NSMutableDictionary *)brandDict{
+    
+    if (!_brandDict) {
+        _brandDict = [NSMutableDictionary dictionary];
+    }
+    return _brandDict;
+}
+
+-(NSMutableArray *)brandArray{
+    if (!_brandArray) {
+        _brandArray = [NSMutableArray array];
+    }
+    return _brandArray;
+}
+
+-(UITableView *)leftTable{
+    if (_leftTable == nil) {
+        self.leftTable = ({
+            UITableView *leftTable = [[UITableView alloc] initWithFrame:({
+                CGRect frame = CGRectMake(0, kNavgationBarHeight, kScreen_Width, kScreen_Height - kNavgationBarHeight - kTabBarHeight);
+                frame;
+            }) style:UITableViewStylePlain];
+            leftTable.delegate = self;
+            leftTable.dataSource = self;
+            [self.view addSubview:leftTable];
+            leftTable;
+        });
+    }
+    
+    return _leftTable;
+}
+
+-(UITableView *)rightTable{
+    if (_rightTable == nil) {
+        self.rightTable = ({
+            UITableView *rightTable= [[UITableView alloc] initWithFrame:({
+                CGRect frame = CGRectMake(kScreen_Width +  5, kNavgationBarHeight, kScreen_Width, kScreen_Height - kNavgationBarHeight - kTabBarHeight);
+                frame;
+            }) style:UITableViewStylePlain];
+            rightTable.delegate = self;
+            rightTable.dataSource = self;
+            [self.view addSubview:rightTable];
+            rightTable;
+        });
+    }
+    
+    return _leftTable;
+}
+
+
+#pragma mark ---- life cycle
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
+    self.title = @"选择品牌";
     self.view.backgroundColor = [UIColor whiteColor];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+
+    [self.view addSubview:self.leftTable];
+    [self.view addSubview:self.rightTable];
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kNavgationBarHeight)];
-    [self.view addSubview:view];
-    SkyAssociationMenuView *choseCarMenu = [[SkyAssociationMenuView alloc] init];
-    choseCarMenu.delegate = self;
+    [[DDHttpTool sharedTool] POST:DDGetCarBrandsUrl parameters:@{@"parentId":@0} success:^(id responseObject) {
+        
+        NSLog(@"%@",responseObject[@"result"]);
+        
+        for (NSString *key in responseObject[@"result"]) {
+            
+            NSArray *newCars = [DDParentCar objectArrayWithKeyValuesArray:[responseObject[@"result"] objectForKey:key]];
+            [self.brandDict setObject:newCars forKey:key];
+        }
+//        NSLog(@"%@",self.brandDict);
+        
+        NSMutableArray *a = [NSMutableArray array];
+        for (int i = 'A'; i <= 'Z'; i++) {
+            for (NSString *k in self.brandDict) {
+
+                NSMutableDictionary *d = [NSMutableDictionary dictionary];
+                
+                if ([k isEqualToString:[NSString stringWithFormat:@"%c",i]]) {
+                    [d setObject:self.brandDict[k] forKey:k];
+                    [a addObject:d];
+                }
+            }
+        }
+        [self.brandArray addObjectsFromArray:a];
+        
+        NSLog(@"%@",self.brandArray);
+        
+//        self.leftTable headerViewForSection:<#(NSInteger)#>
+        
+        [self.leftTable reloadData];
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error.localizedDescription);
+    }];
+}
+
+
+
+#pragma mark ----tableVie delegate & dataSource
+
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    if (tableView == self.leftTable) {
+        return  self.brandArray.count;
+    }
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    [choseCarMenu showAsDrawDownView:view];
+    if (tableView == self.leftTable) {
+        NSDictionary *d = self.brandArray[section];
+        NSString *key = [d allKeys][0];
+        return [[d objectForKey:key] count];
+    }
+    return 0;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(haveChosedCar)
-                                                 name:@"CHOSECARFINISHED"
-                                               object:nil];
+    static NSString *identifier = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
     
+    NSLog(@"%@",self.brandArray);
+    
+    
+    NSDictionary *d = self.brandArray[indexPath.section];
+    NSString *key = [d allKeys][0];
+    DDParentCar *car = [d objectForKey:key][indexPath.row];
+    cell.textLabel.text = car.name;
+    
+    return cell;
 }
 
--(void)haveChosedCar{
-    [self.navigationController popViewControllerAnimated:YES];
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+
+    if (tableView == self.leftTable) {
+        if (self.brandArray.count) {
+            return [self.brandArray[section] allKeys][0];
+        }
+    }
+    return nil;
 }
 
-- (NSInteger)assciationMenuView:(SkyAssociationMenuView*)asView countForClass:(NSInteger)idx {
-//    NSLog(@"choose %ld", idx);
-    return 10;
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 30;
 }
-
-- (NSString*)assciationMenuView:(SkyAssociationMenuView*)asView titleForClass_1:(NSInteger)idx_1 {
-//    NSLog(@"title %ld", idx_1);
-    return [NSString stringWithFormat:@"title %ld", idx_1];
-}
-
--(UIImage *)assciationMenuView:(SkyAssociationMenuView *)asView imageForClass_1:(NSInteger)idx_1{
-    return [UIImage imageNamed:@"icon_chose_arrow_sel@2x"];
-}
-
-- (NSString*)assciationMenuView:(SkyAssociationMenuView*)asView titleForClass_1:(NSInteger)idx_1 class_2:(NSInteger)idx_2 {
-//    NSLog(@"title %ld, %ld", idx_1, idx_2);
-    return [NSString stringWithFormat:@"title %ld, %ld", idx_1, idx_2];
-}
-
-- (NSString*)assciationMenuView:(SkyAssociationMenuView*)asView titleForClass_1:(NSInteger)idx_1 class_2:(NSInteger)idx_2 class_3:(NSInteger)idx_3 {
-//    NSLog(@"title %ld, %ld, %ld", idx_1, idx_2, idx_3);
-//    [self.navigationController popViewControllerAnimated:YES];
-    return [NSString stringWithFormat:@"%ld,%ld,%ld", idx_1, idx_2, idx_3];
-}
-
-
 
 @end

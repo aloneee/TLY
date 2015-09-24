@@ -24,11 +24,10 @@
 }
 
 -(void)tapGes:(UITapGestureRecognizer *)sender{
+    
     NSLog(@"go to  login");
     
     NSLog(@"%d",[DDUserTool existUser]);
-    
-    
     
 }
 
