@@ -183,6 +183,11 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.leftNavItem.enabled = YES;
+}
+
 
 -(void)middleBtnClick:(UIButton *)sender{
     switch (sender.tag) {
@@ -352,6 +357,7 @@
 
 }
 
+
 -(void)choseCity{
     
     NSLog(@"choseCity");
@@ -359,6 +365,7 @@
     DDHomeChoseCityViewController *choseCity = [[DDHomeChoseCityViewController alloc] init];
     choseCity.userLocationBtn = self.leftNavItem;
     [self.navigationController pushViewController:choseCity animated:YES];
+    self.leftNavItem.enabled = NO;
     
 }
 
