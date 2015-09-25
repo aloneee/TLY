@@ -27,7 +27,7 @@
 
 @implementation DD4SStoreCommentViewController
 
-
+#pragma mark --- lazy load
 -(NSArray *)comments{
     if (!_comments) {
         _comments = [NSMutableArray array];
@@ -59,6 +59,7 @@
     return _comments;
 }
 
+#pragma mark --- life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -74,7 +75,7 @@
     self.topView.scoreModel = scoreModel;
 }
 
-
+#pragma mark -- datasource & delegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     return self.comments.count;
@@ -98,10 +99,6 @@
     
     return frameModel.cellHeight;
 }
-
-
-
-
 
 
 /*

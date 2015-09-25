@@ -29,8 +29,7 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
 
 @implementation DDHomeAddCarInfoViewController
 
-#pragma mark --- lazyLoad
-
+#pragma mark --- lazy load
 -(DDDatePicker *)datePicker{
     
     if (!_datePicker) {
@@ -56,7 +55,8 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
                 NSDate *date = self.datePicker.date;
                 NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
                 [dateFormat setDateFormat:@"yyyy-MM-dd"];
-                [self.choseBuyDateBtn setTitle:[dateFormat stringFromDate:date] forState:UIControlStateNormal];
+                [self.choseBuyDateBtn setTitle:[dateFormat stringFromDate:date]
+                                      forState:UIControlStateNormal];
                 
             }];
         };
@@ -69,13 +69,12 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
     return _datePicker;
 }
 
-
+#pragma mark --- life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [self.currentKMField addTarget:self action:@selector(currentKMChange:) forControlEvents:UIControlEventAllEditingEvents];
-//    
-//    [self.licensePlateNumberField addTarget:self action:@selector(licensePlateNumberChange:) forControlEvents:UIControlEventAllEditingEvents];
+    self.view.shiftHeightAsDodgeViewForMLInputDodger = 50.0f;
+    [self.view registerAsDodgeViewForMLInputDodger];
     
     self.title = @"添加爱车";
     
@@ -87,16 +86,28 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
     self.doneBtn.layer.cornerRadius = 5.0f;
     
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShow) name:UIKeyboardWillShowNotification object:nil];
+    [kNote addObserver:self
+              selector:@selector(keyboardShow)
+                  name:UIKeyboardWillShowNotification
+                object:nil];
+    
+    [kNote addObserver:self
+              selector:@selector(didSelectCarName:)
+                  name:@"DidSelectCarName"
+                object:nil];
     
 }
-//- (void)currentKMChange:(UITextField*)sender{
-//    
-//}
-//
-//- (void)licensePlateNumberChange:(UITextField *)sender{
-//    
-//}
+
+-(void)dealloc{
+    [kNote removeObserver:self];
+}
+
+#pragma mark ---- helper
+-(void)didSelectCarName:(NSNotification *)note{
+    
+    [self.choseCarBtn setTitle:note.userInfo[@"carName"]
+                      forState:UIControlStateNormal];
+}
 
 -(void)keyboardShow{
     
@@ -106,18 +117,17 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
             self.datePicker.transform = CGAffineTransformIdentity;
             self.datePicker.isShow = NO;
         }];
-        
-        
     }
 }
 
-
 - (IBAction)choseCarBtnClick:(id)sender {
+    
     NSLog(@"gotoChoseCar");
     
     DDHomeChoseCarViewController *choseCar = [[DDHomeChoseCarViewController alloc] init];
     
-    [self.navigationController pushViewController:choseCar animated:YES];
+    [self.navigationController pushViewController:choseCar
+                                         animated:YES];
 }
 
 - (IBAction)choseCurrentNumOfYeayBtnClick:(id)sender {
@@ -132,7 +142,10 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
    
     self.datePicker.isShow = YES;
     
-    [UIView animateWithDuration:kAnimateDuration delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:kAnimateDuration
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
         
         self.datePicker.transform = CGAffineTransformMakeTranslation(0, -(self.datePicker.height + 100));
         

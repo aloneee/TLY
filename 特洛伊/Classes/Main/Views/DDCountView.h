@@ -19,5 +19,4 @@ typedef void (^DDCountViewValueChangeBlock) (DDCountView *);
 
 @property(nonatomic, copy)   DDCountViewValueChangeBlock  block;
 
-
 @end

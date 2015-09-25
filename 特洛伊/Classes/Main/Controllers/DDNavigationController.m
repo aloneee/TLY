@@ -14,7 +14,7 @@
 
 @implementation DDNavigationController
 
-
+#pragma mark --- life cycle
 +(void)initialize{
     
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"topbarbg_ios7"] forBarMetrics:UIBarMetricsDefault];
@@ -30,7 +30,6 @@
     [[UINavigationBar appearance] setTitleTextAttributes:attrs];
     
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,6 +54,7 @@
     
 }
 
+#pragma mark --- helper
 - (void)pop{
     
     [self popViewControllerAnimated:YES];
@@ -67,11 +67,6 @@
         return NO;
     }
     return YES;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{

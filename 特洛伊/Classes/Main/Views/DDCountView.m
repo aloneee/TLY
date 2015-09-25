@@ -18,6 +18,7 @@
 
 @implementation DDCountView
 
+#pragma mark -- life cycle
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -30,16 +31,6 @@
 
 -(void)awakeFromNib{
     [self setupUI];
-}
-
-//-(void)setMinCount:(NSInteger)minCount{
-//    _minCount = minCount;
-//    self.countLabel.text = [NSString stringWithFormat:@"%ld",minCount];
-//}
-
--(void)setCount:(NSInteger)count{
-    _count = count;
-    self.countLabel.text = [NSString stringWithFormat:@"%ld",count];
 }
 
 -(void)setupUI{
@@ -74,9 +65,18 @@
     self.maxCount = NSIntegerMax;
 }
 
+#pragma mark -- setter
+
+-(void)setCount:(NSInteger)count{
+    _count = count;
+    self.countLabel.text = [NSString stringWithFormat:@"%ld",count];
+}
+
 -(void)setBlock:(DDCountViewValueChangeBlock)block{
     _block = block;
 }
+
+#pragma mark --- helper
 
 - (void)minusBtnClick:(UIButton *)sender{
     
@@ -96,6 +96,7 @@
     _block(self);
 }
 
+#pragma mark --- layout
 -(void)layoutSubviews{
     
     [super layoutSubviews];

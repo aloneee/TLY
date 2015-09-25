@@ -11,6 +11,7 @@
 		5904DF921BA98C4A00556AE6 /* DDHomeRecommendRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5904DF911BA98C4A00556AE6 /* DDHomeRecommendRewardViewController.m */; };
 		5907239C1BAF9BBD00B23D9C /* DDCommentFrameModle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907239B1BAF9BBD00B23D9C /* DDCommentFrameModle.m */; };
 		590723A21BAF9D0600B23D9C /* DDCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 590723A11BAF9D0600B23D9C /* DDCommentCell.m */; };
+		590B7AC81BB51D5600F07565 /* DDHomeCarSubNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 590B7AC71BB51D5600F07565 /* DDHomeCarSubNameViewController.m */; };
 		591299321BAC2C2B00ADACDC /* DD4SStoreCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591299311BAC2C2B00ADACDC /* DD4SStoreCommentViewController.m */; };
 		591299351BAC316600ADACDC /* DDStoreScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 591299341BAC316600ADACDC /* DDStoreScoreView.m */; };
 		591299381BAC31C000ADACDC /* DDStoreScoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 591299371BAC31C000ADACDC /* DDStoreScoreModel.m */; };
@@ -33,6 +34,7 @@
 		5985B9491BA1210600139593 /* DD4SRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5985B9481BA1210600139593 /* DD4SRootViewController.m */; };
 		5985B94C1BA1273200139593 /* DD4SDropMenusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5985B94B1BA1273200139593 /* DD4SDropMenusView.m */; };
 		5985C0631BA190DA00139593 /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = 5985C0621BA190DA00139593 /* Const.m */; };
+		5987E7261BB4FA7800F83FF0 /* DDTouchBeginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5987E7251BB4FA7800F83FF0 /* DDTouchBeginView.m */; };
 		599A55021B8D53E7007D71C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 599A54BE1B8D53E7007D71C8 /* AppDelegate.m */; };
 		599A55031B8D53E7007D71C8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599A54BF1B8D53E7007D71C8 /* LaunchScreen.xib */; };
 		599A55041B8D53E7007D71C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599A54C11B8D53E7007D71C8 /* Main.storyboard */; };
@@ -108,6 +110,8 @@
 		5907239B1BAF9BBD00B23D9C /* DDCommentFrameModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDCommentFrameModle.m; path = "特洛伊/Classes/4SStore/Views/DDCommentFrameModle.m"; sourceTree = SOURCE_ROOT; };
 		590723A01BAF9D0600B23D9C /* DDCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCommentCell.h; sourceTree = "<group>"; };
 		590723A11BAF9D0600B23D9C /* DDCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCommentCell.m; sourceTree = "<group>"; };
+		590B7AC61BB51D5600F07565 /* DDHomeCarSubNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeCarSubNameViewController.h; sourceTree = "<group>"; };
+		590B7AC71BB51D5600F07565 /* DDHomeCarSubNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeCarSubNameViewController.m; sourceTree = "<group>"; };
 		591299301BAC2C2B00ADACDC /* DD4SStoreCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DD4SStoreCommentViewController.h; path = ../Views/DD4SStoreCommentViewController.h; sourceTree = "<group>"; };
 		591299311BAC2C2B00ADACDC /* DD4SStoreCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DD4SStoreCommentViewController.m; path = ../Views/DD4SStoreCommentViewController.m; sourceTree = "<group>"; };
 		591299331BAC316600ADACDC /* DDStoreScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDStoreScoreView.h; sourceTree = "<group>"; };
@@ -149,6 +153,8 @@
 		5985B94B1BA1273200139593 /* DD4SDropMenusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DD4SDropMenusView.m; sourceTree = "<group>"; };
 		5985C0611BA190DA00139593 /* Const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
 		5985C0621BA190DA00139593 /* Const.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Const.m; sourceTree = "<group>"; };
+		5987E7241BB4FA7800F83FF0 /* DDTouchBeginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTouchBeginView.h; sourceTree = "<group>"; };
+		5987E7251BB4FA7800F83FF0 /* DDTouchBeginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTouchBeginView.m; sourceTree = "<group>"; };
 		599A54BD1B8D53E7007D71C8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		599A54BE1B8D53E7007D71C8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		599A54C01B8D53E7007D71C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -449,6 +455,8 @@
 				59CD2ADC1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.m */,
 				59F3B31D1BA7EBEB006026C5 /* DDHomeChoseCarViewController.h */,
 				59F3B31E1BA7EBEB006026C5 /* DDHomeChoseCarViewController.m */,
+				590B7AC61BB51D5600F07565 /* DDHomeCarSubNameViewController.h */,
+				590B7AC71BB51D5600F07565 /* DDHomeCarSubNameViewController.m */,
 				59E34B281BA8033B0006B226 /* DDHomeMyCarsViewController.h */,
 				59E34B291BA8033B0006B226 /* DDHomeMyCarsViewController.m */,
 				59AE15E01BA9479900DBACD0 /* DDHomeFreshManViewController.h */,
@@ -514,6 +522,8 @@
 				5981C4521BABD85500788E6A /* DDHomeIndividualMaintenanceViewCell.h */,
 				5981C4531BABD85500788E6A /* DDHomeIndividualMaintenanceViewCell.m */,
 				5981C4541BABD85500788E6A /* DDHomeIndividualMaintenanceViewCell.xib */,
+				5987E7241BB4FA7800F83FF0 /* DDTouchBeginView.h */,
+				5987E7251BB4FA7800F83FF0 /* DDTouchBeginView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -871,6 +881,7 @@
 				59FC70FA1BAAAEF000CA9948 /* DDHomeOrderViewController.m in Sources */,
 				599A55021B8D53E7007D71C8 /* AppDelegate.m in Sources */,
 				59C6F1061BAC0E3B00DB2DFA /* DDFlowLayout.m in Sources */,
+				5987E7261BB4FA7800F83FF0 /* DDTouchBeginView.m in Sources */,
 				59699C1E1BB0FEEB00D486DC /* DDUser.m in Sources */,
 				59FC71071BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.m in Sources */,
 				59E34B2D1BA809AE0006B226 /* DDHomeMyCar.m in Sources */,
@@ -880,6 +891,7 @@
 				5981C44E1BABCA8300788E6A /* DDHomePersonalMaintenanceViewController.m in Sources */,
 				59EF91FF1BAF9A9C00A7778C /* DDCommenModel.m in Sources */,
 				5958A2291B9D400400B66F32 /* HomeRootViewController.m in Sources */,
+				590B7AC81BB51D5600F07565 /* DDHomeCarSubNameViewController.m in Sources */,
 				59F0DB2F1B8564BB0092B104 /* main.m in Sources */,
 				599A550E1B8D53E7007D71C8 /* UIImage+Help.m in Sources */,
 				59E34B401BA819CD0006B226 /* HMNewsCell.m in Sources */,
@@ -1066,7 +1078,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "特洛伊/PreFile.pch";
 				INFOPLIST_FILE = "特洛伊/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.TLY.lrh.didi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1085,7 +1097,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "特洛伊/PreFile.pch";
 				INFOPLIST_FILE = "特洛伊/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.TLY.lrh.didi;
 				PRODUCT_NAME = "$(TARGET_NAME)";

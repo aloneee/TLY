@@ -20,6 +20,7 @@
 
 @implementation DDHomePersonalMaintenanceViewController
 
+#pragma mark --- life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -31,11 +32,7 @@
     self.table.dataSource = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+#pragma mark -- delegate & dataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 10;
 }
@@ -68,6 +65,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark --- helper
 - (IBAction)gotoMaintenanceBtnClick:(id)sender {
     NSLog(@"%@",[self.table indexPathsForSelectedRows]);
 }

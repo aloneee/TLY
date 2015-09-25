@@ -22,12 +22,11 @@ SingletonM(DDHomeCarTool)
     
     [array addObject:car];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
+    BACK(^{
         // 存进沙盒
         [NSKeyedArchiver archiveRootObject:[array copy] toFile:DDHomeCarFile];
-        
     });
+    
 }
 
 + (NSMutableArray *)getCars;
@@ -44,21 +43,12 @@ SingletonM(DDHomeCarTool)
 {
     if ([[NSFileManager defaultManager] fileExistsAtPath:DDHomeCarFile])
     {
-
-//        [[self getCars] enumerateObjectsUsingBlock:^(DDHomeCar* c, NSUInteger idx, BOOL * _Nonnull stop) {
-//            if ([car isEqual:c]) {
-//                [[self getCars] removeObject:c];
-//                *stop = YES;
-//            }
-//        }];
-        
         [[self getCars] enumerateObjectsUsingBlock:^(DDHomeCar *c, NSUInteger idx, BOOL *stop) {
             if ([car isEqual:c]) {
                 [[self getCars] removeObject:c];
                 *stop = YES;
             }
         }];
-        
         [NSKeyedArchiver archiveRootObject:[self getCars] toFile:DDHomeCarFile];
     }
 }

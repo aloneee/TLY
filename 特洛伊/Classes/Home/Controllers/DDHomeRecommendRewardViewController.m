@@ -18,6 +18,7 @@
 
 @implementation DDHomeRecommendRewardViewController
 
+#pragma mark --- life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -64,14 +65,7 @@
     
 }
 
-- (void)rightNavItemClick{
-    NSLog(@"分享");
-}
-
-
 #pragma mark - Table view data source
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
@@ -91,6 +85,12 @@
     
     return cell;
 }
+
+#pragma mark --- helper
+- (void)rightNavItemClick{
+    NSLog(@"分享");
+}
+
 
 /*
 // Override to support conditional editing of the table view.

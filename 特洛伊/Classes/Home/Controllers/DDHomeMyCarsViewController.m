@@ -20,7 +20,7 @@
 
 @implementation DDHomeMyCarsViewController
 
-
+#pragma mark --- lazy load
 -(NSMutableArray *)cars{
     if (!_cars) {
         _cars = [NSMutableArray array];
@@ -32,14 +32,13 @@
         [_cars addObject:myCar];
         [_cars addObject:myCar];
         [_cars addObject:myCar];
-        
-        NSLog(@"%@",_cars);
-//        [self.table reloadData];
+
     }
     
     return _cars;
 }
 
+#pragma mark --- life cycle
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -70,16 +69,6 @@
     [self.view addSubview:addCarBtn];
 }
 
--(void)addCar:(UIButton *)sender{
-    
-    DDHomeAddCarInfoViewController *addCarInfo = [[UIStoryboard storyboardWithName:@"Main"
-                                                                            bundle:nil]
-                                                  instantiateViewControllerWithIdentifier:@"addCarInfo"];
-    NSLog(@"%@",addCarInfo);
-    
-    [self.navigationController pushViewController:addCarInfo animated:YES];
-}
-
 #pragma mark ---- tableView Delegate  and  dataSource
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -98,6 +87,15 @@
     return cell;
 }
 
-
+#pragma mark ---helper
+-(void)addCar:(UIButton *)sender{
+    
+    DDHomeAddCarInfoViewController *addCarInfo = [[UIStoryboard storyboardWithName:@"Main"
+                                                                            bundle:nil]
+                                                  instantiateViewControllerWithIdentifier:@"addCarInfo"];
+    NSLog(@"%@",addCarInfo);
+    
+    [self.navigationController pushViewController:addCarInfo animated:YES];
+}
 
 @end

@@ -42,9 +42,7 @@
 
 @implementation HomeRootViewController
 
-
-
-#pragma mark - 懒加载
+#pragma mark - lazy load
 - (CLLocationManager *)locationManager
 {
     if (!_locationManager) {
@@ -72,6 +70,8 @@
     return _newses;
 }
 
+
+#pragma mark --- life cycle
 -(void)viewDidLoad{
     
     [super viewDidLoad];
@@ -125,10 +125,9 @@
     layout.minimumLineSpacing = 0;
     layout.itemSize = CGSizeMake(kScreenWidth, kScreenHeight * 0.25);
     
-//    DDFlowLayout *layout = ;
-    
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, kNavgationBarHeight, kScreenWidth, kScreenHeight * 0.25) collectionViewLayout:[[DDFlowLayout alloc] init]];
-//    collectionView.
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, kNavgationBarHeight, kScreenWidth, kScreenHeight * 0.25)
+                                                          collectionViewLayout:[[DDFlowLayout alloc] init]];
+
     collectionView.backgroundColor = [UIColor redColor];
     collectionView.delegate = self;
     collectionView.dataSource = self;
@@ -136,11 +135,14 @@
     [self.view addSubview:collectionView];
     self.collectionView = collectionView;
     // 注册cell
-    [self.collectionView registerNib:[UINib nibWithNibName:@"HMNewsCell" bundle:nil] forCellWithReuseIdentifier:HMCellIdentifier];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"HMNewsCell"
+                                                    bundle:nil]
+          forCellWithReuseIdentifier:HMCellIdentifier];
     // 默认显示最中间的那组
-    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:HMMaxSections/2] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
-    
-    
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0
+                                                                     inSection:HMMaxSections/2]
+                                atScrollPosition:UICollectionViewScrollPositionLeft
+                                        animated:NO];
     // 添加定时器
     [self addTimer];
     
@@ -160,7 +162,6 @@
     for (int i = 0; i <MiddleBtnTitles.count; i++) {
         UIButton *middleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         middleBtn.frame = CGRectMake(middleBtnW * i, CGRectGetMaxY(self.collectionView.frame) + 10, middleBtnW, kScreenHeight * 0.25);
-//        middleBtn.layer.cornerRadius = 10;
         middleBtn.backgroundColor = [UIColor blueColor];
         middleBtn.tag = i;
         [middleBtn setTitle:MiddleBtnTitles[i] forState:UIControlStateNormal];
@@ -173,7 +174,6 @@
     for (int i = 0; i < bottomBtnTitles.count; i++) {
         UIButton *middleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         middleBtn.frame = CGRectMake(bottomBtnW * i, kScreenHeight * 0.75 - kTabBarHeight, bottomBtnW, kScreenHeight * 0.25);
-        //        middleBtn.layer.cornerRadius = 10;
         middleBtn.backgroundColor = [UIColor redColor];
         middleBtn.tag = i + 4;
         [middleBtn setTitle:bottomBtnTitles[i] forState:UIControlStateNormal];
@@ -189,108 +189,7 @@
 }
 
 
--(void)middleBtnClick:(UIButton *)sender{
-    switch (sender.tag) {
-        case 0:{
-            
-            NSLog(@"新人专区");
-            DDHomeFreshManViewController *freshMan = [[DDHomeFreshManViewController alloc] init];
-            [self.navigationController pushViewController:freshMan animated:YES];
-        }
-            break;
-        case 1:{
-           NSLog(@"每日整点");
-            DDHomeSpecificPreferentialViewController *sp = [[DDHomeSpecificPreferentialViewController alloc] init];
-            [self.navigationController pushViewController:sp animated:YES];
-        }
-            
-            break;
-        case 2:{
-            NSLog(@"推荐奖励");
-            DDHomeRecommendRewardViewController *rr = [[DDHomeRecommendRewardViewController alloc] init];
-            [self.navigationController pushViewController:rr
-                                                 animated:YES];
-        }
-            break;
-        case 3:{
-            NSLog(@"冰点价格");
-            DDHomeIcePriceViewController *ip = [[DDHomeIcePriceViewController alloc] init];
-            [self.navigationController pushViewController:ip animated:YES];
-        }
-            break;
-        default:
-            break;
-    }
-}
-
-- (void)bottomBtnClick:(UIButton *)sender{
-    switch (sender.tag) {
-        case 4:
-            NSLog(@"维修预约");
-            break;
-        case 5:{
-            NSLog(@"汽车保养");
-            DDHomeMaintenanceViewController *m = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"maintenanceRoot"];
-            [self.navigationController pushViewController:m animated:YES];
-        }
-            break;
-        default:
-            break;
-    }
-}
-
-/**
- *  添加定时器
- */
-- (void)addTimer
-{
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
-    self.timer = timer;
-}
-
-/**
- *  移除定时器
- */
-- (void)removeTimer
-{
-    // 停止定时器
-    [self.timer invalidate];
-    self.timer = nil;
-}
-
-- (NSIndexPath *)resetIndexPath
-{
-    // 当前正在展示的位置
-    NSIndexPath *currentIndexPath = [[self.collectionView indexPathsForVisibleItems] lastObject];
-    // 马上显示回最中间那组的数据
-    NSIndexPath *currentIndexPathReset = [NSIndexPath indexPathForItem:currentIndexPath.item inSection:HMMaxSections/2];
-    [self.collectionView scrollToItemAtIndexPath:currentIndexPathReset atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
-    return currentIndexPathReset;
-}
-
-/**
- *  下一页
- */
-- (void)nextPage
-{
-    // 1.马上显示回最中间那组的数据
-    NSIndexPath *currentIndexPathReset = [self resetIndexPath];
-    
-    // 2.计算出下一个需要展示的位置
-    NSInteger nextItem = currentIndexPathReset.item + 1;
-    NSInteger nextSection = currentIndexPathReset.section;
-    if (nextItem == self.newses.count) {
-        nextItem = 0;
-        nextSection++;
-    }
-    NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:nextItem inSection:nextSection];
-    
-    // 3.通过动画滚动到下一个位置
-    [self.collectionView scrollToItemAtIndexPath:nextIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
-}
-
-#pragma mark - UICollectionViewDataSource
+#pragma mark - UICollectionView dataSource & delegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return self.newses.count;
@@ -310,7 +209,6 @@
     return cell;
 }
 
-#pragma mark  - UICollectionViewDelegate
 /**
  *  当用户即将开始拖拽的时候就调用
  */
@@ -337,6 +235,96 @@
 }
 
 
+#pragma mark --- helper
+-(void)middleBtnClick:(UIButton *)sender{
+    
+    NSArray *array = @[@"FreshMan",@"SpecificPreferential",@"RecommendReward",@"IcePrice"];
+    
+    [self.navigationController pushViewController:[[NSClassFromString([NSString stringWithFormat:@"DDHome%@ViewController",array[sender.tag]]) alloc] init]
+                                         animated:YES];
+}
+
+- (void)bottomBtnClick:(UIButton *)sender{
+    switch (sender.tag) {
+        case 4:
+            NSLog(@"维修预约");
+            break;
+        case 5:{
+            NSLog(@"汽车保养");
+            DDHomeMaintenanceViewController *m = [[UIStoryboard storyboardWithName:@"Main"
+                                                                            bundle:nil] instantiateViewControllerWithIdentifier:@"maintenanceRoot"];
+            [self.navigationController pushViewController:m
+                                                 animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+/**
+ *  添加定时器
+ */
+- (void)addTimer
+{
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0
+                                                      target:self
+                                                    selector:@selector(nextPage)
+                                                    userInfo:nil
+                                                     repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:timer
+                              forMode:NSRunLoopCommonModes];
+    self.timer = timer;
+}
+
+/**
+ *  移除定时器
+ */
+- (void)removeTimer
+{
+    // 停止定时器
+    [self.timer invalidate];
+    self.timer = nil;
+}
+
+- (NSIndexPath *)resetIndexPath
+{
+    // 当前正在展示的位置
+    NSIndexPath *currentIndexPath = [[self.collectionView indexPathsForVisibleItems] lastObject];
+    // 马上显示回最中间那组的数据
+    NSIndexPath *currentIndexPathReset = [NSIndexPath indexPathForItem:currentIndexPath.item
+                                                             inSection:HMMaxSections/2];
+    
+    [self.collectionView scrollToItemAtIndexPath:currentIndexPathReset
+                                atScrollPosition:UICollectionViewScrollPositionLeft
+                                        animated:NO];
+    return currentIndexPathReset;
+}
+
+/**
+ *  下一页
+ */
+- (void)nextPage
+{
+    // 1.马上显示回最中间那组的数据
+    NSIndexPath *currentIndexPathReset = [self resetIndexPath];
+    
+    // 2.计算出下一个需要展示的位置
+    NSInteger nextItem = currentIndexPathReset.item + 1;
+    NSInteger nextSection = currentIndexPathReset.section;
+    if (nextItem == self.newses.count) {
+        nextItem = 0;
+        nextSection++;
+    }
+    NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:nextItem
+                                                     inSection:nextSection];
+    
+    // 3.通过动画滚动到下一个位置
+    [self.collectionView scrollToItemAtIndexPath:nextIndexPath
+                                atScrollPosition:UICollectionViewScrollPositionLeft
+                                        animated:YES];
+}
+
 #pragma mark ---- 定位相关
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     CLLocation *userLocation = [locations lastObject];
@@ -344,23 +332,21 @@
     [self.geocoder reverseGeocodeLocation:userLocation
                         completionHandler:^(NSArray *placemarks, NSError *error) {
                             
-        CLPlacemark *placemark = [placemarks lastObject];
-        
-        NSLog(@"%@",placemark.administrativeArea);
+                            CLPlacemark *placemark = [placemarks lastObject];
                             
-        if (placemark.administrativeArea) {
-            [self.leftNavItem setTitle:placemark.administrativeArea
-                              forState:UIControlStateNormal];
-            [self.locationManager stopUpdatingLocation];
-        }
-    }];
-
+                            NSLog(@"%@",placemark.administrativeArea);
+                            
+                            if (placemark.administrativeArea) {
+                                [self.leftNavItem setTitle:placemark.administrativeArea
+                                                  forState:UIControlStateNormal];
+                                [self.locationManager stopUpdatingLocation];
+                            }
+                        }];
+    
 }
 
 
 -(void)choseCity{
-    
-    NSLog(@"choseCity");
     
     DDHomeChoseCityViewController *choseCity = [[DDHomeChoseCityViewController alloc] init];
     choseCity.userLocationBtn = self.leftNavItem;
@@ -370,11 +356,9 @@
 }
 
 -(void)addCarInfo{
-    NSLog(@"addCarInfo");
     
     DDHomeAddCarInfoViewController *addCarInfo = [[UIStoryboard storyboardWithName:@"Main"
                                                                             bundle:nil] instantiateViewControllerWithIdentifier:@"addCarInfo"];
-    NSLog(@"%@",addCarInfo);
     
     [self.navigationController pushViewController:addCarInfo animated:YES];
 }

@@ -147,7 +147,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:kDropMenuTableCellClickNotification
+    [kNote postNotificationName:kDropMenuTableCellClickNotification
                                                         object:nil
                                                       userInfo:@{@"table":tableView,@"TAG":@(tableView.tag),@"STR":(tableView.tag == 0 ? self.serviceTypes[indexPath.row] : tableView.tag == 2 ? self.carTypes[indexPath.row] : self.sortTypes[indexPath.row])}];
     [tableView removeFromSuperview];

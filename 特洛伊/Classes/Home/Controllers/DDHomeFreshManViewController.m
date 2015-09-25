@@ -18,6 +18,7 @@
 
 @implementation DDHomeFreshManViewController
 
+#pragma mark --- life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"新人注册大礼包";
@@ -43,12 +44,8 @@
     [self.view addSubview:headImageView];
 }
 
-- (void)rightNavItemClick{
-    NSLog(@"分享");
-}
 
-#pragma mark - Table view data source
-
+#pragma mark - Table view dataSource & delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
@@ -67,6 +64,12 @@
     cell.textLabel.text = @"测试小酱油呀～～～～";
     
     return cell;
+}
+
+#pragma mark --- helper
+
+- (void)rightNavItemClick{
+    NSLog(@"分享");
 }
 
 

@@ -28,6 +28,7 @@ static const CGFloat kTopBtnHeight = 44;
 
 @implementation DD4SRootViewController
 
+#pragma mark --- life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -51,31 +52,8 @@ static const CGFloat kTopBtnHeight = 44;
     
     [self.view addSubview:menu];
     self.menu = menu;
-
-//    DD4SDropMenusView *dropMenusView = [[DD4SDropMenusView alloc] initWithFrame:CGRectMake(0, -kTopBtnHeight, kScreenWidth, kTopBtnHeight)];
-//    [self.view addSubview:dropMenusView];
-//    
-//    [[NSNotificationCenter defaultCenter] addObserverForName:kDropMenuTableCellClickNotification
-//                                                      object:nil
-//                                                       queue:[NSOperationQueue mainQueue]
-//                                                  usingBlock:^(NSNotification * _Nonnull note) {
-//        NSLog(@"%@",note);
-//    }];
     
-
 }
-//
-//-(void)dealloc{
-//    [[NSNotificationCenter defaultCenter] removeObserver:self];
-//}
-#pragma mark -- ScrollViewDelegate
-
-//-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-//    
-//    if ([scrollView isEqual:self.tableView]) {
-//        [self.menu backgroundTapped:nil];
-//    }
-//}
 
 #pragma mark ---- DOPDropMenuDelegate
 - (NSInteger)numberOfColumnsInMenu:(DOPDropDownMenu *)menu
@@ -183,14 +161,6 @@ static const CGFloat kTopBtnHeight = 44;
     
 }
 
-
-
-
-//-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(nonnull NSIndexPath *)indexPath{
-//    
-//}
-
-
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     
 }
@@ -217,10 +187,6 @@ static const CGFloat kTopBtnHeight = 44;
 
     return actions;
 }
-
-//-(UITableViewCellAccessoryType )tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath{
-//    return UITableViewCellAccessoryDisclosureIndicator;
-//}
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%@lllllllll",indexPath);

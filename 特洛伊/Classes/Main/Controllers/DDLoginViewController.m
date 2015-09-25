@@ -23,6 +23,8 @@ static NSTimeInterval kDownCount;
 
 @implementation DDLoginViewController
 
+
+#pragma mark --- life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -47,6 +49,7 @@ static NSTimeInterval kDownCount;
     
 }
 
+#pragma mark --- helper
 - (void)phoneNumberViewChangeValue:(UITextField *)phoneNumberView{
     NSLog(@"%@",phoneNumberView.text);
     
@@ -58,13 +61,6 @@ static NSTimeInterval kDownCount;
         self.getVerificationCodeBtn.enabled = NO;
     }
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     

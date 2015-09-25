@@ -26,6 +26,7 @@
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        
         UIImageView *headImageView = [[UIImageView alloc] init];
         [self.contentView addSubview:headImageView];
         self.headImageView = headImageView;
@@ -53,7 +54,9 @@
     
 //    self.headImageView   geti image frome url  via SDWebImage
     self.headImageView.frame = commentFrameModel.headImageFrame;
-    self.headImageView.image = [UIImage captureCircleImageWithImage:[UIImage imageNamed:@"img_03"] andBorderWith:2.0 andBorderColor:[UIColor orangeColor]];
+    self.headImageView.image = [UIImage captureCircleImageWithImage:[UIImage imageNamed:@"img_03"]
+                                                      andBorderWith:2.0
+                                                     andBorderColor:[UIColor orangeColor]];
     
     self.timeView.frame = commentFrameModel.postTimeFrame;
     self.timeView.text = commentFrameModel.commentModel.postTime;
@@ -70,7 +73,8 @@
     static NSString *identifier = @"commentCell";
     DDCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
-        cell = [[DDCommentCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[DDCommentCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                    reuseIdentifier:identifier];
     }
     return cell;
 }

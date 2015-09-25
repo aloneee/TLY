@@ -16,6 +16,7 @@
 
 @implementation DDMineRootViewController
 
+#pragma mark --- life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -29,11 +30,6 @@
     
     NSLog(@"%d",[DDUserTool existUser]);
     
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source

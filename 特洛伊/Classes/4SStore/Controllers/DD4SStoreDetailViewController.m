@@ -31,7 +31,7 @@
 
 @implementation DD4SStoreDetailViewController
 
-
+#pragma mark -- lazy load
 - (NSArray *)newses
 {
     if (_newses == nil) {
@@ -42,6 +42,7 @@
     return _newses;
 }
 
+#pragma mark --- life cycle
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -105,7 +106,54 @@
     [self.view addSubview:countView];
 }
 
+#pragma mark - UICollectionViewDataSource
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.newses.count;
+}
 
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return HMMaxSections;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    HMNewsCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:HMCellIdentifier forIndexPath:indexPath];
+    
+    cell.news = self.newses[indexPath.item];
+    
+    return cell;
+}
+
+#pragma mark  - UICollectionViewDelegate
+/**
+ *  当用户即将开始拖拽的时候就调用
+ */
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self removeTimer];
+}
+
+
+#pragma mark --- scrollViewDelegate
+/**
+ *  当用户停止拖拽的时候就调用
+ */
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    //    NSLog(@"scrollViewDidEndDragging--松开");
+    [self addTimer];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    int page = (int)(scrollView.contentOffset.x / scrollView.bounds.size.width + 0.5) % self.newses.count;
+    self.pageControl.currentPage = page;
+}
+
+
+#pragma mark --- helper
 
 - (void)btnClick:(UIButton *)sender{
     DD4SStoreCommentViewController *comment = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"commentVC"];
@@ -173,52 +221,6 @@
     [self.collectionView scrollToItemAtIndexPath:nextIndexPath
                                 atScrollPosition:UICollectionViewScrollPositionLeft
                                         animated:YES];
-}
-
-#pragma mark - UICollectionViewDataSource
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    return self.newses.count;
-}
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return HMMaxSections;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    HMNewsCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:HMCellIdentifier forIndexPath:indexPath];
-    
-    cell.news = self.newses[indexPath.item];
-    
-    return cell;
-}
-
-#pragma mark  - UICollectionViewDelegate
-/**
- *  当用户即将开始拖拽的时候就调用
- */
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
-    [self removeTimer];
-}
-
-
-#pragma mark --- scrollViewDelegate
-/**
- *  当用户停止拖拽的时候就调用
- */
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    //    NSLog(@"scrollViewDidEndDragging--松开");
-    [self addTimer];
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    int page = (int)(scrollView.contentOffset.x / scrollView.bounds.size.width + 0.5) % self.newses.count;
-    self.pageControl.currentPage = page;
 }
 
 

@@ -14,25 +14,17 @@
 
 @implementation DDHomeIcePriceViewController
 
+#pragma mark --- life cycle
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     
     self.title = @"冰点价格";
-    
-
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete method implementation.
-    // Return the number of rows in the section.
+
     return 50;
 }
 

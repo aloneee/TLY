@@ -17,7 +17,7 @@
 
 @implementation DDHomeChoseCityViewController
 
-
+#pragma mark ---- lazy load
 -(NSMutableArray *)citys{
     if (!_citys) {
         _citys = [NSMutableArray arrayWithObjects:@"北京市",@"长春市",@"上海市",@"天津市",@"重庆市",@"石家庄市", nil];
@@ -25,6 +25,7 @@
     return _citys;
 }
 
+#pragma mark --- life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -50,35 +51,19 @@
     
 }
 
-- (void) popBack{
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Table view data source
-
+#pragma mark - Table view data source & delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    
-//#warning Incomplete method implementation.
-    // Return the number of rows in the section.
     if (0 == section) {
         return 1;
     }
     return self.citys.count;
 }
-
 
 - (DDHomeCityCell *)tableView:(UITableView *)tableView
         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -110,6 +95,12 @@ titleForHeaderInSection:(NSInteger)section{
         return @"已开通城市";
     }
     
+}
+
+
+#pragma mark --- helper
+- (void) popBack{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

@@ -37,7 +37,7 @@
 
 @implementation DDGeneralStoreViewController
 
-
+#pragma mark -- lazy load
 - (NSArray *)newses
 {
     if (_newses == nil) {
@@ -48,6 +48,7 @@
     return _newses;
 }
 
+#pragma mark --- life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -106,6 +107,92 @@
     }
     
 }
+
+#pragma mark - UICollectionViewDataSource
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.newses.count;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return HMMaxSections;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    HMNewsCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:HMCellIdentifier forIndexPath:indexPath];
+    
+    cell.news = self.newses[indexPath.item];
+    
+    return cell;
+}
+
+#pragma mark  - UICollectionViewDelegate
+/**
+ *  当用户即将开始拖拽的时候就调用
+ */
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    if ([scrollView isKindOfClass:[UICollectionView class]]) {
+        [self removeTimer];
+    }
+}
+
+#pragma mark --- scrollViewDelegate
+/**
+ *  当用户停止拖拽的时候就调用
+ */
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    
+    if ([scrollView isKindOfClass:[UICollectionView class]]) {
+        [self addTimer];
+    }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if ([scrollView isKindOfClass:[UICollectionView class]]) {
+        int page = (int)(scrollView.contentOffset.x / scrollView.bounds.size.width + 0.5) % self.newses.count;
+        self.pageControl.currentPage = page;
+    }
+    
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    //#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    //#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *identifier = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    
+    if (indexPath.row == 0) {
+        cell.textLabel.text = @"测试小酱油呀...00000";
+    }else{
+        cell.textLabel.text = @"测试小酱油呀...11111";
+    }
+    
+    return cell;
+}
+
+#pragma mark -- helper
 
 -(void)btnClick:(UIButton *)sender{
     NSLog(@"lalalal");
@@ -178,96 +265,6 @@
     [self.collectionView scrollToItemAtIndexPath:nextIndexPath
                                 atScrollPosition:UICollectionViewScrollPositionLeft
                                         animated:YES];
-}
-
-#pragma mark - UICollectionViewDataSource
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    return self.newses.count;
-}
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return HMMaxSections;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    HMNewsCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:HMCellIdentifier forIndexPath:indexPath];
-    
-    cell.news = self.newses[indexPath.item];
-    
-    return cell;
-}
-
-#pragma mark  - UICollectionViewDelegate
-/**
- *  当用户即将开始拖拽的时候就调用
- */
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
-    if ([scrollView isKindOfClass:[UICollectionView class]]) {
-        [self removeTimer];
-    }
-}
-
-#pragma mark --- scrollViewDelegate
-/**
- *  当用户停止拖拽的时候就调用
- */
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    
-    if ([scrollView isKindOfClass:[UICollectionView class]]) {
-        [self addTimer];
-    }
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    if ([scrollView isKindOfClass:[UICollectionView class]]) {
-        int page = (int)(scrollView.contentOffset.x / scrollView.bounds.size.width + 0.5) % self.newses.count;
-        self.pageControl.currentPage = page;
-    }
-    
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 10;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *identifier = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
-    
-    if (indexPath.row == 0) {
-        cell.textLabel.text = @"测试小酱油呀...00000";
-    }else{
-        cell.textLabel.text = @"测试小酱油呀...11111";
-    }
-    
-    return cell;
 }
 
 /*

@@ -28,6 +28,8 @@
 
 @implementation DDHomeMaintenanceViewController
 
+#pragma mark --- life cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -72,13 +74,15 @@
     
 }
 
-- (void)tapGes{
-    NSLog(@"tapGes");
-}
-
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.view.backgroundColor = [UIColor whiteColor];
+}
+
+#pragma mark --- helper
+
+- (void)tapGes{
+    NSLog(@"tapGes");
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

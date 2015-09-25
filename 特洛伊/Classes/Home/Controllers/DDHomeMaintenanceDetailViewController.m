@@ -28,6 +28,7 @@ static const CGFloat kTopBtnHeight = 44;
 
 @implementation DDHomeMaintenanceDetailViewController
 
+#pragma mark --- life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     

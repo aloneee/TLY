@@ -99,7 +99,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="品牌：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYe-vF-CYA">
-                                <rect key="frame" x="20" y="40" width="100" height="21"/>
+                                <rect key="frame" x="20" y="120" width="100" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="S7i-w9-EKV"/>
                                     <constraint firstAttribute="height" constant="21" id="dwu-gP-Rsc"/>
@@ -109,7 +109,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajJ-ob-Qh8">
-                                <rect key="frame" x="120" y="122" width="430" height="21"/>
+                                <rect key="frame" x="120" y="202" width="430" height="21"/>
                                 <state key="normal" title="请选择车辆年限">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -118,53 +118,53 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前公里：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jza-LG-664">
-                                <rect key="frame" x="20" y="81" width="100" height="21"/>
+                                <rect key="frame" x="20" y="161" width="100" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="当前公里数  (km)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y6w-YB-b30">
-                                <rect key="frame" x="120" y="81" width="430" height="21"/>
+                                <rect key="frame" x="120" y="161" width="430" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="车牌号：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6m-4E-XLG">
-                                <rect key="frame" x="20" y="204" width="100" height="21"/>
+                                <rect key="frame" x="20" y="284" width="100" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="车辆年限：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWJ-6d-WDb">
-                                <rect key="frame" x="20" y="122" width="100" height="21"/>
+                                <rect key="frame" x="20" y="202" width="100" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="购车时间：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdS-57-0Oc">
-                                <rect key="frame" x="20" y="163" width="100" height="21"/>
+                                <rect key="frame" x="20" y="243" width="100" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sLk-sc-f3t">
-                                <rect key="frame" x="564" y="40" width="26" height="21"/>
+                                <rect key="frame" x="564" y="120" width="26" height="21"/>
                                 <color key="backgroundColor" red="1" green="0.042358625216598167" blue="0.15221181047302079" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ULs-i7-Ufg">
-                                <rect key="frame" x="564" y="122" width="26" height="21"/>
+                                <rect key="frame" x="564" y="202" width="26" height="21"/>
                                 <color key="backgroundColor" red="1" green="0.042358625220000001" blue="0.15221181049999999" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rxw-gE-JYc">
-                                <rect key="frame" x="564" y="81" width="26" height="21"/>
+                                <rect key="frame" x="564" y="161" width="26" height="21"/>
                                 <color key="backgroundColor" red="1" green="0.042358625220000001" blue="0.15221181049999999" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请填写车牌号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PPT-yD-i64">
-                                <rect key="frame" x="120" y="204" width="430" height="21"/>
+                                <rect key="frame" x="120" y="284" width="430" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5IY-tr-nop">
-                                <rect key="frame" x="120" y="40" width="430" height="21"/>
+                                <rect key="frame" x="120" y="120" width="430" height="21"/>
                                 <state key="normal" title="请选择品牌">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -173,7 +173,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cH-GY-qTD">
-                                <rect key="frame" x="120" y="163" width="430" height="21"/>
+                                <rect key="frame" x="120" y="243" width="430" height="21"/>
                                 <state key="normal" title="请选择您的购车时间">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -225,7 +225,7 @@
                             <constraint firstItem="4cH-GY-qTD" firstAttribute="leading" secondItem="hdS-57-0Oc" secondAttribute="trailing" id="RJk-qO-rzR"/>
                             <constraint firstItem="sLk-sc-f3t" firstAttribute="height" secondItem="5IY-tr-nop" secondAttribute="height" id="Spf-UR-Tlf"/>
                             <constraint firstItem="b6m-4E-XLG" firstAttribute="height" secondItem="jza-LG-664" secondAttribute="height" id="SxX-t9-4kl"/>
-                            <constraint firstItem="5IY-tr-nop" firstAttribute="top" secondItem="cSA-4v-ci7" secondAttribute="bottom" constant="20" id="T9i-BH-9x7"/>
+                            <constraint firstItem="5IY-tr-nop" firstAttribute="top" secondItem="cSA-4v-ci7" secondAttribute="bottom" constant="100" id="T9i-BH-9x7"/>
                             <constraint firstItem="ULs-i7-Ufg" firstAttribute="height" secondItem="sLk-sc-f3t" secondAttribute="height" id="TWW-bG-gtB"/>
                             <constraint firstItem="hdS-57-0Oc" firstAttribute="height" secondItem="jWJ-6d-WDb" secondAttribute="height" id="ToY-YV-8Qi"/>
                             <constraint firstItem="4cH-GY-qTD" firstAttribute="top" secondItem="ajJ-ob-Qh8" secondAttribute="bottom" constant="20" id="V0H-hF-u7g"/>
@@ -234,11 +234,11 @@
                             <constraint firstItem="jza-LG-664" firstAttribute="leading" secondItem="CHG-qF-v34" secondAttribute="leading" constant="20" id="Yvb-ef-D0H"/>
                             <constraint firstItem="jWJ-6d-WDb" firstAttribute="height" secondItem="jza-LG-664" secondAttribute="height" id="aaO-QQ-KKq"/>
                             <constraint firstItem="Y6w-YB-b30" firstAttribute="leading" secondItem="jza-LG-664" secondAttribute="trailing" id="d0y-ll-RwI"/>
-                            <constraint firstItem="dYe-vF-CYA" firstAttribute="top" secondItem="cSA-4v-ci7" secondAttribute="bottom" constant="20" id="dNB-PF-4sK"/>
+                            <constraint firstItem="dYe-vF-CYA" firstAttribute="top" secondItem="cSA-4v-ci7" secondAttribute="bottom" constant="100" id="dNB-PF-4sK"/>
                             <constraint firstItem="b6m-4E-XLG" firstAttribute="top" secondItem="4cH-GY-qTD" secondAttribute="bottom" constant="20" id="eM3-lD-Cx7"/>
                             <constraint firstItem="ajJ-ob-Qh8" firstAttribute="width" secondItem="5IY-tr-nop" secondAttribute="width" id="gFq-Ba-fAF"/>
                             <constraint firstItem="Y6w-YB-b30" firstAttribute="height" secondItem="jza-LG-664" secondAttribute="height" id="hxo-Gi-al9"/>
-                            <constraint firstItem="sLk-sc-f3t" firstAttribute="top" secondItem="cSA-4v-ci7" secondAttribute="bottom" constant="20" id="jgg-ur-V31"/>
+                            <constraint firstItem="sLk-sc-f3t" firstAttribute="top" secondItem="cSA-4v-ci7" secondAttribute="bottom" constant="100" id="jgg-ur-V31"/>
                             <constraint firstItem="5IY-tr-nop" firstAttribute="leading" secondItem="dYe-vF-CYA" secondAttribute="trailing" id="lLZ-NU-XWr"/>
                             <constraint firstItem="dYe-vF-CYA" firstAttribute="leading" secondItem="CHG-qF-v34" secondAttribute="leading" constant="20" id="ldQ-JJ-o84"/>
                             <constraint firstItem="hdS-57-0Oc" firstAttribute="width" secondItem="jWJ-6d-WDb" secondAttribute="width" id="lrX-44-vh0"/>

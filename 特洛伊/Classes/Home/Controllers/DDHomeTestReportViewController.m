@@ -19,6 +19,7 @@
 
 @implementation DDHomeTestReportViewController
 
+#pragma mark -- life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -35,6 +36,8 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
 }
+
+#pragma mark --- helper
 
 - (IBAction)goToMaintenance:(id)sender {
     
