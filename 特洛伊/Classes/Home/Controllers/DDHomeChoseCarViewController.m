@@ -7,7 +7,7 @@
 //
 
 #import "DDHomeChoseCarViewController.h"
-#import "DDParentCar.h"
+#import "DDHomeCar.h"
 #import "DDTouchBeginView.h"
 #import "DDHomeCarSubNameViewController.h"
 
@@ -35,10 +35,15 @@
         self.rightContainer = ({
             
             UIView *rightContainer = [[UIView alloc] initWithFrame:({
-                CGRect frame = CGRectMake(kScreenWidth , kNavgationBarHeight, kScreenWidth, kScreenHeight - kNavgationBarHeight - kTabBarHeight);
+                CGRect frame = CGRectMake(kScreenWidth , kNavgationBarHeight, kScreenWidth, kScreenHeight - kNavgationBarHeight);
                 frame;
             })];
             rightContainer.backgroundColor = CLEARCOLOR;
+            rightContainer.layer.masksToBounds = NO;
+            rightContainer.layer.cornerRadius = 0.0;
+            rightContainer.layer.shadowOffset = CGSizeMake(-5.0f, 0.0f);
+            rightContainer.layer.shadowRadius = 5.0;
+            rightContainer.layer.shadowOpacity = 0.4;
             rightContainer;
         });
     }
@@ -99,7 +104,7 @@
     if (_rightTable == nil) {
         self.rightTable = ({
             UITableView *rightTable= [[UITableView alloc] initWithFrame:({
-                CGRect frame = CGRectMake(10, 0, kScreen_Width, kScreen_Height - kNavgationBarHeight - kTabBarHeight);
+                CGRect frame = CGRectMake(10, 0, kScreen_Width, kScreen_Height - kNavgationBarHeight);
                 frame;
             }) style:UITableViewStylePlain];
             rightTable.delegate = self;
@@ -123,8 +128,8 @@
 
     
     [self.view addSubview:self.leftTable];
-    [self.rightContainer addSubview:self.rightTable];
     [self.rightContainer addSubview:self.trangleView];
+    [self.rightContainer addSubview:self.rightTable];
     [self.view addSubview:self.rightContainer];
     
     [[DDHttpTool sharedTool] POST:DDGetCarBrandsUrl parameters:@{@"parentId":@0} success:^(id responseObject) {
@@ -133,7 +138,7 @@
         
         for (NSString *key in responseObject[@"result"]) {
             
-            NSArray *newCars = [DDParentCar objectArrayWithKeyValuesArray:[responseObject[@"result"] objectForKey:key]];
+            NSArray *newCars = [DDHomeCar objectArrayWithKeyValuesArray:[responseObject[@"result"] objectForKey:key]];
             [self.brandDict setObject:newCars forKey:key];
         }
 
@@ -199,11 +204,11 @@
     if (tableView == self.leftTable) {
         NSDictionary *d = self.brandArray[indexPath.section];
         NSString *key = [d allKeys][0];
-        DDParentCar *car = [d objectForKey:key][indexPath.row];
+        DDHomeCar *car = [d objectForKey:key][indexPath.row];
         cell.textLabel.text = car.name;
     }else{
         if (self.subBrandArray.count > 0) {
-            DDParentCar *car = self.subBrandArray[indexPath.row];
+            DDHomeCar *car = self.subBrandArray[indexPath.row];
             cell.textLabel.text = car.name;
         }else{
             cell.textLabel.text = @"";
@@ -252,13 +257,13 @@
         
         NSDictionary *d = self.brandArray[indexPath.section];
         NSString *key = [d allKeys][0];
-        DDParentCar *car = [d objectForKey:key][indexPath.row];
+        DDHomeCar *car = [d objectForKey:key][indexPath.row];
         
         [[DDHttpTool sharedTool] POST:DDGetCarBrandsUrl
                            parameters:@{@"parentId":car.carId}
                               success:^(id responseObject) {
             
-            self.subBrandArray = [DDParentCar objectArrayWithKeyValuesArray:responseObject[@"result"]];
+            self.subBrandArray = [DDHomeCar objectArrayWithKeyValuesArray:responseObject[@"result"]];
             
             [self.rightTable reloadData];
             
@@ -273,7 +278,7 @@
         
         DDHomeCarSubNameViewController *subName = [[DDHomeCarSubNameViewController alloc] init];
         
-         DDParentCar *car = self.subBrandArray[indexPath.row];
+         DDHomeCar *car = self.subBrandArray[indexPath.row];
         subName.carId = car.carId;
         [self.navigationController pushViewController:subName
                                              animated:YES];

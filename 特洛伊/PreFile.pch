@@ -32,6 +32,9 @@
 #import "DDHttpTool.h"
 #import <MJExtension.h>
 #import <UIView+MLInputDodger.h>
+#import "DDUserTool.h"
+#import "DDUser.h"
+#import "DDHomeCarTool.h"
 #endif
 
 //提高效率

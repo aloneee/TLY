@@ -42,7 +42,7 @@
 
 @implementation HomeRootViewController
 
-#pragma mark - lazy load
+#pragma mark ---- lazy load
 - (CLLocationManager *)locationManager
 {
     if (!_locationManager) {
@@ -112,6 +112,9 @@
     right.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -20);
     [right setTitleColor:[UIColor whiteColor]
                 forState:UIControlStateNormal];
+    
+    [[DDHomeCarTool getCars] lastObject];
+    
     [right setTitle:@"添加爱车" forState:UIControlStateNormal];
     [right addTarget:self
               action:@selector(addCarInfo)
@@ -147,7 +150,13 @@
     [self addTimer];
     
     //pageControl
-    UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(kScreenWidth - 120, kScreenHeight * 0.25 - 30 + kNavgationBarHeight, 100, 30)];
+    UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:({
+        
+        CGRect frame = CGRectMake(kScreenWidth - 120, kScreenHeight * 0.25 - 30 + kNavgationBarHeight, 100, 30);
+        frame;
+        
+    })];
+    
     [self.view addSubview:pageControl];
     pageControl.numberOfPages = 5;
     pageControl.currentPage = 0;
@@ -189,7 +198,7 @@
 }
 
 
-#pragma mark - UICollectionView dataSource & delegate
+#pragma mark ---- UICollectionView dataSource & delegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return self.newses.count;
@@ -218,7 +227,7 @@
 }
 
 
-#pragma mark --- scrollViewDelegate
+#pragma mark ---- scrollViewDelegate
 /**
  *  当用户停止拖拽的时候就调用
  */
@@ -235,7 +244,7 @@
 }
 
 
-#pragma mark --- helper
+#pragma mark ---- helper
 -(void)middleBtnClick:(UIButton *)sender{
     
     NSArray *array = @[@"FreshMan",@"SpecificPreferential",@"RecommendReward",@"IcePrice"];

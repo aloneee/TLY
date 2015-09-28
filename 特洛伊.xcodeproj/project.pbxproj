@@ -60,7 +60,6 @@
 		599A55231B8D6055007D71C8 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 599A551F1B8D6055007D71C8 /* MBProgressHUD.bundle */; };
 		599A55241B8D6055007D71C8 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 599A55211B8D6055007D71C8 /* MBProgressHUD.m */; };
 		59ADFE371BB27D2400EE5EEB /* DDHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ADFE361BB27D2400EE5EEB /* DDHttpTool.m */; };
-		59ADFE3A1BB29D6300EE5EEB /* DDParentCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ADFE391BB29D6300EE5EEB /* DDParentCar.m */; };
 		59AE15E21BA9479900DBACD0 /* DDHomeFreshManViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AE15E11BA9479900DBACD0 /* DDHomeFreshManViewController.m */; };
 		59B6DE9C1BA9591B0046F1DB /* DDHomeSpecificPreferentialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B6DE9B1BA9591B0046F1DB /* DDHomeSpecificPreferentialViewController.m */; };
 		59B6DE9F1BA963960046F1DB /* DDHomeTableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B6DE9E1BA963960046F1DB /* DDHomeTableHeadView.m */; };
@@ -69,7 +68,6 @@
 		59C6F1061BAC0E3B00DB2DFA /* DDFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C6F1051BAC0E3B00DB2DFA /* DDFlowLayout.m */; };
 		59CD2ADD1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CD2ADC1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.m */; };
 		59E34B2A1BA8033B0006B226 /* DDHomeMyCarsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E34B291BA8033B0006B226 /* DDHomeMyCarsViewController.m */; };
-		59E34B2D1BA809AE0006B226 /* DDHomeMyCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E34B2C1BA809AE0006B226 /* DDHomeMyCar.m */; };
 		59E34B311BA80A4B0006B226 /* DDHomeMyCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E34B2F1BA80A4B0006B226 /* DDHomeMyCarCell.m */; };
 		59E34B321BA80A4B0006B226 /* DDHomeMyCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E34B301BA80A4B0006B226 /* DDHomeMyCarCell.xib */; };
 		59E34B391BA8199A0006B226 /* newses.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59E34B381BA8199A0006B226 /* newses.plist */; };
@@ -202,8 +200,6 @@
 		599A55211B8D6055007D71C8 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		59ADFE351BB27D2400EE5EEB /* DDHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHttpTool.h; sourceTree = "<group>"; };
 		59ADFE361BB27D2400EE5EEB /* DDHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHttpTool.m; sourceTree = "<group>"; };
-		59ADFE381BB29D6300EE5EEB /* DDParentCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDParentCar.h; sourceTree = "<group>"; };
-		59ADFE391BB29D6300EE5EEB /* DDParentCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDParentCar.m; sourceTree = "<group>"; };
 		59AE15E01BA9479900DBACD0 /* DDHomeFreshManViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeFreshManViewController.h; sourceTree = "<group>"; };
 		59AE15E11BA9479900DBACD0 /* DDHomeFreshManViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeFreshManViewController.m; sourceTree = "<group>"; };
 		59B6DE9A1BA9591B0046F1DB /* DDHomeSpecificPreferentialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeSpecificPreferentialViewController.h; sourceTree = "<group>"; };
@@ -220,8 +216,6 @@
 		59CD2ADC1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeAddCarInfoViewController.m; sourceTree = "<group>"; };
 		59E34B281BA8033B0006B226 /* DDHomeMyCarsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeMyCarsViewController.h; sourceTree = "<group>"; };
 		59E34B291BA8033B0006B226 /* DDHomeMyCarsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeMyCarsViewController.m; sourceTree = "<group>"; };
-		59E34B2B1BA809AE0006B226 /* DDHomeMyCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeMyCar.h; sourceTree = "<group>"; };
-		59E34B2C1BA809AE0006B226 /* DDHomeMyCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeMyCar.m; sourceTree = "<group>"; };
 		59E34B2E1BA80A4B0006B226 /* DDHomeMyCarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeMyCarCell.h; sourceTree = "<group>"; };
 		59E34B2F1BA80A4B0006B226 /* DDHomeMyCarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeMyCarCell.m; sourceTree = "<group>"; };
 		59E34B301BA80A4B0006B226 /* DDHomeMyCarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDHomeMyCarCell.xib; sourceTree = "<group>"; };
@@ -488,10 +482,6 @@
 				59E34B3B1BA819BE0006B226 /* HMNews.m */,
 				5985B92F1BA0091700139593 /* DDHomeCar.h */,
 				5985B9301BA0091700139593 /* DDHomeCar.m */,
-				59E34B2B1BA809AE0006B226 /* DDHomeMyCar.h */,
-				59E34B2C1BA809AE0006B226 /* DDHomeMyCar.m */,
-				59ADFE381BB29D6300EE5EEB /* DDParentCar.h */,
-				59ADFE391BB29D6300EE5EEB /* DDParentCar.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -884,7 +874,6 @@
 				5987E7261BB4FA7800F83FF0 /* DDTouchBeginView.m in Sources */,
 				59699C1E1BB0FEEB00D486DC /* DDUser.m in Sources */,
 				59FC71071BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.m in Sources */,
-				59E34B2D1BA809AE0006B226 /* DDHomeMyCar.m in Sources */,
 				5981C4451BABBCB900788E6A /* DOPDropDownMenu.m in Sources */,
 				5985B9311BA0091700139593 /* DDHomeCar.m in Sources */,
 				599A55101B8D53E7007D71C8 /* UIView+AutoLayout.m in Sources */,
@@ -936,7 +925,6 @@
 				59B6DE9C1BA9591B0046F1DB /* DDHomeSpecificPreferentialViewController.m in Sources */,
 				59E34B441BA824980006B226 /* DDActivityCell.m in Sources */,
 				590723A21BAF9D0600B23D9C /* DDCommentCell.m in Sources */,
-				59ADFE3A1BB29D6300EE5EEB /* DDParentCar.m in Sources */,
 				5904DF921BA98C4A00556AE6 /* DDHomeRecommendRewardViewController.m in Sources */,
 				59E34B3C1BA819BE0006B226 /* HMNews.m in Sources */,
 				599A55121B8D53E7007D71C8 /* UIView+MotionEffect.m in Sources */,
@@ -1078,7 +1066,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "特洛伊/PreFile.pch";
 				INFOPLIST_FILE = "特洛伊/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.TLY.lrh.didi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1097,7 +1085,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "特洛伊/PreFile.pch";
 				INFOPLIST_FILE = "特洛伊/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaojukeji.TLY.lrh.didi;
 				PRODUCT_NAME = "$(TARGET_NAME)";

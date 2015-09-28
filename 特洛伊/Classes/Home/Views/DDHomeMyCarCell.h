@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class DDHomeMyCar;
+//@class DDHomeMyCar;
 
 @interface DDHomeMyCarCell : UITableViewCell
 
-@property (nonatomic, strong) DDHomeMyCar *myCar;
+@property (nonatomic, strong) DDHomeCar *myCar;
 
 +(DDHomeMyCarCell *)cellForTabelView:(UITableView *)tableView;
 

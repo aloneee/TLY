@@ -18,4 +18,6 @@ SingletonH(DDUserTool)
 
 +(BOOL)existUser;
 
++(NSString *)ticket;
+
 @end

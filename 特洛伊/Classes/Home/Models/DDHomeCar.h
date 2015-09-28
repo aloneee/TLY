@@ -10,10 +10,15 @@
 
 @interface DDHomeCar : NSObject <NSCoding>
 
-@property(nonatomic, copy) NSString *carBrand;
-@property(nonatomic, copy) NSString *currentKM;
+@property(nonatomic, copy) NSString *name;
+@property(nonatomic, copy) NSString *mileAge;
 @property(nonatomic, copy) NSString *numberOfYear;
-@property(nonatomic, copy) NSString *buyDate;
-@property(nonatomic, copy) NSString *licensePlateNumber;
+@property(nonatomic, copy) NSString *carStartDate;
+@property(nonatomic, copy) NSString *carProvinceName;
+@property(nonatomic, copy) NSString *carCardNumber;
+@property(nonatomic, copy) NSString *carId;
+@property(nonatomic, copy) NSString *carTitle;
+@property(nonatomic, copy) NSString *carSubTitle;
+@property(nonatomic, copy) NSString *imageUrl;
 
 @end

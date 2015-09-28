@@ -7,7 +7,7 @@
 //
 
 #import "DDHomeMyCarCell.h"
-#import "DDHomeMyCar.h"
+#import "DDHomeCar.h"
 #import <UIImageView+WebCache.h>
 
 @interface DDHomeMyCarCell ()
@@ -29,7 +29,7 @@
     
 }
 
--(void)setMyCar:(DDHomeMyCar *)myCar{
+-(void)setMyCar:(DDHomeCar *)myCar{
     _myCar = myCar;
     
 //    self.iconImageView  sd_setImageWithURL:<#(NSURL *)#> placeholderImage:<#(UIImage *)#>  //setImage

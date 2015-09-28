@@ -37,8 +37,8 @@ static NSTimeInterval kDownCount;
     self.phoneNumberView.leftViewMode = UITextFieldViewModeAlways;
     [self.phoneNumberView addTarget:self action:@selector(phoneNumberViewChangeValue:) forControlEvents:UIControlEventAllEditingEvents];
     
-//    self.getVerificationCodeBtn.layer.borderWidth = 1;
-//    self.getVerificationCodeBtn.layer.borderColor = [UIColor blackColor].CGColor;
+    self.getVerificationCodeBtn.layer.borderWidth = 1;
+    self.getVerificationCodeBtn.layer.borderColor = [UIColor blackColor].CGColor;
     [self.getVerificationCodeBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     self.getVerificationCodeBtn.enabled = NO;
     self.getVerificationCodeBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -75,11 +75,22 @@ static NSTimeInterval kDownCount;
     
     NSLog(@"上传手机号码:%@",self.phoneNumberView.text);
     
-    [MBProgressHUD showSuccess:@"验证码已发送到您的手机,请查收"];
+    NSMutableDictionary *paras = [NSMutableDictionary dictionary];
+    paras[@"cell"] = self.phoneNumberView.text;
+    paras[@"role"] = @8;
+//    paras[@"source"] = @;
+    
+    [[DDHttpTool sharedTool] POST:DDLoginSmsMtUrl parameters:paras success:^(id responseObject) {
+        [MBProgressHUD showSuccess:@"验证码已发送到您的手机..."];
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error.localizedDescription);
+    }];
+    
+    
     
     kDownCount = 60;
     
-    [self.getVerificationCodeBtn setTitle:@"60s" forState:UIControlStateNormal];
+    [self.getVerificationCodeBtn setTitle:@"60秒" forState:UIControlStateNormal];
     [self.getVerificationCodeBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     self.getVerificationCodeBtn.enabled = NO;
     
@@ -97,11 +108,32 @@ static NSTimeInterval kDownCount;
         [self.getVerificationCodeBtn setTitle:@"重发" forState:UIControlStateNormal];
         [_timer invalidate];
     }else{
-        [self.getVerificationCodeBtn setTitle:[NSString stringWithFormat:@"%.0fs",kDownCount] forState:UIControlStateNormal];
+        [self.getVerificationCodeBtn setTitle:[NSString stringWithFormat:@"%.0f秒",kDownCount] forState:UIControlStateNormal];
     }
 }
 
 - (IBAction)login:(id)sender {
+    
+    NSMutableDictionary *paras = [NSMutableDictionary dictionary];
+    paras[@"cell"] = @"18000001921";
+    paras[@"role"] = @8;
+//    paras[@"source"] = @"000";
+    paras[@"smsCode"] = @"7864";
+    
+    [[DDHttpTool sharedTool] POST:DDLoginSmsUrl parameters:paras success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+        
+        DDUser *user = [[DDUser alloc] init];
+        user.ticket = responseObject[@"data"][@"ticket"];
+        [DDUserTool saveUser:user];
+        
+        
+        NSLog(@"%@",[DDUserTool ticket]);
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error.localizedDescription);
+    }];
+    
     
     NSLog(@"上传手机号:%@ 和 验证码:%@",self.phoneNumberView.text,self.verificationCodeView.text);
     

@@ -27,4 +27,11 @@ SingletonM(DDUserTool)
     return [kUser objectForKey:kUSERKEY] ? YES: NO;
 }
 
++(NSString *)ticket{
+    
+    DDUser *user = [NSKeyedUnarchiver unarchiveObjectWithData: [kUser objectForKey:kUSERKEY]];
+    
+    return user.ticket;
+}
+
 @end

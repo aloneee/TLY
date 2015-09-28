@@ -23,6 +23,9 @@
 
 @property (nonatomic, weak) DDDatePicker            *datePicker;
 
+
+@property(nonatomic, copy)  NSString                *carId;
+
 @end
 
 static const NSTimeInterval kAnimateDuration = 0.25f;
@@ -54,7 +57,7 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
                 
                 NSDate *date = self.datePicker.date;
                 NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-                [dateFormat setDateFormat:@"yyyy-MM-dd"];
+                [dateFormat setDateFormat:@"yyyy-MM"];
                 [self.choseBuyDateBtn setTitle:[dateFormat stringFromDate:date]
                                       forState:UIControlStateNormal];
                 
@@ -85,6 +88,12 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
     
     self.doneBtn.layer.cornerRadius = 5.0f;
     
+    self.choseCarBtn.layer.borderColor = [UIColor grayColor].CGColor;
+    self.choseCarBtn.layer.borderWidth = 1;
+    self.choseCarBtn.layer.cornerRadius = 5;
+    self.choseCarBtn.titleLabel.numberOfLines = 0;
+    [self.choseCarBtn.titleLabel setAdjustsFontSizeToFitWidth:YES];
+    
     
     [kNote addObserver:self
               selector:@selector(keyboardShow)
@@ -107,6 +116,7 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
     
     [self.choseCarBtn setTitle:note.userInfo[@"carName"]
                       forState:UIControlStateNormal];
+    self.carId = note.userInfo[@"carId"];
 }
 
 -(void)keyboardShow{
@@ -132,6 +142,9 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
 
 - (IBAction)choseCurrentNumOfYeayBtnClick:(id)sender {
     NSLog(@"showNumberPicker");
+    
+    
+    
 }
 - (IBAction)buyDateBtnClick:(id)sender {
     NSLog(@"showDatepicker");
@@ -159,7 +172,7 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
 
 - (IBAction)doneBtnClick:(id)sender {
     
-    BOOL isChoseCar = ![self.choseCarBtn.titleLabel.text isEqualToString:@"请选择品牌 "];
+    BOOL isChoseCar = ![self.choseCarBtn.titleLabel.text isEqualToString:@"请选择品牌"];
     BOOL isAddKM = self.currentKMField.text.length != 0;
     BOOL isChoseYear = ![self.choseYearBtn.titleLabel.text isEqualToString:@"请选择车辆年限 "];
     
@@ -167,16 +180,38 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
         //save
         
         DDHomeCar *car = [[DDHomeCar alloc] init];
-        car.carBrand = self.choseCarBtn.titleLabel.text;
-        car.currentKM = self.currentKMField.text;
+        car.name = self.choseCarBtn.titleLabel.text;
+        car.mileAge= self.currentKMField.text;
         car.numberOfYear = self.choseYearBtn.titleLabel.text;
-        car.buyDate = self.choseBuyDateBtn.titleLabel.text;
-        car.licensePlateNumber = self.licensePlateNumberField.text;
-        
+        car.carStartDate = self.choseBuyDateBtn.titleLabel.text;
+        car.carProvinceName = [self.licensePlateNumberField.text substringToIndex:1];
+        car.carCardNumber = [self.licensePlateNumberField.text substringFromIndex:1];
+        car.carId = self.carId;
         
         NSLog(@"%@ll",car);
         
         [DDHomeCarTool saveCar:car];
+        
+        
+        NSMutableDictionary *paras = [NSMutableDictionary dictionary];
+        paras[@"carTypeId"] = @([self.carId longLongValue]);
+        paras[@"carTypeName"] = car.name;
+        paras[@"mileAge"] = @([car.mileAge doubleValue]);
+        paras[@"carStartDate"] = car.carStartDate;
+        paras[@"ticket"] = [DDUserTool ticket];
+        paras[@"carProvinceName"] = car.carProvinceName;
+        paras[@"carCardNumber"] = car.carCardNumber;
+        
+        
+        NSLog(@"%@",paras);
+        
+        [[DDHttpTool sharedTool] POST:DDAddMyCarUrl parameters:paras success:^(id responseObject) {
+            NSLog(@"%@",responseObject);
+        } failure:^(NSError *error) {
+            NSLog(@"%@",error.localizedDescription);
+        }];
+        
+        
         
         [self.navigationController popViewControllerAnimated:YES];
         
@@ -194,7 +229,7 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
         
         if (!isAddKM) {
             
-            NSMutableAttributedString *attrPlaceholder = [[NSMutableAttributedString alloc] initWithString:@"当前公里数(KM)"];
+            NSMutableAttributedString *attrPlaceholder = [[NSMutableAttributedString alloc] initWithString:@"当前公里数(km)"];
             
             [attrPlaceholder setAttributes:@{NSForegroundColorAttributeName:[UIColor redColor]}
                                      range:NSMakeRange(0, attrPlaceholder.length)];

@@ -9,7 +9,7 @@
 #import "DDHomeMyCarsViewController.h"
 #import "DDHomeAddCarInfoViewController.h"
 #import "DDHomeMyCarCell.h"
-#import "DDHomeMyCar.h"
+#import "DDHomeCar.h"
 
 @interface DDHomeMyCarsViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -25,7 +25,7 @@
     if (!_cars) {
         _cars = [NSMutableArray array];
         //get cars
-        DDHomeMyCar *myCar = [[DDHomeMyCar alloc] init];
+        DDHomeCar *myCar = [[DDHomeCar alloc] init];
         myCar.carTitle = @"奥迪";
         myCar.carSubTitle = @"酱油A1";
         [_cars addObject:myCar];

@@ -7,7 +7,7 @@
 //
 
 #import "DDHomeCarSubNameViewController.h"
-#import "DDParentCar.h"
+#import "DDHomeCar.h"
 
 @interface DDHomeCarSubNameViewController ()
 @property (nonatomic, strong) NSMutableArray *cars;
@@ -24,7 +24,6 @@
     return _cars;
 }
 
-
 #pragma mark ---- life cycle
 
 - (void)viewDidLoad {
@@ -37,7 +36,7 @@
                           success:^(id responseObject){
         NSLog(@"%@",responseObject);
         
-        self.cars = [DDParentCar objectArrayWithKeyValuesArray:responseObject[@"result"]];
+        self.cars = [DDHomeCar objectArrayWithKeyValuesArray:responseObject[@"result"]];
         [self.tableView reloadData];
         
     } failure:^(NSError *error) {
@@ -60,7 +59,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:identifier];
     }
-    DDParentCar *car = self.cars[indexPath.row];
+    DDHomeCar *car = self.cars[indexPath.row];
     cell.textLabel.text = car.name;
     
     return cell;
@@ -68,11 +67,11 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    DDParentCar *car = self.cars[indexPath.row];
+    DDHomeCar *car = self.cars[indexPath.row];
     
     [kNote postNotificationName:@"DidSelectCarName"
                          object:nil
-                       userInfo:@{@"carName":car.name}];
+                       userInfo:@{@"carName":car.name,@"carId":car.carId}];
     
     
     [self.navigationController popToViewController:self.navigationController.childViewControllers[1]

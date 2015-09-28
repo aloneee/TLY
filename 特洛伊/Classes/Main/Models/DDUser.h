@@ -24,5 +24,9 @@
  */
 @property(nonatomic, copy) NSString *phoneNum;
 
+/**
+ *  用户ticket
+ */
+@property(nonatomic, copy) NSString *ticket;
 
 @end
