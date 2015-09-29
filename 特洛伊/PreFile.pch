@@ -45,15 +45,16 @@
 #define iPod  ([[UIDevice currentDevice].model rangeOfString:@"iPod"].length > 0)
 #define ios8 ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0)
 #define ios7 ([[UIDevice currentDevice].systemVersion floatValue] < 8.0)
-#define kColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0  blue:(b)/255.0  alpha:1]
+
 
 //工具条高度
 #define kNavgationBarHeight 64
 #define kTabBarHeight 49
 
-//随机色
+//颜色
 #define kRandomColor [UIColor colorWithRed:(arc4random()%255 /255.0)green:(arc4random()%255 /255.0) blue:(arc4random()%255 /255.0) alpha:1]
 #define CLEARCOLOR [UIColor clearColor]
+#define kColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0  blue:(b)/255.0  alpha:1]
 
 //G－C－D
 #define BACK(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
