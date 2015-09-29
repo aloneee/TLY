@@ -45,7 +45,7 @@ static const CGFloat kTopBtnHeight = 44;
     self.menu.dataSource = self;
     [self.view addSubview:self.menu];
     
-    self.table = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavgationBarHeight + kTopBtnHeight, kScreenWidth, kScreenHeight - kNavgationBarHeight - kTopBtnHeight)
+    self.table = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavgationBarHeight + kTopBtnHeight, kScreen_Width, kScreen_Height - kNavgationBarHeight - kTopBtnHeight)
                                               style:UITableViewStylePlain];
     self.table.delegate = self;
     self.table.dataSource = self;

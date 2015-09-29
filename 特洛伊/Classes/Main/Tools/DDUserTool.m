@@ -17,19 +17,19 @@ SingletonM(DDUserTool)
 
 +(void)saveUser:(DDUser *)user{
     
-    [kUser setObject:[NSKeyedArchiver archivedDataWithRootObject:user] forKey:kUSERKEY];
-    [kUser synchronize];
+    [kUserDefaults setObject:[NSKeyedArchiver archivedDataWithRootObject:user] forKey:kUSERKEY];
+    [kUserDefaults synchronize];
     
 }
 
 +(BOOL)existUser{
     
-    return [kUser objectForKey:kUSERKEY] ? YES: NO;
+    return [kUserDefaults objectForKey:kUSERKEY] ? YES: NO;
 }
 
 +(NSString *)ticket{
     
-    DDUser *user = [NSKeyedUnarchiver unarchiveObjectWithData: [kUser objectForKey:kUSERKEY]];
+    DDUser *user = [NSKeyedUnarchiver unarchiveObjectWithData: [kUserDefaults objectForKey:kUSERKEY]];
     
     return user.ticket;
 }

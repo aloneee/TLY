@@ -50,7 +50,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, kNavgationBarHeight, kScreenWidth, kScreenHeight * 0.25)
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, kNavgationBarHeight, kScreen_Width, kScreen_Height * 0.25)
                                                           collectionViewLayout:[[DDFlowLayout alloc] init]];
     collectionView.backgroundColor = [UIColor redColor];
     collectionView.delegate = self;
@@ -73,7 +73,7 @@
     [self addTimer];
     
     //pageControl
-    UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(kScreenWidth - 120, kScreenHeight * 0.25 - 30 + kNavgationBarHeight, 100, 30)];
+    UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(kScreen_Width - 120, kScreen_Height * 0.25 - 30 + kNavgationBarHeight, 100, 30)];
     [self.view addSubview:pageControl];
     pageControl.numberOfPages = 5;
     pageControl.currentPage = 0;

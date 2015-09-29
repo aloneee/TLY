@@ -35,7 +35,7 @@
         self.rightContainer = ({
             
             UIView *rightContainer = [[UIView alloc] initWithFrame:({
-                CGRect frame = CGRectMake(kScreenWidth , kNavgationBarHeight, kScreenWidth, kScreenHeight - kNavgationBarHeight);
+                CGRect frame = CGRectMake(kScreen_Width , kNavgationBarHeight, kScreen_Width, kScreen_Height - kNavgationBarHeight);
                 frame;
             })];
             rightContainer.backgroundColor = CLEARCOLOR;
@@ -258,7 +258,7 @@
             [UIView animateWithDuration:0.25f
                              animations:^{
                 
-                self.rightContainer.x = kScreenWidth;
+                self.rightContainer.x = kScreen_Width;
                 
             }];
         }]];
@@ -285,7 +285,7 @@
             [self.rightTable reloadData];
             
             [UIView animateWithDuration:0.25f animations:^{
-                self.rightContainer.x = kScreenWidth * 0.4;
+                self.rightContainer.x = kScreen_Width * 0.4;
 
             }];
         } failure:^(NSError *error) {

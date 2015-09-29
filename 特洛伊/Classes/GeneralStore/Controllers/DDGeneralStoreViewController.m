@@ -56,7 +56,7 @@
     
     self.tableView.contentInset = UIEdgeInsetsMake(kNavgationBarHeight + kScreen_Height * 0.25 + 2 * kBtnH, 0, kTabBarHeight, 0);
     
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, - kScreen_Height * 0.25 - 2 * kBtnH, kScreenWidth, kScreenHeight * 0.25)
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, - kScreen_Height * 0.25 - 2 * kBtnH, kScreen_Width, kScreen_Height * 0.25)
                                                           collectionViewLayout:[[DDFlowLayout alloc] init]];
     collectionView.backgroundColor = [UIColor redColor];
     collectionView.delegate = self;
@@ -79,7 +79,7 @@
     [self addTimer];
     
     //pageControl
-    UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(kScreenWidth - 120, CGRectGetMaxY(self.collectionView.frame) - 30, 100, 30)];
+    UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(kScreen_Width - 120, CGRectGetMaxY(self.collectionView.frame) - 30, 100, 30)];
     [self.view addSubview:pageControl];
     pageControl.numberOfPages = 5;
     pageControl.currentPage = 0;

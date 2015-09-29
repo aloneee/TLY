@@ -13,7 +13,7 @@
 
 @end
 
-#define headImageHeight kScreenHeight * 0.4
+#define headImageHeight kScreen_Height * 0.4
 #define kBottomBtnHeight 50
 
 @implementation DDHomeRecommendRewardViewController
@@ -46,7 +46,7 @@
     self.tableView.contentInset  = UIEdgeInsetsMake(headImageHeight, 0, -kBottomBtnHeight, 0);
     self.tableView.showsVerticalScrollIndicator = NO;
     
-    UIImageView *headImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -headImageHeight, kScreenWidth, headImageHeight)];
+    UIImageView *headImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -headImageHeight, kScreen_Width, headImageHeight)];
     headImageView.image = [UIImage imageNamed:@"img_03"];
     [self.view addSubview:headImageView];
     

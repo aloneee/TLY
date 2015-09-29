@@ -18,7 +18,6 @@ NSString * const DDLoginSmsMtUrl = @"http://10.10.38.216:8080/ddyc-web-user-web/
  *  登陆
  */
 NSString * const DDLoginSmsUrl = @"http://10.10.38.216:8080/ddyc-web-user-web/user/userCenter/loginSms";
-
 /**
  *  添加爱车
  */

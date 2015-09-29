@@ -58,7 +58,7 @@
     [super prepareLayout];
     
     // 每个cell的尺寸
-    self.itemSize = CGSizeMake(kScreenWidth, kScreenHeight * 0.25);
+    self.itemSize = CGSizeMake(kScreen_Width, kScreen_Height * 0.25);
 //    CGFloat inset = (self.collectionView.frame.size.width - HMItemWH) * 0.5;
     self.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
     // 设置水平滚动
@@ -66,7 +66,7 @@
     self.minimumLineSpacing = 0;
     
     // 每一个cell(item)都有自己的UICollectionViewLayoutAttributes
-    // 每一个indexPath都有自己的UICollectionViewLayoutAttributes
+    // 每一个indexPath都有自己的UICollectionViewLayoutAttributesb
 }
 
 ///** 有效距离:当item的中间x距离屏幕的中间x在HMActiveDistance以内,才会开始放大, 其它情况都是缩小 */

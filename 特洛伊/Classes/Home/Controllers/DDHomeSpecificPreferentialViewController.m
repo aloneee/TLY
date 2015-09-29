@@ -13,7 +13,7 @@
 
 @end
 
-#define headImageHeight kScreenHeight * 0.25
+#define headImageHeight kScreen_Height * 0.25
 #define topHintViewHeight 30
 
 @implementation DDHomeSpecificPreferentialViewController
@@ -28,12 +28,12 @@
     self.tableView.contentInset  = UIEdgeInsetsMake(headImageHeight + topHintViewHeight, 0, 0, 0);
     self.tableView.showsVerticalScrollIndicator = NO;
     
-    UIImageView *headImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -headImageHeight, kScreenWidth, headImageHeight)];
+    UIImageView *headImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -headImageHeight, kScreen_Width, headImageHeight)];
     headImageView.image = [UIImage imageNamed:@"img_03"];
     [self.view addSubview:headImageView];
     
     DDHomeTableHeadView *headView = [DDHomeTableHeadView headView];
-    headView.frame = CGRectMake(0, -headImageHeight - topHintViewHeight, kScreenWidth, topHintViewHeight);
+    headView.frame = CGRectMake(0, -headImageHeight - topHintViewHeight, kScreen_Width, topHintViewHeight);
     headView.leftText = @"今晚8点整点大优惠";
     headView.rightText = @"剩余时间: 00:00";
     

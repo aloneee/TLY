@@ -31,7 +31,7 @@
      
     CGFloat timeX = CGRectGetMaxX(_headImageFrame) + DDPadding;
     CGFloat timeY = DDPadding;
-    CGSize timeSize = [commentModel.postTime boundingRectWithSize:CGSizeMake(kScreenWidth - 3 * DDPadding - headImageW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : DDCommentTimeFont} context:nil].size;
+    CGSize timeSize = [commentModel.postTime boundingRectWithSize:CGSizeMake(kScreen_Width - 3 * DDPadding - headImageW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : DDCommentTimeFont} context:nil].size;
     _postTimeFrame = (CGRect){{timeX,timeY},timeSize};
     
     /**
@@ -39,7 +39,7 @@
      */
     CGFloat commentX = DDPadding;
     CGFloat commentY = MAX(CGRectGetMaxY(_headImageFrame), CGRectGetMaxY(_postTimeFrame)) + DDPadding;
-    CGSize commentSize = [commentModel.comment boundingRectWithSize:CGSizeMake(kScreenWidth - 2 * DDPadding, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : DDCommentFont} context:nil].size;
+    CGSize commentSize = [commentModel.comment boundingRectWithSize:CGSizeMake(kScreen_Width - 2 * DDPadding, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : DDCommentFont} context:nil].size;
     _commentFrame = (CGRect){{commentX,commentY},commentSize};
     
     _cellHeight = CGRectGetMaxY(_commentFrame) + DDPadding;

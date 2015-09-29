@@ -139,9 +139,9 @@
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
     layout.minimumLineSpacing = 0;
-    layout.itemSize = CGSizeMake(kScreenWidth, kScreenHeight * 0.25);
+    layout.itemSize = CGSizeMake(kScreen_Width, kScreen_Height * 0.25);
     
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, kNavgationBarHeight, kScreenWidth, kScreenHeight * 0.25)
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, kNavgationBarHeight, kScreen_Width, kScreen_Height * 0.25)
                                                           collectionViewLayout:[[DDFlowLayout alloc] init]];
 
     collectionView.backgroundColor = [UIColor redColor];
@@ -165,7 +165,7 @@
     //pageControl
     UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:({
         
-        CGRect frame = CGRectMake(kScreenWidth - 120, kScreenHeight * 0.25 - 30 + kNavgationBarHeight, 100, 30);
+        CGRect frame = CGRectMake(kScreen_Width - 120, kScreen_Height * 0.25 - 30 + kNavgationBarHeight, 100, 30);
         frame;
         
     })];
@@ -178,7 +178,7 @@
     self.pageControl = pageControl;
     [self.view bringSubviewToFront:self.pageControl];
     
-    CGFloat middleBtnW = kScreenWidth * 0.25;
+    CGFloat middleBtnW = kScreen_Width * 0.25;
     
     NSArray *MiddleBtnTitles = @[@"新人专区",
                                  @"每日整点",
@@ -194,7 +194,7 @@
         
         UIButton *middleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         
-        middleBtn.frame = CGRectMake(middleBtnW * i, CGRectGetMaxY(self.collectionView.frame) + 10, middleBtnW, kScreenHeight * 0.25);
+        middleBtn.frame = CGRectMake(middleBtnW * i, CGRectGetMaxY(self.collectionView.frame) + 10, middleBtnW, kScreen_Height * 0.25);
         
         middleBtn.backgroundColor = [UIColor blueColor];
         
@@ -210,7 +210,7 @@
         [self.view addSubview:middleBtn];
     }
     
-    CGFloat bottomBtnW = kScreenWidth * 0.5;
+    CGFloat bottomBtnW = kScreen_Width * 0.5;
     
     NSArray *bottomBtnTitles = @[@"维修预约",
                                  @"汽车保养"];
@@ -218,7 +218,7 @@
     for (int i = 0; i < bottomBtnTitles.count; i++) {
         
         UIButton *middleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        middleBtn.frame = CGRectMake(bottomBtnW * i, kScreenHeight * 0.75 - kTabBarHeight, bottomBtnW, kScreenHeight * 0.25);
+        middleBtn.frame = CGRectMake(bottomBtnW * i, kScreen_Height * 0.75 - kTabBarHeight, bottomBtnW, kScreen_Height * 0.25);
         middleBtn.backgroundColor = [UIColor redColor];
         
         [middleBtn setTitle:bottomBtnTitles[i]

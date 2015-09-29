@@ -55,8 +55,8 @@
 -(void)layoutSubviews{
     [super layoutSubviews];
     
-    self.leftLabel.frame = CGRectMake(0, 0, kScreenWidth * 0.5, self.height);
-    self.rightLabel.frame = CGRectMake(kScreenWidth * 0.5, 0, kScreenWidth * 0.5, self.height);
+    self.leftLabel.frame = CGRectMake(0, 0, kScreen_Width * 0.5, self.height);
+    self.rightLabel.frame = CGRectMake(kScreen_Width * 0.5, 0, kScreen_Width * 0.5, self.height);
     
 }
 

@@ -36,7 +36,7 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
 -(DDDatePicker *)datePicker{
     
     if (!_datePicker) {
-        DDDatePicker *datePicker = [[DDDatePicker alloc] initWithFrame:CGRectMake(0, kScreenHeight, kScreenWidth, kScreenHeight * 0.25)
+        DDDatePicker *datePicker = [[DDDatePicker alloc] initWithFrame:CGRectMake(0, kScreen_Height, kScreen_Width, kScreen_Height * 0.25)
                                                         datePickerMode:UIDatePickerModeDate
                                                            minimumDate:nil maximumDate:[NSDate date]];
 

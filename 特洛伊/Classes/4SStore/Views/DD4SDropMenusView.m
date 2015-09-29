@@ -88,7 +88,7 @@
                 CGRect transformRect = [self convertRect:self.bounds toView:window];
                 
                 if (1 != i) {
-                    UITableView *dropMenu = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(transformRect), kScreenWidth, 100)
+                    UITableView *dropMenu = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(transformRect), kScreen_Width, 100)
                                                                          style:UITableViewStylePlain];
                     dropMenu.delegate = self;
                     dropMenu.dataSource = self;
@@ -118,7 +118,7 @@
     
     [super layoutSubviews];
     
-    CGFloat btnW = kScreenWidth * 0.25;
+    CGFloat btnW = kScreen_Width * 0.25;
     
     for (int i = 0; i< self.subviews.count;i++) {
         

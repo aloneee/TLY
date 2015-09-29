@@ -45,7 +45,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kNavgationBarHeight - 50) style:UITableViewStylePlain];
+    UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Height - kNavgationBarHeight - 50) style:UITableViewStylePlain];
     table.delegate = self;
     table.dataSource = self;
     table.rowHeight = 70;
@@ -55,7 +55,7 @@
     
     
     UIButton *addCarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    addCarBtn.frame = CGRectMake(20, kScreenHeight - 50, kScreenWidth - 40, 30);
+    addCarBtn.frame = CGRectMake(20, kScreen_Height - 50, kScreen_Width - 40, 30);
     addCarBtn.layer.cornerRadius = 5;
     addCarBtn.backgroundColor = [UIColor orangeColor];
     
