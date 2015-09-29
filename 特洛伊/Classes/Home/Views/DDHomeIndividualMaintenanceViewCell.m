@@ -27,7 +27,7 @@
     if (selected) {
         self.selectedImage.image = [UIImage imageNamed:@"icon_chose_arrow_sel"];
     }else{
-        self.selectedImage.image = [UIImage imageNamed:@"icon_chose_arrow_nor"];
+        self.selectedImage.image = [UIImage imageNamed:@"img_01"];
     }
 }
 

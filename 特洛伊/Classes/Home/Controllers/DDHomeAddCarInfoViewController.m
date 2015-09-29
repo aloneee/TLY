@@ -94,17 +94,30 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
     self.choseCarBtn.titleLabel.numberOfLines = 0;
     [self.choseCarBtn.titleLabel setAdjustsFontSizeToFitWidth:YES];
     
+    [kNote addObserverForName:UIKeyboardWillShowNotification
+                       object:nil
+                        queue:[NSOperationQueue mainQueue]
+                   usingBlock:^(NSNotification * _Nonnull note) {
+                       
+        if (self.datePicker.isShow) {
+            
+            [UIView animateWithDuration:kAnimateDuration animations:^{
+                self.datePicker.transform = CGAffineTransformIdentity;
+                self.datePicker.isShow = NO;
+            }];
+        }
+    }];
     
-    [kNote addObserver:self
-              selector:@selector(keyboardShow)
-                  name:UIKeyboardWillShowNotification
-                object:nil];
-    
-    [kNote addObserver:self
-              selector:@selector(didSelectCarName:)
-                  name:@"DidSelectCarName"
-                object:nil];
-    
+    [kNote addObserverForName:@"DidSelectCarName"
+                       object:nil
+                        queue:[NSOperationQueue mainQueue]
+                   usingBlock:^(NSNotification * _Nonnull note) {
+        
+        [self.choseCarBtn setTitle:note.userInfo[@"carName"]
+                          forState:UIControlStateNormal];
+        
+        self.carId = note.userInfo[@"carId"];
+    }];
 }
 
 -(void)dealloc{
@@ -112,24 +125,6 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
 }
 
 #pragma mark ---- helper
--(void)didSelectCarName:(NSNotification *)note{
-    
-    [self.choseCarBtn setTitle:note.userInfo[@"carName"]
-                      forState:UIControlStateNormal];
-    self.carId = note.userInfo[@"carId"];
-}
-
--(void)keyboardShow{
-    
-    if (self.datePicker.isShow) {
-        
-        [UIView animateWithDuration:kAnimateDuration animations:^{
-            self.datePicker.transform = CGAffineTransformIdentity;
-            self.datePicker.isShow = NO;
-        }];
-    }
-}
-
 - (IBAction)choseCarBtnClick:(id)sender {
     
     NSLog(@"gotoChoseCar");
@@ -205,7 +200,10 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
         
         NSLog(@"%@",paras);
         
-        [[DDHttpTool sharedTool] POST:DDAddMyCarUrl parameters:paras success:^(id responseObject) {
+        [[DDHttpTool sharedTool] POST:DDAddMyCarUrl
+                           parameters:paras
+                              success:^(id responseObject) {
+                                  
             NSLog(@"%@",responseObject);
         } failure:^(NSError *error) {
             NSLog(@"%@",error.localizedDescription);
@@ -240,6 +238,7 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
     [self.currentKMField resignFirstResponder];
     
     [self.licensePlateNumberField resignFirstResponder];

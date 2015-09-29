@@ -33,11 +33,29 @@ static const CGFloat kTopBtnHeight = 44;
     [super viewDidLoad];
     
     // 数据
-    self.serviceTypes = @[@"服务保养",@"汽车美容",@"汽车维修"];
-    self.areas = @[@"北京",@"上海",@"天津",@"河北",@"广州"];
-    self.beijingRegions = @[@"东城区",@"西城区",@"海淀区",@"朝阳区",@"丰台区",@"石景山区",@"顺义区"];
+    self.serviceTypes = @[@"服务保养",
+                          @"汽车美容",
+                          @"汽车维修"];
     
-    self.sorts = @[@"默认排序",@"离我最近",@"好评优先",@"人气优先",@"最新发布"];
+    self.areas = @[@"北京",
+                   @"上海",
+                   @"天津",
+                   @"河北",
+                   @"广州"];
+    
+    self.beijingRegions = @[@"东城区",
+                            @"西城区",
+                            @"海淀区",
+                            @"朝阳区",
+                            @"丰台区",
+                            @"石景山区",
+                            @"顺义区"];
+    
+    self.sorts = @[@"默认排序",
+                   @"离我最近",
+                   @"好评优先",
+                   @"人气优先",
+                   @"最新发布"];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -170,8 +188,13 @@ static const CGFloat kTopBtnHeight = 44;
     
     NSMutableArray *actions = [NSMutableArray array];
     
-    NSArray *titles = @[@"置顶",@"标为未读",@"删除"];
-    NSArray *colors = @[[UIColor grayColor],[UIColor yellowColor],[UIColor redColor]];
+    NSArray *titles = @[@"置顶",
+                        @"标为未读",
+                        @"删除"];
+    
+    NSArray *colors = @[[UIColor grayColor],
+                        [UIColor yellowColor],
+                        [UIColor redColor]];
     
     for (NSInteger i = titles.count - 1; i >= 0; i--) {
         
