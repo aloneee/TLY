@@ -29,11 +29,15 @@
     
     [right setTitleColor:[UIColor whiteColor]
                 forState:UIControlStateNormal];
-    [right setTitle:@"分享" forState:UIControlStateNormal];
+    
+    [right setTitle:@"分享"
+           forState:UIControlStateNormal];
 
-    [right addTarget:self
-              action:@selector(rightNavItemClick)
-    forControlEvents:UIControlEventTouchUpInside];
+    [right handleControlEvents:UIControlEventTouchUpInside
+                     withBlock:^(id weakSender) {
+                         
+        NSLog(@"分享");
+    }];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:right];
     
@@ -56,9 +60,10 @@
     [bottomBtn setTitleColor:[UIColor whiteColor]
                     forState:UIControlStateNormal];
     
-    [bottomBtn addTarget:self
-                  action:@selector(rightNavItemClick)
-        forControlEvents:UIControlEventTouchUpInside];
+    [bottomBtn handleControlEvents:UIControlEventTouchUpInside
+                         withBlock:^(id weakSender) {
+        NSLog(@"分享");
+    }];
     
     [self.view addSubview:bottomBtn];
     
@@ -87,10 +92,6 @@
 }
 
 #pragma mark --- helper
-- (void)rightNavItemClick{
-    NSLog(@"分享");
-}
-
 
 /*
 // Override to support conditional editing of the table view.

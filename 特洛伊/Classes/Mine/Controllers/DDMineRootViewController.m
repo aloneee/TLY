@@ -20,16 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGes:)];
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithActionHandler:^(UIGestureRecognizer *ges) {
+        
+        NSLog(@"go to  login");
+        
+        NSLog(@"%d",[DDUserTool existUser]);
+    }];
+    
+    
     [self.loginImageView addGestureRecognizer:tapGes];
-}
-
--(void)tapGes:(UITapGestureRecognizer *)sender{
-    
-    NSLog(@"go to  login");
-    
-    NSLog(@"%d",[DDUserTool existUser]);
-    
 }
 
 #pragma mark - Table view data source

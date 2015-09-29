@@ -99,9 +99,23 @@
             btn.frame = CGRectMake(kBtnMargin + j * (kBtnW + kBtnMargin), kScreen_Height * 0.25 * 0.5 * i, kBtnW, kBtnH);
             btn.layer.cornerRadius = 5;
             btn.backgroundColor = kRandomColor;
-            [btn setTitle:@"换轮胎" forState:UIControlStateNormal];
-            [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [btn setTitle:@"换轮胎"
+                 forState:UIControlStateNormal];
+            
+            [btn setTitleColor:[UIColor whiteColor]
+                      forState:UIControlStateNormal];
+
+            [btn handleControlEvents:UIControlEventTouchUpInside
+                           withBlock:^(id weakSender) {
+                               
+                NSLog(@"lalalal");
+                
+                DDHomeMaintenanceDetailViewController *md = [[DDHomeMaintenanceDetailViewController alloc] init];
+                
+                [self.navigationController pushViewController:md
+                                                     animated:YES];
+            }];
             [container addSubview:btn];
         }
     }
@@ -193,27 +207,33 @@
 }
 
 #pragma mark -- helper
-
--(void)btnClick:(UIButton *)sender{
-    NSLog(@"lalalal");
-    
-    DDHomeMaintenanceDetailViewController *md = [[DDHomeMaintenanceDetailViewController alloc] init];
-    
-    [self.navigationController pushViewController:md
-                                         animated:YES];
-}
-
-
-
 /**
  *  添加定时器
  */
 - (void)addTimer
 {
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0
-                                                      target:self
-                                                    selector:@selector(nextPage)
-                                                    userInfo:nil
+                                                       block:^{
+                                                           
+        // 1.马上显示回最中间那组的数据
+        NSIndexPath *currentIndexPathReset = [self resetIndexPath];
+        
+        // 2.计算出下一个需要展示的位置
+        NSInteger nextItem = currentIndexPathReset.item + 1;
+        NSInteger nextSection = currentIndexPathReset.section;
+                                                           
+        if (nextItem == self.newses.count) {
+            nextItem = 0;
+            nextSection++;
+        }
+        NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:nextItem
+                                                         inSection:nextSection];
+        
+        // 3.通过动画滚动到下一个位置
+        [self.collectionView scrollToItemAtIndexPath:nextIndexPath
+                                    atScrollPosition:UICollectionViewScrollPositionLeft
+                                            animated:YES];
+    }
                                                      repeats:YES];
     
     [[NSRunLoop mainRunLoop] addTimer:timer
@@ -244,29 +264,6 @@
                                         animated:NO];
     return currentIndexPathReset;
 }
-/**
- *  下一页
- */
-- (void)nextPage
-{
-    // 1.马上显示回最中间那组的数据
-    NSIndexPath *currentIndexPathReset = [self resetIndexPath];
-    
-    // 2.计算出下一个需要展示的位置
-    NSInteger nextItem = currentIndexPathReset.item + 1;
-    NSInteger nextSection = currentIndexPathReset.section;
-    if (nextItem == self.newses.count) {
-        nextItem = 0;
-        nextSection++;
-    }
-    NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:nextItem inSection:nextSection];
-    
-    // 3.通过动画滚动到下一个位置
-    [self.collectionView scrollToItemAtIndexPath:nextIndexPath
-                                atScrollPosition:UICollectionViewScrollPositionLeft
-                                        animated:YES];
-}
-
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

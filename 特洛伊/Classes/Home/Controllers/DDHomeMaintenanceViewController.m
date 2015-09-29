@@ -47,8 +47,9 @@
     
     [@[self.carNameContainerView,self.driveDistanceContainerView,self.driveYearContainerView] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
         
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                              action:@selector(tapGes)];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithActionHandler:^(UIGestureRecognizer *ges) {
+            NSLog(@"tapGes");
+        }];
         [view addGestureRecognizer:tap];
     }];
     
@@ -80,10 +81,6 @@
 }
 
 #pragma mark --- helper
-
-- (void)tapGes{
-    NSLog(@"tapGes");
-}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSLog(@"%@",segue.identifier);

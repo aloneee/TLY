@@ -35,6 +35,9 @@
 #import "DDUserTool.h"
 #import "DDUser.h"
 #import "DDHomeCarTool.h"
+#import "UIGestureRecognizer+Block.h"
+#import "UIControl+ActionBlocks.h"
+#import "NSTimer+Blocks.h"
 #endif
 
 //提高效率

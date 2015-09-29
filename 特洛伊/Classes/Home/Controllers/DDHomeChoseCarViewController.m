@@ -132,7 +132,9 @@
     [self.rightContainer addSubview:self.rightTable];
     [self.view addSubview:self.rightContainer];
     
-    [[DDHttpTool sharedTool] POST:DDGetCarBrandsUrl parameters:@{@"parentId":@0} success:^(id responseObject) {
+    [[DDHttpTool sharedTool] POST:DDGetCarBrandsUrl
+                       parameters:@{@"parentId":@0}
+                          success:^(id responseObject) {
         
         NSLog(@"%@",responseObject[@"result"]);
         
@@ -244,8 +246,21 @@
         tableView.scrollEnabled = NO;
         
         UIView *cover = [[UIView alloc] initWithFrame:self.leftTable.bounds];
-        [cover addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                            action:@selector(removeCover)]];
+        [cover addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithActionHandler:^(UIGestureRecognizer *ges) {
+            
+            [self.cover removeFromSuperview];
+            self.cover = nil;
+            
+            self.leftTable.scrollEnabled = YES;
+            
+            [UIView animateWithDuration:0.25f
+                             animations:^{
+                
+                self.rightContainer.x = kScreenWidth;
+                
+            }];
+        }]];
+        
         self.cover = cover;
         [self.leftTable addSubview:cover];
         
@@ -288,20 +303,6 @@
 
 
 #pragma mark --- helper
--(void)removeCover{
-    
-    [self.cover removeFromSuperview];
-    self.cover = nil;
-    
-    self.leftTable.scrollEnabled = YES;
-    
-    [UIView animateWithDuration:0.25f animations:^{
 
-        self.rightContainer.x = kScreenWidth;
-
-    }];
-    
-    
-}
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "DDCountView.h"
+#import <objc/runtime.h>
 
 @interface DDCountView ()
 
@@ -44,9 +45,23 @@
     UIButton *minusBtn = [UIButton buttonWithType:UIButtonTypeCustom];
 //    minusBtn.layer.cornerRadius = 5;
     minusBtn.backgroundColor = [UIColor redColor];
-    [minusBtn setTitle:@"-" forState:UIControlStateNormal];
-    [minusBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [minusBtn addTarget:self action:@selector(minusBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [minusBtn setTitle:@"-"
+              forState:UIControlStateNormal];
+    
+    [minusBtn setTitleColor:[UIColor blackColor]
+                   forState:UIControlStateNormal];
+
+    [minusBtn handleControlEvents:UIControlEventTouchUpInside
+                        withBlock:^(id weakSender) {
+                            
+        if (self.count > self.minCount) {
+            self.count--;
+        }
+        
+        _block(self);
+                            
+    }];
+    
     [self addSubview:minusBtn];
     self.minusBtn = minusBtn;
     
@@ -54,10 +69,24 @@
     UIButton *addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
 //    addBtn.layer.cornerRadius = 5;
     addBtn.backgroundColor = [UIColor greenColor];
-    [addBtn setTitle:@"+" forState:UIControlStateNormal];
-    [addBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [addBtn addTarget:self action:@selector(addBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [addBtn setTitle:@"+"
+            forState:UIControlStateNormal];
+    
+    [addBtn setTitleColor:[UIColor whiteColor]
+                 forState:UIControlStateNormal];
+    
     [self addSubview:addBtn];
+    
+    [addBtn handleControlEvents:UIControlEventTouchUpInside
+                      withBlock:^(id weakSender) {
+                          
+        if (self.count < self.maxCount) {
+            self.count++;
+        }
+        
+        _block(self);
+    }];
+    
     self.addBtn = addBtn;
     
     self.count = 1;
@@ -78,23 +107,6 @@
 
 #pragma mark --- helper
 
-- (void)minusBtnClick:(UIButton *)sender{
-    
-    if (self.count > self.minCount) {
-        self.count--;
-    }
-    
-    _block(self);
-}
-
-- (void)addBtnClick:(UIButton *)sender{
-    
-    if (self.count < self.maxCount) {
-        self.count++;
-    }
-    
-    _block(self);
-}
 
 #pragma mark --- layout
 -(void)layoutSubviews{

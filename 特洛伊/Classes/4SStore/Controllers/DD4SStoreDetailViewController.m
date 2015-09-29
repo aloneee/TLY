@@ -86,9 +86,21 @@
     btn.frame = CGRectMake(100, 250, 100, 100);
     btn.layer.cornerRadius = 5;
     btn.backgroundColor = [UIColor redColor];
-    [btn setTitle:@"not so fast " forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [btn setTitle:@"not so fast "
+         forState:UIControlStateNormal];
+    
+    [btn setTitleColor:[UIColor whiteColor]
+              forState:UIControlStateNormal];
+    
+    [btn handleControlEvents:UIControlEventTouchUpInside
+                   withBlock:^(id weakSender) {
+                       
+         DD4SStoreCommentViewController *comment = [[UIStoryboard storyboardWithName:@"Main"
+                                                                              bundle:nil] instantiateViewControllerWithIdentifier:@"commentVC"];
+         [self.navigationController pushViewController:comment
+                                              animated:YES];
+    }];
     [self.view addSubview:btn];
     
     
@@ -154,22 +166,32 @@
 
 
 #pragma mark --- helper
-
-- (void)btnClick:(UIButton *)sender{
-    DD4SStoreCommentViewController *comment = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"commentVC"];
-    [self.navigationController pushViewController:comment animated:YES];
-}
-
-
 /**
  *  添加定时器
  */
 - (void)addTimer
 {
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0
-                                                      target:self
-                                                    selector:@selector(nextPage)
-                                                    userInfo:nil
+                                                       block:^{
+                                                           
+        // 1.马上显示回最中间那组的数据
+        NSIndexPath *currentIndexPathReset = [self resetIndexPath];
+        
+        // 2.计算出下一个需要展示的位置
+        NSInteger nextItem = currentIndexPathReset.item + 1;
+        NSInteger nextSection = currentIndexPathReset.section;
+        if (nextItem == self.newses.count) {
+            nextItem = 0;
+            nextSection++;
+        }
+        NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:nextItem
+                                                         inSection:nextSection];
+        
+        // 3.通过动画滚动到下一个位置
+        [self.collectionView scrollToItemAtIndexPath:nextIndexPath
+                                    atScrollPosition:UICollectionViewScrollPositionLeft
+                                            animated:YES];
+    }
                                                      repeats:YES];
     
     [[NSRunLoop mainRunLoop] addTimer:timer
@@ -200,30 +222,6 @@
                                         animated:NO];
     return currentIndexPathReset;
 }
-/**
- *  下一页
- */
-- (void)nextPage
-{
-    // 1.马上显示回最中间那组的数据
-    NSIndexPath *currentIndexPathReset = [self resetIndexPath];
-    
-    // 2.计算出下一个需要展示的位置
-    NSInteger nextItem = currentIndexPathReset.item + 1;
-    NSInteger nextSection = currentIndexPathReset.section;
-    if (nextItem == self.newses.count) {
-        nextItem = 0;
-        nextSection++;
-    }
-    NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:nextItem inSection:nextSection];
-    
-    // 3.通过动画滚动到下一个位置
-    [self.collectionView scrollToItemAtIndexPath:nextIndexPath
-                                atScrollPosition:UICollectionViewScrollPositionLeft
-                                        animated:YES];
-}
-
-
 
 /*
 #pragma mark - Navigation

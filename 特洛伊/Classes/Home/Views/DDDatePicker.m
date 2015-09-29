@@ -34,10 +34,10 @@ static const CGFloat kBtnW = 50.0f;
         
         cancleBtn.backgroundColor = [UIColor blueColor];
         cancleBtn.layer.cornerRadius = 5;
-        
-        [cancleBtn addTarget:self
-                      action:@selector(cancle)
-            forControlEvents:UIControlEventTouchUpInside];
+        [cancleBtn handleControlEvents:UIControlEventTouchUpInside
+                             withBlock:^(id weakSender) {
+            _cancleBlock(self);
+        }];
         
         [self addSubview:cancleBtn];
         self.cancleBtn = cancleBtn;
@@ -53,11 +53,11 @@ static const CGFloat kBtnW = 50.0f;
         
         
         doneBtn.layer.cornerRadius = 5;
-        
-        [doneBtn addTarget:self
-                    action:@selector(done)
-          forControlEvents:UIControlEventTouchUpInside];
-        
+        [doneBtn handleControlEvents:UIControlEventTouchUpInside
+                           withBlock:^(id weakSender) {
+                               
+            _doneBlock(self);
+        }];
         
         [self addSubview:doneBtn];
         self.doneBtn = doneBtn;
@@ -113,14 +113,6 @@ static const CGFloat kBtnW = 50.0f;
 
 -(void)setDoneBlock:(DDDatePickerDoneBlock)doneBlock{
     _doneBlock = doneBlock;
-}
-
--(void)cancle{
-    _cancleBlock(self);
-}
-
--(void)done{
-    _doneBlock(self);
 }
 
 @end

@@ -62,9 +62,16 @@
     [addCarBtn setTitle:@"添加爱车"
                forState:UIControlStateNormal];
     
-    [addCarBtn addTarget:self
-                  action:@selector(addCar:)
-        forControlEvents:UIControlEventTouchUpInside];
+    [addCarBtn handleControlEvents:UIControlEventTouchUpInside
+                         withBlock:^(id weakSender) {
+                             
+        DDHomeAddCarInfoViewController *addCarInfo = [[UIStoryboard storyboardWithName:@"Main"
+                                                                                bundle:nil] instantiateViewControllerWithIdentifier:@"addCarInfo"];
+        NSLog(@"%@",addCarInfo);
+        
+        [self.navigationController pushViewController:addCarInfo
+                                             animated:YES];
+    }];
     
     [self.view addSubview:addCarBtn];
 }
@@ -88,14 +95,5 @@
 }
 
 #pragma mark ---helper
--(void)addCar:(UIButton *)sender{
-    
-    DDHomeAddCarInfoViewController *addCarInfo = [[UIStoryboard storyboardWithName:@"Main"
-                                                                            bundle:nil]
-                                                  instantiateViewControllerWithIdentifier:@"addCarInfo"];
-    NSLog(@"%@",addCarInfo);
-    
-    [self.navigationController pushViewController:addCarInfo animated:YES];
-}
 
 @end

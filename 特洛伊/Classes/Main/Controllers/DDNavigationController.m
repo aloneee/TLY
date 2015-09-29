@@ -17,7 +17,8 @@
 #pragma mark --- life cycle
 +(void)initialize{
     
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"topbarbg_ios7"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"topbarbg_ios7"]
+                                       forBarMetrics:UIBarMetricsDefault];
 //
     
 //    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
@@ -61,16 +62,9 @@
     // 禁止使用系统自带的滑动手势
     self.interactivePopGestureRecognizer.enabled = NO;
     
-    
-    
 }
 
 #pragma mark --- helper
-- (void)pop{
-    
-    [self popViewControllerAnimated:YES];
-}
-
 -(BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
     
     if (self.childViewControllers.count == 1) {
@@ -88,14 +82,21 @@
     
     UIButton *left=[UIButton buttonWithType:UIButtonTypeCustom];
     left.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
+    
     [left setTitleColor:[UIColor whiteColor]
                forState:UIControlStateNormal];
-    left.frame = CGRectMake(0, 0, 40, 40);
-    [left setImage:[UIImage imageNamed:@"back_btn"] forState:UIControlStateNormal];
     
-    [left addTarget:self
-             action:@selector(pop)
-   forControlEvents:UIControlEventTouchUpInside];
+    left.frame = CGRectMake(0, 0, 40, 40);
+    
+    [left setImage:[UIImage imageNamed:@"back_btn"]
+          forState:UIControlStateNormal];
+    
+    [left handleControlEvents:UIControlEventTouchUpInside
+                    withBlock:^(id weakSender) {
+                        
+        [self popViewControllerAnimated:YES];
+    }];
+    
     viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:left];
     
     [super pushViewController:viewController animated:animated];

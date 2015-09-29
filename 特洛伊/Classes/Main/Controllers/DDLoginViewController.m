@@ -35,11 +35,34 @@ static NSTimeInterval kDownCount;
     self.phoneNumberView.leftView = hintView;
     
     self.phoneNumberView.leftViewMode = UITextFieldViewModeAlways;
-    [self.phoneNumberView addTarget:self action:@selector(phoneNumberViewChangeValue:) forControlEvents:UIControlEventAllEditingEvents];
+    
+    
+    [self.phoneNumberView handleControlEvents:UIControlEventAllEditingEvents
+                                    withBlock:^(UITextField *weakSender) {
+                                        
+        
+        NSLog(@"%@",weakSender.text);
+        
+        if (11 == weakSender.text.length) {
+            
+            [self.getVerificationCodeBtn setTitleColor:[UIColor blueColor]
+                                              forState:UIControlStateNormal];
+            
+            self.getVerificationCodeBtn.enabled = YES;
+        }else{
+            [self.getVerificationCodeBtn setTitleColor:[UIColor lightGrayColor]
+                                              forState:UIControlStateNormal];
+            
+            self.getVerificationCodeBtn.enabled = NO;
+        }
+    }];
     
     self.getVerificationCodeBtn.layer.borderWidth = 1;
     self.getVerificationCodeBtn.layer.borderColor = [UIColor blackColor].CGColor;
-    [self.getVerificationCodeBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    
+    [self.getVerificationCodeBtn setTitleColor:[UIColor lightGrayColor]
+                                      forState:UIControlStateNormal];
+    
     self.getVerificationCodeBtn.enabled = NO;
     self.getVerificationCodeBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
     
@@ -50,18 +73,6 @@ static NSTimeInterval kDownCount;
 }
 
 #pragma mark --- helper
-- (void)phoneNumberViewChangeValue:(UITextField *)phoneNumberView{
-    NSLog(@"%@",phoneNumberView.text);
-    
-    if (11 == phoneNumberView.text.length) {
-        [self.getVerificationCodeBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        self.getVerificationCodeBtn.enabled = YES;
-    }else{
-        [self.getVerificationCodeBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-        self.getVerificationCodeBtn.enabled = NO;
-    }
-}
-
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     [self.phoneNumberView resignFirstResponder];
@@ -80,9 +91,15 @@ static NSTimeInterval kDownCount;
     paras[@"role"] = @8;
 //    paras[@"source"] = @;
     
-    [[DDHttpTool sharedTool] POST:DDLoginSmsMtUrl parameters:paras success:^(id responseObject) {
+    [[DDHttpTool sharedTool] POST:DDLoginSmsMtUrl
+                       parameters:paras
+                          success:^(id responseObject) {
+                              
         [MBProgressHUD showSuccess:@"验证码已发送到您的手机..."];
-    } failure:^(NSError *error) {
+                              
+    }
+                          failure:^(NSError *error) {
+                              
         NSLog(@"%@",error.localizedDescription);
     }];
     
@@ -90,26 +107,40 @@ static NSTimeInterval kDownCount;
     
     kDownCount = 60;
     
-    [self.getVerificationCodeBtn setTitle:@"60秒" forState:UIControlStateNormal];
-    [self.getVerificationCodeBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [self.getVerificationCodeBtn setTitle:@"60秒"
+                                 forState:UIControlStateNormal];
+    
+    [self.getVerificationCodeBtn setTitleColor:[UIColor blueColor]
+                                      forState:UIControlStateNormal];
+    
     self.getVerificationCodeBtn.enabled = NO;
     
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(countdown) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0f
+                                               block:^{
+        
+        kDownCount--;
+        
+        if (0 == kDownCount) {
+            self.getVerificationCodeBtn.enabled = YES;
+            
+            [self.getVerificationCodeBtn setTitle:@"重发"
+                                         forState:UIControlStateNormal];
+            [_timer invalidate];
+        }else{
+            [self.getVerificationCodeBtn setTitle:[NSString stringWithFormat:@"%.0f秒",kDownCount]
+                                         forState:UIControlStateNormal];
+        }
+    }
+                                             repeats:YES];
+    
+    [[NSRunLoop currentRunLoop] addTimer:_timer
+                                 forMode:NSRunLoopCommonModes];
     
 }
 
 - (void)countdown{
     
-    kDownCount--;
     
-    if (0 == kDownCount) {
-        self.getVerificationCodeBtn.enabled = YES;
-        [self.getVerificationCodeBtn setTitle:@"重发" forState:UIControlStateNormal];
-        [_timer invalidate];
-    }else{
-        [self.getVerificationCodeBtn setTitle:[NSString stringWithFormat:@"%.0f秒",kDownCount] forState:UIControlStateNormal];
-    }
 }
 
 - (IBAction)login:(id)sender {
@@ -120,7 +151,10 @@ static NSTimeInterval kDownCount;
 //    paras[@"source"] = @"000";
     paras[@"smsCode"] = @"7864";
     
-    [[DDHttpTool sharedTool] POST:DDLoginSmsUrl parameters:paras success:^(id responseObject) {
+    [[DDHttpTool sharedTool] POST:DDLoginSmsUrl
+                       parameters:paras
+                          success:^(id responseObject) {
+                              
         NSLog(@"%@",responseObject);
         
         DDUser *user = [[DDUser alloc] init];

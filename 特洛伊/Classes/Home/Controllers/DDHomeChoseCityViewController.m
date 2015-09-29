@@ -20,7 +20,14 @@
 #pragma mark ---- lazy load
 -(NSMutableArray *)citys{
     if (!_citys) {
-        _citys = [NSMutableArray arrayWithObjects:@"北京市",@"长春市",@"上海市",@"天津市",@"重庆市",@"石家庄市", nil];
+        _citys = [NSMutableArray arrayWithObjects:
+                  @"北京市",
+                  @"长春市",
+                  @"上海市",
+                  @"天津市",
+                  @"重庆市",
+                  @"石家庄市",
+                  nil];
     }
     return _citys;
 }
@@ -39,14 +46,15 @@
                forState:UIControlStateNormal];
     
     left.frame = CGRectMake(0, 0, 80, 30);
-    
     [left setTitle:@"返回"
           forState:UIControlStateNormal];
     
-    [left addTarget:self
-             action:@selector(popBack)
-   forControlEvents:UIControlEventTouchUpInside];
-    
+    [left handleControlEvents:UIControlEventTouchUpInside
+                    withBlock:^(id weakSender) {
+        
+        [self.navigationController popViewControllerAnimated:YES];
+
+    }];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:left];
     
 }
@@ -99,8 +107,5 @@ titleForHeaderInSection:(NSInteger)section{
 
 
 #pragma mark --- helper
-- (void) popBack{
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 @end

@@ -37,7 +37,10 @@ static const CGFloat kTopBtnHeight = 44;
     self.menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 64)
                                               andHeight:kTopBtnHeight];
     
-    self.menu.initialTitles = @[@"店铺类型",@"区域",@"智能排序"];
+    self.menu.initialTitles = @[@"店铺类型",
+                                @"区域",
+                                @"智能排序"];
+    
     self.menu.delegate = self;
     self.menu.dataSource = self;
     [self.view addSubview:self.menu];
@@ -48,11 +51,29 @@ static const CGFloat kTopBtnHeight = 44;
     self.table.dataSource = self;
     [self.view addSubview:self.table];
 
-    self.serviceTypes = @[@"服务保养",@"汽车美容",@"汽车维修"];
-    self.areas = @[@"北京",@"上海",@"天津",@"河北",@"广州"];
-    self.beijingRegions = @[@"东城区",@"西城区",@"海淀区",@"朝阳区",@"丰台区",@"石景山区",@"顺义区"];
+    self.serviceTypes = @[@"服务保养",
+                          @"汽车美容",
+                          @"汽车维修"];
     
-    self.sorts = @[@"默认排序",@"离我最近",@"好评优先",@"人气优先",@"最新发布"];
+    self.areas = @[@"北京",
+                   @"上海",
+                   @"天津",
+                   @"河北",
+                   @"广州"];
+    
+    self.beijingRegions = @[@"东城区",
+                            @"西城区",
+                            @"海淀区",
+                            @"朝阳区",
+                            @"丰台区",
+                            @"石景山区",
+                            @"顺义区"];
+    
+    self.sorts = @[@"默认排序",
+                   @"离我最近",
+                   @"好评优先",
+                   @"人气优先",
+                   @"最新发布"];
     
 }
 
