@@ -86,8 +86,10 @@
     }
     
     cell.returnCityBlock = ^(DDHomeCityCell *homeCityCell){
+        
         [self.userLocationBtn setTitle:homeCityCell.city
                               forState:UIControlStateNormal];
+        
         [self.navigationController popViewControllerAnimated:YES];
     };
     

@@ -185,26 +185,26 @@
                                  @"推荐奖励",
                                  @"冰点价格"];
     
-    for (int i = 0; i <MiddleBtnTitles.count; i++) {
+    NSArray *array = @[@"FreshMan",
+                       @"SpecificPreferential",
+                       @"RecommendReward",
+                       @"IcePrice"];
+    
+    for (int i = 0; i < MiddleBtnTitles.count; i++) {
+        
         UIButton *middleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         
         middleBtn.frame = CGRectMake(middleBtnW * i, CGRectGetMaxY(self.collectionView.frame) + 10, middleBtnW, kScreenHeight * 0.25);
         
         middleBtn.backgroundColor = [UIColor blueColor];
-        middleBtn.tag = i;
         
         [middleBtn setTitle:MiddleBtnTitles[i]
                    forState:UIControlStateNormal];
         
         [middleBtn handleControlEvents:UIControlEventTouchUpInside
                              withBlock:^(UIButton * weakSender) {
-            
-            NSArray *array = @[@"FreshMan",
-                               @"SpecificPreferential",
-                               @"RecommendReward",
-                               @"IcePrice"];
-            
-            [self.navigationController pushViewController:[[NSClassFromString([NSString stringWithFormat:@"DDHome%@ViewController",array[weakSender.tag]]) alloc] init]
+
+            [self.navigationController pushViewController:[[NSClassFromString([NSString stringWithFormat:@"DDHome%@ViewController",array[i]]) alloc] init]
                                                  animated:YES];
         }];
         [self.view addSubview:middleBtn];
@@ -216,10 +216,10 @@
                                  @"汽车保养"];
     
     for (int i = 0; i < bottomBtnTitles.count; i++) {
+        
         UIButton *middleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         middleBtn.frame = CGRectMake(bottomBtnW * i, kScreenHeight * 0.75 - kTabBarHeight, bottomBtnW, kScreenHeight * 0.25);
         middleBtn.backgroundColor = [UIColor redColor];
-        middleBtn.tag = i + 4;
         
         [middleBtn setTitle:bottomBtnTitles[i]
                    forState:UIControlStateNormal];
@@ -227,14 +227,16 @@
         [middleBtn handleControlEvents:UIControlEventTouchUpInside
                              withBlock:^(UIButton *weakSender) {
                                  
-            switch (weakSender.tag) {
-                case 4:
+            switch (i) {
+                case 0:
                     NSLog(@"维修预约");
                     break;
-                case 5:{
+                case 1:{
                     NSLog(@"汽车保养");
                     DDHomeMaintenanceViewController *m = [[UIStoryboard storyboardWithName:@"Main"
-                                                                                    bundle:nil] instantiateViewControllerWithIdentifier:@"maintenanceRoot"];
+                                                                                    bundle:nil]
+                                                          instantiateViewControllerWithIdentifier:@"maintenanceRoot"];
+                    
                     [self.navigationController pushViewController:m
                                                          animated:YES];
                 }
@@ -306,7 +308,8 @@
  */
 - (void)addTimer
 {
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0 block:^{
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0
+                                                       block:^{
         // 1.马上显示回最中间那组的数据
         NSIndexPath *currentIndexPathReset = [self resetIndexPath];
         
@@ -324,7 +327,8 @@
         [self.collectionView scrollToItemAtIndexPath:nextIndexPath
                                     atScrollPosition:UICollectionViewScrollPositionLeft
                                             animated:YES];
-    } repeats:YES];
+    }
+                                                     repeats:YES];
     
     
     [[NSRunLoop mainRunLoop] addTimer:timer
@@ -368,8 +372,10 @@
                             NSLog(@"%@",placemark.administrativeArea);
                             
                             if (placemark.administrativeArea) {
+                                
                                 [self.leftNavItem setTitle:placemark.administrativeArea
                                                   forState:UIControlStateNormal];
+                                
                                 [self.locationManager stopUpdatingLocation];
                             }
                         }];

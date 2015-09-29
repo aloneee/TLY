@@ -141,7 +141,9 @@
         for (NSString *key in responseObject[@"result"]) {
             
             NSArray *newCars = [DDHomeCar objectArrayWithKeyValuesArray:[responseObject[@"result"] objectForKey:key]];
-            [self.brandDict setObject:newCars forKey:key];
+            
+            [self.brandDict setObject:newCars
+                               forKey:key];
         }
 
         NSMutableArray *a = [NSMutableArray array];

@@ -7,7 +7,6 @@
 //
 
 #import "DDCountView.h"
-#import <objc/runtime.h>
 
 @interface DDCountView ()
 
@@ -45,6 +44,7 @@
     UIButton *minusBtn = [UIButton buttonWithType:UIButtonTypeCustom];
 //    minusBtn.layer.cornerRadius = 5;
     minusBtn.backgroundColor = [UIColor redColor];
+    
     [minusBtn setTitle:@"-"
               forState:UIControlStateNormal];
     
@@ -69,6 +69,7 @@
     UIButton *addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
 //    addBtn.layer.cornerRadius = 5;
     addBtn.backgroundColor = [UIColor greenColor];
+    
     [addBtn setTitle:@"+"
             forState:UIControlStateNormal];
     
