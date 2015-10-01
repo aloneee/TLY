@@ -40,39 +40,11 @@
 //    rootVC.automaticallyAdjustsScrollViewInsets = NO;
     
     
-    id target = self.interactivePopGestureRecognizer.delegate;
-    // 创建全屏滑动手势，调用系统自带滑动手势的target的action方法
-    
-    
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored"-Wundeclared-selector"
-    
-    //这里是会报警告的代码
-    
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target
-                                                                          action:@selector(handleNavigationTransition:)];
-    
-#pragma clang diagnostic pop
-    
-    
-    // 设置手势代理，拦截手势触发
-    pan.delegate = self;
-    // 给导航控制器的view添加全屏滑动手势
-    [self.view addGestureRecognizer:pan];
-    // 禁止使用系统自带的滑动手势
-    self.interactivePopGestureRecognizer.enabled = NO;
+    self.fullScreenInteractivePopGestureRecognizer = YES;
     
 }
 
 #pragma mark --- helper
--(BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
-    
-    if (self.childViewControllers.count == 1) {
-        // 表示用户在根控制器界面，就不需要触发滑动手势，
-        return NO;
-    }
-    return YES;
-}
 
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     

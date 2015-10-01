@@ -176,6 +176,7 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
                                                     
                                                     [KMContainer removeFromSuperview];
                                                     KMContainer = nil;
+                                                    
                                                     [self.provinceBtn setTitle:self.currentProvince
                                                                       forState:UIControlStateNormal];
                                                 }];
@@ -288,6 +289,7 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
     self.title = @"添加爱车";
     self.year = 0;
     self.month = 0;
+    self.currentProvince = @"京";
     
     self.provinceBtn.layer.borderWidth = 2;
     self.provinceBtn.layer.cornerRadius = 5;
@@ -430,6 +432,14 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
         return 1;
     }
     
+}
+
+-(CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component{
+    if (0 == pickerView.tag) {
+        return kScreen_Width * 0.5 ;
+    }else{
+        return kScreen_Width;
+    }
 }
 
 #pragma mark ---- helper

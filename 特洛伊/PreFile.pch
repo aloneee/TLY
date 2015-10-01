@@ -38,6 +38,7 @@
 #import "UIGestureRecognizer+Block.h"
 #import "UIControl+ActionBlocks.h"
 #import "NSTimer+Blocks.h"
+#import "UINavigationController+JZExtension.h"
 #endif
 
 //提高效率
