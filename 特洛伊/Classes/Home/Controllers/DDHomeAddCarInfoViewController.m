@@ -537,4 +537,10 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
     [self.licensePlateNumberField resignFirstResponder];
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 @end

@@ -11,17 +11,19 @@
 #import "DDTouchBeginView.h"
 #import "DDHomeCarSubNameViewController.h"
 
+static const NSTimeInterval kAnimationDuration = 0.25;
+
 @interface DDHomeChoseCarViewController ()<UITableViewDataSource,UITableViewDelegate>
 
-@property(nonatomic, strong)  UITableView           *leftTable;
-@property(nonatomic, strong)  UITableView           *rightTable;
-@property(nonatomic, strong)  UIView                *trangleView;
-@property(nonatomic, strong)  UIView                *rightContainer;
-@property(nonatomic, weak)    UIView                *cover;
+@property (nonatomic, strong)  UITableView           *leftTable;
+@property (nonatomic, strong)  UITableView           *rightTable;
+@property (nonatomic, strong)  UIView                *trangleView;
+@property (nonatomic, strong)  UIView                *rightContainer;
+@property (nonatomic, weak  )  UIView                *cover;
 
-@property (nonatomic, strong) NSMutableDictionary   *brandDict;
-@property (nonatomic, strong) NSMutableArray        *brandArray;
-@property (nonatomic, strong) NSMutableArray        *subBrandArray;
+@property (nonatomic, strong)  NSMutableDictionary   *brandDict;
+@property (nonatomic, strong)  NSMutableArray        *brandArray;
+@property (nonatomic, strong)  NSMutableArray        *subBrandArray;
 
 @end
 
@@ -34,8 +36,11 @@
     if (!_rightContainer) {
         self.rightContainer = ({
             
-            UIView *rightContainer = [[UIView alloc] initWithFrame:({
-                CGRect frame = CGRectMake(kScreen_Width , kNavgationBarHeight, kScreen_Width, kScreen_Height - kNavgationBarHeight);
+            __block UIView *rightContainer = [[UIView alloc] initWithFrame:({
+                CGRect frame = CGRectMake(kScreen_Width ,
+                                          kNavgationBarHeight,
+                                          kScreen_Width,
+                                          kScreen_Height - kNavgationBarHeight);
                 frame;
             })];
             rightContainer.backgroundColor = CLEARCOLOR;
@@ -44,7 +49,46 @@
             rightContainer.layer.shadowOffset = CGSizeMake(-5.0f, 0.0f);
             rightContainer.layer.shadowRadius = 5.0;
             rightContainer.layer.shadowOpacity = 0.4;
+            
+            [rightContainer addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithActionHandler:^(UIGestureRecognizer *ges) {
+                
+                UIPanGestureRecognizer *pan = (UIPanGestureRecognizer *)ges;
+                
+                switch (ges.state) {
+                    case UIGestureRecognizerStateChanged:{
+                        
+                        rightContainer.transform = CGAffineTransformMakeTranslation([pan translationInView:self.view].x, 0);
+                        if (rightContainer.transform.tx < 0) {
+                            rightContainer.transform = CGAffineTransformIdentity;
+                        }
+                    }
+                        break;
+                    case UIGestureRecognizerStateEnded:{
+                        
+                        if (rightContainer.transform.tx > kScreen_Width * 0.2) {
+                            
+                            [self removeRight];
+                        }else{
+                            [UIView animateWithDuration:kAnimationDuration
+                                             animations:^{
+                                                 rightContainer.transform = CGAffineTransformIdentity;
+                                             }];
+                        }
+                        
+                    }
+                        
+                    default:
+                        break;
+                }
+                
+            }]];
+            
+            [rightContainer addSubview:self.trangleView];
+            [rightContainer addSubview:self.rightTable];
+            [self.view addSubview:rightContainer];
+            
             rightContainer;
+            
         });
     }
     return _rightContainer;
@@ -88,7 +132,10 @@
     if (_leftTable == nil) {
         self.leftTable = ({
             UITableView *leftTable = [[UITableView alloc] initWithFrame:({
-                CGRect frame = CGRectMake(0, kNavgationBarHeight, kScreen_Width, kScreen_Height - kNavgationBarHeight - kTabBarHeight);
+                CGRect frame = CGRectMake(0,
+                                          kNavgationBarHeight,
+                                          kScreen_Width,
+                                          kScreen_Height - kNavgationBarHeight - kTabBarHeight);
                 frame;
             }) style:UITableViewStylePlain];
             leftTable.delegate = self;
@@ -104,7 +151,10 @@
     if (_rightTable == nil) {
         self.rightTable = ({
             UITableView *rightTable= [[UITableView alloc] initWithFrame:({
-                CGRect frame = CGRectMake(10, 0, kScreen_Width, kScreen_Height - kNavgationBarHeight);
+                CGRect frame = CGRectMake(10,
+                                          0,
+                                          kScreen_Width,
+                                          kScreen_Height - kNavgationBarHeight);
                 frame;
             }) style:UITableViewStylePlain];
             rightTable.delegate = self;
@@ -128,9 +178,7 @@
 
     
     [self.view addSubview:self.leftTable];
-    [self.rightContainer addSubview:self.trangleView];
-    [self.rightContainer addSubview:self.rightTable];
-    [self.view addSubview:self.rightContainer];
+    
     
     [[DDHttpTool sharedTool] POST:DDGetCarBrandsUrl
                        parameters:@{@"parentId":@0}
@@ -250,17 +298,7 @@
         UIView *cover = [[UIView alloc] initWithFrame:self.leftTable.bounds];
         [cover addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithActionHandler:^(UIGestureRecognizer *ges) {
             
-            [self.cover removeFromSuperview];
-            self.cover = nil;
-            
-            self.leftTable.scrollEnabled = YES;
-            
-            [UIView animateWithDuration:0.25f
-                             animations:^{
-                
-                self.rightContainer.x = kScreen_Width;
-                
-            }];
+            [self removeRight];
         }]];
         
         self.cover = cover;
@@ -288,7 +326,8 @@
                 self.rightContainer.x = kScreen_Width * 0.4;
 
             }];
-        } failure:^(NSError *error) {
+        }
+                              failure:^(NSError *error) {
             
         }];
     }else{
@@ -299,12 +338,25 @@
         subName.carId = car.carId;
         [self.navigationController pushViewController:subName
                                              animated:YES];
-        
     }
 }
 
 
 #pragma mark --- helper
-
+-(void)removeRight{
+    [UIView animateWithDuration:kAnimationDuration
+                     animations:^{
+                         _rightContainer.transform = CGAffineTransformMakeTranslation(kScreen_Width * 0.6, 0);
+                         
+                     }
+                     completion:^(BOOL finished) {
+                         _rightContainer = nil;
+                         _rightTable = nil;
+                         _trangleView = nil;
+                         [_cover removeFromSuperview];
+                         _cover = nil;
+                         _leftTable.scrollEnabled = YES;
+                     }];
+}
 
 @end
