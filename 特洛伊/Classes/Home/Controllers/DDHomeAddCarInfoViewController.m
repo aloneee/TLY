@@ -499,8 +499,7 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
         paras[@"ticket"] = [DDUserTool ticket];
         paras[@"carProvinceName"] = car.carProvinceName;
         paras[@"carCardNumber"] = car.carCardNumber;
-        
-        
+
         NSLog(@"%@",paras);
         
         [[DDHttpTool sharedTool] POST:DDAddMyCarUrl
@@ -508,18 +507,16 @@ static const NSTimeInterval kAnimateDuration = 0.25f;
                               success:^(id responseObject) {
                                   
             NSLog(@"%@",responseObject);
-        } failure:^(NSError *error) {
+        }
+                              failure:^(NSError *error) {
             NSLog(@"%@",error.localizedDescription);
         }];
-        
-        
         
         [self.navigationController popViewControllerAnimated:YES];
         
     }else{
         if (!isChoseCar){
             [MBProgressHUD showError:@"请选择车型信息"];
-            
         }else if (!isChoseYear) {
             [MBProgressHUD showError:@"请选择车辆年限"];
         }else if (!isAddKM) {

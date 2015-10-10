@@ -101,8 +101,8 @@
          [self.navigationController pushViewController:comment
                                               animated:YES];
     }];
-    [self.view addSubview:btn];
     
+    [self.view addSubview:btn];
     
     DDCountView *countView = [[DDCountView alloc]init];
     countView.frame = CGRectMake(100, CGRectGetMaxY(btn.frame) + 20, 100, 50);
@@ -147,7 +147,6 @@
     [self removeTimer];
 }
 
-
 #pragma mark --- scrollViewDelegate
 /**
  *  当用户停止拖拽的时候就调用
@@ -163,7 +162,6 @@
     int page = (int)(scrollView.contentOffset.x / scrollView.bounds.size.width + 0.5) % self.newses.count;
     self.pageControl.currentPage = page;
 }
-
 
 #pragma mark --- helper
 /**
@@ -222,10 +220,8 @@
                                         animated:NO];
     return currentIndexPathReset;
 }
-
 /*
 #pragma mark - Navigation
-
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].

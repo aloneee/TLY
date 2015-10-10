@@ -27,7 +27,6 @@
         NSLog(@"%d",[DDUserTool existUser]);
     }];
     
-    
     [self.loginImageView addGestureRecognizer:tapGes];
 }
 

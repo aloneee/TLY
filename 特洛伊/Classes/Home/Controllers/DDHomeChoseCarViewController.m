@@ -74,8 +74,8 @@ static const NSTimeInterval kAnimationDuration = 0.25;
                                                  rightContainer.transform = CGAffineTransformIdentity;
                                              }];
                         }
-                        
                     }
+                        break;
                         
                     default:
                         break;
@@ -176,9 +176,7 @@ static const NSTimeInterval kAnimationDuration = 0.25;
     self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
 
-    
     [self.view addSubview:self.leftTable];
-    
     
     [[DDHttpTool sharedTool] POST:DDGetCarBrandsUrl
                        parameters:@{@"parentId":@0}
@@ -265,7 +263,7 @@ static const NSTimeInterval kAnimationDuration = 0.25;
         }else{
             cell.textLabel.text = @"";
         }
-        
+
     }
     
     return cell;
@@ -334,13 +332,12 @@ static const NSTimeInterval kAnimationDuration = 0.25;
         
         DDHomeCarSubNameViewController *subName = [[DDHomeCarSubNameViewController alloc] init];
         
-         DDHomeCar *car = self.subBrandArray[indexPath.row];
+        DDHomeCar *car = self.subBrandArray[indexPath.row];
         subName.carId = car.carId;
         [self.navigationController pushViewController:subName
                                              animated:YES];
     }
 }
-
 
 #pragma mark --- helper
 -(void)removeRight{

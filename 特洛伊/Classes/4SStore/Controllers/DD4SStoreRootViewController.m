@@ -1,18 +1,19 @@
 
+
 //
-//  DD4SRootViewController.m
+//  DD4SStoreRootViewController.m
 //  特洛伊
 //
-//  Created by liurihua on 15/9/10.
+//  Created by liurihua on 15/10/10.
 //  Copyright © 2015年 刘日华. All rights reserved.
 //
 
-#import "DD4SRootViewController.h"
-//#import "DD4SDropMenusView.h"
+#import "DD4SStoreRootViewController.h"
 #import "DOPDropDownMenu.h"
 #import "DD4SStoreDetailViewController.h"
 
-@interface DD4SRootViewController ()<DOPDropDownMenuDataSource,DOPDropDownMenuDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface DD4SStoreRootViewController ()<DOPDropDownMenuDataSource,DOPDropDownMenuDelegate,UITableViewDataSource,UITableViewDelegate>
+
 
 @property (nonatomic, strong) NSArray         *areas;
 @property (nonatomic, strong) NSArray         *beijingRegions;
@@ -27,11 +28,11 @@
 
 static const CGFloat kTopBtnHeight = 44;
 
-@implementation DD4SRootViewController
+@implementation DD4SStoreRootViewController
 
-#pragma mark --- life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     // 数据
     self.serviceTypes = @[@"服务保养",
@@ -73,8 +74,9 @@ static const CGFloat kTopBtnHeight = 44;
     tableView.delegate = self;
     [self.view addSubview:tableView];
     self.tableView = tableView;
-    
+
 }
+
 
 #pragma mark ---- DOPDropMenuDelegate
 - (NSInteger)numberOfColumnsInMenu:(DOPDropDownMenu *)menu
@@ -145,12 +147,12 @@ static const CGFloat kTopBtnHeight = 44;
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
+    //#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of rows
+    //#warning Incomplete implementation, return the number of rows
     return 100;
 }
 
@@ -192,7 +194,7 @@ static const CGFloat kTopBtnHeight = 44;
 }
 
 -(NSArray*)tableView:(UITableView *)tableView
-                 editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
+editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSMutableArray *actions = [NSMutableArray array];
     
@@ -209,18 +211,29 @@ static const CGFloat kTopBtnHeight = 44;
         UITableViewRowAction *action = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault
                                                                           title:titles[i]
                                                                         handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-            NSLog(@"%@,%@",indexPath,action.title);
-        }];
+                                                                            NSLog(@"%@,%@",indexPath,action.title);
+                                                                        }];
         action.backgroundColor = colors[i];
         
         [actions addObject:action];
     }
-
+    
     return actions;
 }
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%@lllllllll",indexPath);
 }
+
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

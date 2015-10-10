@@ -66,7 +66,11 @@
 		59C549961BAFB77800BA093A /* DDCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C549951BAFB77800BA093A /* DDCountView.m */; };
 		59C549991BAFE6D300BA093A /* DDGeneralStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C549981BAFE6D300BA093A /* DDGeneralStoreViewController.m */; };
 		59C6F1061BAC0E3B00DB2DFA /* DDFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C6F1051BAC0E3B00DB2DFA /* DDFlowLayout.m */; };
-		59CD2ADD1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CD2ADC1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.m */; };
+		59DB50461BC8FD4F0067AC82 /* ExtensiveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DB50401BC8FD4F0067AC82 /* ExtensiveCell.m */; settings = {ASSET_TAGS = (); }; };
+		59DB50471BC8FD4F0067AC82 /* ECViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DB50421BC8FD4F0067AC82 /* ECViewController.m */; settings = {ASSET_TAGS = (); }; };
+		59DB504D1BC8FF100067AC82 /* DDHomeECViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DB504C1BC8FF100067AC82 /* DDHomeECViewController.m */; settings = {ASSET_TAGS = (); }; };
+		59DB50511BC9062A0067AC82 /* ExtensiveCellContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DB504F1BC9062A0067AC82 /* ExtensiveCellContainer.m */; settings = {ASSET_TAGS = (); }; };
+		59DB50521BC9062A0067AC82 /* ExtensiveCellContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DB50501BC9062A0067AC82 /* ExtensiveCellContainer.xib */; settings = {ASSET_TAGS = (); }; };
 		59E34B2A1BA8033B0006B226 /* DDHomeMyCarsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E34B291BA8033B0006B226 /* DDHomeMyCarsViewController.m */; };
 		59E34B311BA80A4B0006B226 /* DDHomeMyCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E34B2F1BA80A4B0006B226 /* DDHomeMyCarCell.m */; };
 		59E34B321BA80A4B0006B226 /* DDHomeMyCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E34B301BA80A4B0006B226 /* DDHomeMyCarCell.xib */; };
@@ -77,6 +81,8 @@
 		59E372201BBA523E0030BC1D /* UIGestureRecognizer+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E3721F1BBA523E0030BC1D /* UIGestureRecognizer+Block.m */; settings = {ASSET_TAGS = (); }; };
 		59E372231BBA53330030BC1D /* UIControl+ActionBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E372221BBA53330030BC1D /* UIControl+ActionBlocks.m */; settings = {ASSET_TAGS = (); }; };
 		59E372261BBA55B40030BC1D /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E372251BBA55B40030BC1D /* NSTimer+Blocks.m */; settings = {ASSET_TAGS = (); }; };
+		59E3FA8F1BC7BB7A00703DE3 /* DDHomeAddCarInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CD2ADC1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.m */; settings = {ASSET_TAGS = (); }; };
+		59E8B14E1BC8BFFF00994E4D /* DD4SStoreRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E8B14D1BC8BFFF00994E4D /* DD4SStoreRootViewController.m */; settings = {ASSET_TAGS = (); }; };
 		59ECD9F11BBCC84900B01E6F /* UINavigationController+JZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ECD9F01BBCC84900B01E6F /* UINavigationController+JZExtension.m */; settings = {ASSET_TAGS = (); }; };
 		59EF91FF1BAF9A9C00A7778C /* DDCommenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EF91FE1BAF9A9C00A7778C /* DDCommenModel.m */; };
 		59F0DB2F1B8564BB0092B104 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F0DB2E1B8564BB0092B104 /* main.m */; };
@@ -218,6 +224,15 @@
 		59C6F1051BAC0E3B00DB2DFA /* DDFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFlowLayout.m; sourceTree = "<group>"; };
 		59CD2ADB1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeAddCarInfoViewController.h; sourceTree = "<group>"; };
 		59CD2ADC1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeAddCarInfoViewController.m; sourceTree = "<group>"; };
+		59DB503F1BC8FD4F0067AC82 /* ExtensiveCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensiveCell.h; sourceTree = "<group>"; };
+		59DB50401BC8FD4F0067AC82 /* ExtensiveCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtensiveCell.m; sourceTree = "<group>"; };
+		59DB50411BC8FD4F0067AC82 /* ECViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECViewController.h; sourceTree = "<group>"; };
+		59DB50421BC8FD4F0067AC82 /* ECViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECViewController.m; sourceTree = "<group>"; };
+		59DB504B1BC8FF100067AC82 /* DDHomeECViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeECViewController.h; sourceTree = "<group>"; };
+		59DB504C1BC8FF100067AC82 /* DDHomeECViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeECViewController.m; sourceTree = "<group>"; };
+		59DB504E1BC9062A0067AC82 /* ExtensiveCellContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensiveCellContainer.h; sourceTree = "<group>"; };
+		59DB504F1BC9062A0067AC82 /* ExtensiveCellContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtensiveCellContainer.m; sourceTree = "<group>"; };
+		59DB50501BC9062A0067AC82 /* ExtensiveCellContainer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtensiveCellContainer.xib; sourceTree = "<group>"; };
 		59E34B281BA8033B0006B226 /* DDHomeMyCarsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeMyCarsViewController.h; sourceTree = "<group>"; };
 		59E34B291BA8033B0006B226 /* DDHomeMyCarsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeMyCarsViewController.m; sourceTree = "<group>"; };
 		59E34B2E1BA80A4B0006B226 /* DDHomeMyCarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeMyCarCell.h; sourceTree = "<group>"; };
@@ -236,6 +251,8 @@
 		59E372221BBA53330030BC1D /* UIControl+ActionBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+ActionBlocks.m"; sourceTree = "<group>"; };
 		59E372241BBA55B40030BC1D /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
 		59E372251BBA55B40030BC1D /* NSTimer+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Blocks.m"; sourceTree = "<group>"; };
+		59E8B14C1BC8BFFF00994E4D /* DD4SStoreRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DD4SStoreRootViewController.h; sourceTree = "<group>"; };
+		59E8B14D1BC8BFFF00994E4D /* DD4SStoreRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DD4SStoreRootViewController.m; sourceTree = "<group>"; };
 		59ECD9EF1BBCC84900B01E6F /* UINavigationController+JZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JZExtension.h"; sourceTree = "<group>"; };
 		59ECD9F01BBCC84900B01E6F /* UINavigationController+JZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JZExtension.m"; sourceTree = "<group>"; };
 		59EF91FD1BAF9A9C00A7778C /* DDCommenModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDCommenModel.h; path = "特洛伊/Classes/4SStore/Views/DDCommenModel.h"; sourceTree = SOURCE_ROOT; };
@@ -357,6 +374,8 @@
 			children = (
 				5985B9471BA1210600139593 /* DD4SRootViewController.h */,
 				5985B9481BA1210600139593 /* DD4SRootViewController.m */,
+				59E8B14C1BC8BFFF00994E4D /* DD4SStoreRootViewController.h */,
+				59E8B14D1BC8BFFF00994E4D /* DD4SStoreRootViewController.m */,
 				5981C4571BABEFD200788E6A /* DD4SStoreDetailViewController.h */,
 				5981C4581BABEFD200788E6A /* DD4SStoreDetailViewController.m */,
 				591299301BAC2C2B00ADACDC /* DD4SStoreCommentViewController.h */,
@@ -481,6 +500,8 @@
 				59FC71021BAABD1600CA9948 /* DDHomeMaintenanceDetailViewController.m */,
 				59FC70F81BAAAEEF00CA9948 /* DDHomeOrderViewController.h */,
 				59FC70F91BAAAEEF00CA9948 /* DDHomeOrderViewController.m */,
+				59DB504B1BC8FF100067AC82 /* DDHomeECViewController.h */,
+				59DB504C1BC8FF100067AC82 /* DDHomeECViewController.m */,
 				5981C44C1BABCA8300788E6A /* DDHomePersonalMaintenanceViewController.h */,
 				5981C44D1BABCA8300788E6A /* DDHomePersonalMaintenanceViewController.m */,
 			);
@@ -501,6 +522,7 @@
 		599A54CF1B8D53E7007D71C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				59DB504A1BC8FDDB0067AC82 /* ExtensiveCell */,
 				59F3B3181BA7EB14006026C5 /* SkyAssociationMenuView.h */,
 				59F3B3171BA7EB14006026C5 /* SkyAssociationMenuView.m */,
 				599A54D01B8D53E7007D71C8 /* DDHomeCityCell.h */,
@@ -665,6 +687,20 @@
 				599A55211B8D6055007D71C8 /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		59DB504A1BC8FDDB0067AC82 /* ExtensiveCell */ = {
+			isa = PBXGroup;
+			children = (
+				59DB503F1BC8FD4F0067AC82 /* ExtensiveCell.h */,
+				59DB50401BC8FD4F0067AC82 /* ExtensiveCell.m */,
+				59DB50411BC8FD4F0067AC82 /* ECViewController.h */,
+				59DB50421BC8FD4F0067AC82 /* ECViewController.m */,
+				59DB504E1BC9062A0067AC82 /* ExtensiveCellContainer.h */,
+				59DB504F1BC9062A0067AC82 /* ExtensiveCellContainer.m */,
+				59DB50501BC9062A0067AC82 /* ExtensiveCellContainer.xib */,
+			);
+			name = ExtensiveCell;
 			sourceTree = "<group>";
 		};
 		59F0DB201B8564BB0092B104 = {
@@ -835,6 +871,7 @@
 				59FC71081BAADB3500CA9948 /* DDHomeMaintenanceDetialCell.xib in Resources */,
 				599A55041B8D53E7007D71C8 /* Main.storyboard in Resources */,
 				5981C4471BABBCB900788E6A /* icon_chose_arrow_sel@2x.png in Resources */,
+				59DB50521BC9062A0067AC82 /* ExtensiveCellContainer.xib in Resources */,
 				59FCE92F1BA833AB006303EF /* HMNewsCell.xib in Resources */,
 				59E34B321BA80A4B0006B226 /* DDHomeMyCarCell.xib in Resources */,
 			);
@@ -904,8 +941,8 @@
 				59F0DB2F1B8564BB0092B104 /* main.m in Sources */,
 				599A550E1B8D53E7007D71C8 /* UIImage+Help.m in Sources */,
 				59E34B401BA819CD0006B226 /* HMNewsCell.m in Sources */,
+				59DB50461BC8FD4F0067AC82 /* ExtensiveCell.m in Sources */,
 				5985B9371BA0122200139593 /* DDHomeCarTool.m in Sources */,
-				59CD2ADD1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.m in Sources */,
 				599A55111B8D53E7007D71C8 /* UIView+Help.m in Sources */,
 				599A55141B8D53E7007D71C8 /* XXBHelpTools.m in Sources */,
 				59C549991BAFE6D300BA093A /* DDGeneralStoreViewController.m in Sources */,
@@ -923,6 +960,8 @@
 				59FC70EE1BAA53AA00CA9948 /* DDHomeIcePriceViewController.m in Sources */,
 				5981C4591BABEFD200788E6A /* DD4SStoreDetailViewController.m in Sources */,
 				599A550F1B8D53E7007D71C8 /* UIImage+ImageEffects.m in Sources */,
+				59DB50471BC8FD4F0067AC82 /* ECViewController.m in Sources */,
+				59DB50511BC9062A0067AC82 /* ExtensiveCellContainer.m in Sources */,
 				5981C44B1BABBCEB00788E6A /* DDBackView.m in Sources */,
 				591299381BAC31C000ADACDC /* DDStoreScoreModel.m in Sources */,
 				599A550C1B8D53E7007D71C8 /* UIBarButtonItem+Help.m in Sources */,
@@ -936,6 +975,7 @@
 				599A55241B8D6055007D71C8 /* MBProgressHUD.m in Sources */,
 				59ADFE371BB27D2400EE5EEB /* DDHttpTool.m in Sources */,
 				59699C1B1BB0FA8C00D486DC /* DDMineRootViewController.m in Sources */,
+				59DB504D1BC8FF100067AC82 /* DDHomeECViewController.m in Sources */,
 				599A550D1B8D53E7007D71C8 /* UIColor+Help.m in Sources */,
 				59ECD9F11BBCC84900B01E6F /* UINavigationController+JZExtension.m in Sources */,
 				59E372261BBA55B40030BC1D /* NSTimer+Blocks.m in Sources */,
@@ -949,11 +989,13 @@
 				59E34B441BA824980006B226 /* DDActivityCell.m in Sources */,
 				590723A21BAF9D0600B23D9C /* DDCommentCell.m in Sources */,
 				5904DF921BA98C4A00556AE6 /* DDHomeRecommendRewardViewController.m in Sources */,
+				59E3FA8F1BC7BB7A00703DE3 /* DDHomeAddCarInfoViewController.m in Sources */,
 				59E34B3C1BA819BE0006B226 /* HMNews.m in Sources */,
 				599A55121B8D53E7007D71C8 /* UIView+MotionEffect.m in Sources */,
 				59C549961BAFB77800BA093A /* DDCountView.m in Sources */,
 				59B6DE9F1BA963960046F1DB /* DDHomeTableHeadView.m in Sources */,
 				599A550A1B8D53E7007D71C8 /* NSDate+XXB.m in Sources */,
+				59E8B14E1BC8BFFF00994E4D /* DD4SStoreRootViewController.m in Sources */,
 				591299351BAC316600ADACDC /* DDStoreScoreView.m in Sources */,
 				59E372201BBA523E0030BC1D /* UIGestureRecognizer+Block.m in Sources */,
 			);

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DD4SRootViewController : UITableViewController
+@interface DD4SRootViewController : UIViewController
 
 @end

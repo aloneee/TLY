@@ -18,8 +18,7 @@
     // Override point for customization after application launch.
     
     NSLog(@"%@",DDGetCarBrandsUrl);
-    
-    
+
     //设置状态栏的样式
     application.statusBarStyle = UIStatusBarStyleLightContent;
     
@@ -34,6 +33,7 @@
         [application registerUserNotificationSettings:settings];
         
         [application registerForRemoteNotifications];
+
     }
     
     NSLog(@"");
