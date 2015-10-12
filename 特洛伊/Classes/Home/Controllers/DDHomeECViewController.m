@@ -21,6 +21,7 @@
     // Do any additional setup after loading the view.
     
     self.title = @"保养店铺";
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,7 +36,8 @@
 {
     NSString *identifier = @"demoCell";
     ExtensiveCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    cell.textLabel.text = @"lalall";
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    cell.textLabel.text = @"lalall";
     
     return cell;
 }
