@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class DDMaintanceDetailModel;
 
 
 @protocol ExtensiveCellDelegate;
 
 @interface ExtensiveCell : UITableViewCell
+
+@property (nonatomic, strong) DDMaintanceDetailModel *matainanceDetailModel;
 
 @property (nonatomic, weak) IBOutlet UITableViewController<ExtensiveCellDelegate>  *tableViewDelegate;
 
@@ -25,3 +28,5 @@
 - (void)shouldExtendCellAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
+
+

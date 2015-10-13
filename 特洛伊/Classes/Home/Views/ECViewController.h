@@ -76,6 +76,7 @@
 @interface ECViewController : UIViewController <ECTableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *maintainanceModels;
 
 
 

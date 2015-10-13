@@ -66,6 +66,7 @@
 		59C549961BAFB77800BA093A /* DDCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C549951BAFB77800BA093A /* DDCountView.m */; };
 		59C549991BAFE6D300BA093A /* DDGeneralStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C549981BAFE6D300BA093A /* DDGeneralStoreViewController.m */; };
 		59C6F1061BAC0E3B00DB2DFA /* DDFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C6F1051BAC0E3B00DB2DFA /* DDFlowLayout.m */; };
+		59CF3F101BCBA46600FEAB01 /* DDMaintanceDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CF3F0F1BCBA46600FEAB01 /* DDMaintanceDetailModel.m */; settings = {ASSET_TAGS = (); }; };
 		59DB50461BC8FD4F0067AC82 /* ExtensiveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DB50401BC8FD4F0067AC82 /* ExtensiveCell.m */; settings = {ASSET_TAGS = (); }; };
 		59DB50471BC8FD4F0067AC82 /* ECViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DB50421BC8FD4F0067AC82 /* ECViewController.m */; settings = {ASSET_TAGS = (); }; };
 		59DB504D1BC8FF100067AC82 /* DDHomeECViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DB504C1BC8FF100067AC82 /* DDHomeECViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -224,6 +225,8 @@
 		59C6F1051BAC0E3B00DB2DFA /* DDFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFlowLayout.m; sourceTree = "<group>"; };
 		59CD2ADB1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeAddCarInfoViewController.h; sourceTree = "<group>"; };
 		59CD2ADC1B9FCC2800DAB7F5 /* DDHomeAddCarInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeAddCarInfoViewController.m; sourceTree = "<group>"; };
+		59CF3F0E1BCBA46600FEAB01 /* DDMaintanceDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMaintanceDetailModel.h; sourceTree = "<group>"; };
+		59CF3F0F1BCBA46600FEAB01 /* DDMaintanceDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMaintanceDetailModel.m; sourceTree = "<group>"; };
 		59DB503F1BC8FD4F0067AC82 /* ExtensiveCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensiveCell.h; sourceTree = "<group>"; };
 		59DB50401BC8FD4F0067AC82 /* ExtensiveCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtensiveCell.m; sourceTree = "<group>"; };
 		59DB50411BC8FD4F0067AC82 /* ECViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECViewController.h; sourceTree = "<group>"; };
@@ -515,6 +518,8 @@
 				59E34B3B1BA819BE0006B226 /* HMNews.m */,
 				5985B92F1BA0091700139593 /* DDHomeCar.h */,
 				5985B9301BA0091700139593 /* DDHomeCar.m */,
+				59CF3F0E1BCBA46600FEAB01 /* DDMaintanceDetailModel.h */,
+				59CF3F0F1BCBA46600FEAB01 /* DDMaintanceDetailModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -939,6 +944,7 @@
 				5958A2291B9D400400B66F32 /* HomeRootViewController.m in Sources */,
 				590B7AC81BB51D5600F07565 /* DDHomeCarSubNameViewController.m in Sources */,
 				59F0DB2F1B8564BB0092B104 /* main.m in Sources */,
+				59CF3F101BCBA46600FEAB01 /* DDMaintanceDetailModel.m in Sources */,
 				599A550E1B8D53E7007D71C8 /* UIImage+Help.m in Sources */,
 				59E34B401BA819CD0006B226 /* HMNewsCell.m in Sources */,
 				59DB50461BC8FD4F0067AC82 /* ExtensiveCell.m in Sources */,

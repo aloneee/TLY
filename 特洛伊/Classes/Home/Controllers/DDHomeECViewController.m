@@ -9,54 +9,121 @@
 //
 
 #import "DDHomeECViewController.h"
+#import "DDMaintanceDetailModel.h"
+
+#define normalFont [UIFont systemFontOfSize:15]
+#define lightFont  [UIFont systemFontOfSize:12]
+
+@interface DDDetailView : UIView
+
+@property(nonatomic, weak) UILabel    *preferentialHint;
+@property(nonatomic, weak) UITextView *preferentialTextView;
+
+@property(nonatomic, weak) UILabel    *deadlineHint;
+@property(nonatomic, weak) UILabel    *deadlineLabel;
+@property(nonatomic, weak) UILabel    *restDaysLabel;
+
+@property(nonatomic, weak) UILabel    *contactHint;
+@property(nonatomic, weak) UILabel    *addressLabel;
+
+@property(nonatomic, strong) DDMaintanceDetailModel *detailModel;
+
+@end
+
+@implementation DDDetailView
+
+-(instancetype)initWithFrame:(CGRect)frame{
+    
+    if (self = [super initWithFrame:frame]) {
+        UILabel *preferentialHint = [[UILabel alloc] init];
+        preferentialHint.text = @"优惠说明";
+        preferentialHint.font = normalFont;
+        [self addSubview:preferentialHint];
+        self.preferentialHint = preferentialHint;
+        
+        UITextView *preferentialTextView = [[UITextView alloc] init];
+        preferentialTextView.textColor = [UIColor lightGrayColor];
+        preferentialTextView.font = lightFont;
+        [self addSubview:preferentialTextView];
+        self.preferentialTextView = preferentialTextView;
+        
+        UILabel *deadlineHint = [[UILabel alloc] init];
+        deadlineHint.text = @"有效期至";
+        deadlineHint.font = normalFont;
+        [self addSubview:deadlineHint];
+        self.deadlineHint = deadlineHint;
+        
+        UILabel *deadlineLabel = [[UILabel alloc] init];
+        deadlineLabel.font = lightFont;
+        deadlineLabel.textColor = [UIColor lightGrayColor];
+        [self addSubview:deadlineLabel];
+        self.deadlineLabel = deadlineLabel;
+        
+        UILabel *restDaysLabel = [[UILabel alloc] init];
+        restDaysLabel.textColor = [UIColor orangeColor];
+        restDaysLabel.font = lightFont;
+        [self addSubview:restDaysLabel];
+        self.restDaysLabel = restDaysLabel;
+        
+    }
+    
+    return self;
+}
+
+@end
+
 
 @interface DDHomeECViewController ()
+
 
 @end
 
 @implementation DDHomeECViewController
 
+#pragma mark --- lazyload
+
+
+#pragma mark --- lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     self.title = @"保养店铺";
     self.automaticallyAdjustsScrollViewInsets = NO;
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark ECTableViewDataSource
-
 
 - (ExtensiveCell *)extensiveCellForRowIndexPath:(NSIndexPath *)indexPath
 {
     NSString *identifier = @"demoCell";
     ExtensiveCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    cell.textLabel.text = @"lalall";
+    cell.matainanceDetailModel = self.maintainanceModels[indexPath.row];
     
     return cell;
 }
 
 - (CGFloat)heightForExtensiveCellAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    return 129;
 }
 
 
 - (NSInteger)numberOfSections
 {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return self.maintainanceModels.count;
 }
+
+
+
+
 
 - (UIView *)viewForContainerAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -74,9 +141,7 @@
         }
         case 3:
         {
-            // Will instantiate the View on every opening/closing
-            // The frame origin set to (10, 10) will create a margin-top and margin-left effect of 10 pixels.
-            // Width 300 will do the rest (the full width of the screen is 320 = 300 + 10 + 10).
+    
             UIView *dropDownView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, kScreen_Width, 88)];
             dropDownView.backgroundColor = [UIColor redColor];
             return dropDownView;
